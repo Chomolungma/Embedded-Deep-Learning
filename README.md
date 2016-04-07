@@ -9,7 +9,7 @@ Jetson: Nvidia Tegra X1 + Ubuntu 14.04.1 LTS
 
 I have extracted the source from <a href="https://github.com/NVIDIA/caffe/tree/caffe-0.14">NVIDIA/caffe (Nvidia/caffe/tree/caffe-0.14) </a>and have disabled the full backward pass and clock the time for a full forward pass only as shown in <a href=" https://github.com/charlyng/Embedded-Deep-Learning/blob/master/caffe.cpp">caffe.cpp</a>. 
 
-Next, I run caffe time on three models on both Titan X (FP32) and Jetson TX1 (FP16, FP32) for Batch 1, 64 and 128.
+Next, I run caffe time on three models on both Titan X (FP32) and Jetson TX1 (FP16, FP32) for Batch 1, 64 and 128 (Refer to cmd_AlexNet.md, cmd_GoogLeNet.md, cmd_Vgg16.md).
 
 **AlexNet**
 
