@@ -7,9 +7,11 @@ Machine: 6-core Intel Xeon E5-2620 v3 CPU @ 2.4GHz + NVIDIA GeForce GTX Titan X 
 
 Jetson: Nvidia Tegra X1 + Ubuntu 14.04.1 LTS
 
-I have extracted the source from <a href="https://github.com/NVIDIA/caffe/tree/caffe-0.14">NVIDIA/caffe (Nvidia/caffe/tree/caffe-0.14) </a>and have disabled the full backward pass and clock the time for a full forward pass only as shown in <a href=" https://github.com/charlyng/Embedded-Deep-Learning/blob/master/caffe.cpp">caffe.cpp</a>. 
+I took reference from <a href="https://www.nvidia.com/content/tegra/embedded-systems/pdf/jetson_tx1_whitepaper.pdf">Nvidia Jetson TX1 Whitepaper</a> and extracted the source from <a href="https://github.com/NVIDIA/caffe/tree/caffe-0.14">NVIDIA/caffe/tree/caffe-0.14</a> for Titan X and <a href="https://github.com/NVIDIA/caffe/tree/experimental/fp16">NVIDIA/caffe/tree/experimental/fp16</a> for Jetson TX1. 
 
-Next, I run caffe time on three models on both Titan X (FP32) and Jetson TX1 (FP16, FP32) for Batch 1, 64 and 128 (Refer to cmd_AlexNet.md, cmd_GoogLeNet.md, cmd_Vgg16.md).
+In the following codes, I have edited <a href=" https://github.com/charlyng/Embedded-Deep-Learning/blob/master/caffe.cpp">caffe.cpp</a> to disable the full backward pass and clock the time for a full forward pass only for 100 iterations. 
+
+Next, I run caffe time on AlexNet, GoogLeNet and Vgg16 on Jetson TX1 (FP32), caffe_fp16 time on Jetson TX1 (FP16) and caffe time on Titan X (FP32) for Batch 1, 64 and 128 (Refer to commands in cmd_AlexNet.md, cmd_GoogLeNet.md, cmd_Vgg16.md).
 
 **AlexNet**
 
