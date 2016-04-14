@@ -15,6 +15,8 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
 
 **AlexNet**
 
+<div style="text-align:center">
+<div>
 <table class="tg">
   <tr>
     <th class="tg-hgcj" rowspan="2">Network: AlexNet Batch 1</th>
@@ -75,6 +77,7 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
     <td class="tg-s6z2"></td>
   </tr>
 </table>
+</div>
 
 <table class="tg">
   <tr>
@@ -92,7 +95,7 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
   </tr>
   <tr>
     <td class="tg-031e">Average Forward Pass (ms)</td>
-    <td class="tg-h0x1"><center>501.2</center></td>
+    <td class="tg-h0x1">501.2</td>
     <td class="tg-s6z2">252.8</td>
     <td class="tg-h0x1">23.4</td>
     <td class="tg-s6z2"></td>
