@@ -17,7 +17,7 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
 
 <table class="tg">
   <tr>
-    <th class="tg-hgcj" rowspan="2">Network: AlexNet Batch 1</th>
+    <th class="tg-hgcj" rowspan="2">Network: <br>AlexNet Batch 1</th>
     <th class="tg-hgcj" colspan="3">cuDNN4</th>
     <th class="tg-hgcj" colspan="3">cuDNN5</th>
   </tr>
@@ -78,7 +78,7 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
 
 <table class="tg">
   <tr>
-    <th class="tg-hgcj" rowspan="2">Network: AlexNet Batch 64</th>
+    <th class="tg-hgcj" rowspan="2">Network: <br>AlexNet Batch 64</th>
     <th class="tg-hgcj" colspan="3">cuDNN4</th>
     <th class="tg-hgcj" colspan="3">cuDNN 5</th>
   </tr>
@@ -139,7 +139,7 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
 
 <table class="tg">
   <tr>
-    <th class="tg-hgcj" rowspan="2">Network: AlexNet Batch 128</th>
+    <th class="tg-hgcj" rowspan="2">Network: <br>AlexNet Batch 128</th>
     <th class="tg-hgcj" colspan="3">cuDNN4</th>
     <th class="tg-hgcj" colspan="3">cuDNN 5</th>
   </tr>
@@ -204,7 +204,7 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
 
 <table class="tg">
   <tr>
-    <th class="tg-hgcj" rowspan="2">Network: GoogLeNet Batch 1</th>
+    <th class="tg-hgcj" rowspan="2">Network: <br>GoogLeNet Batch 1</th>
     <th class="tg-hgcj" colspan="3">cuDNN4</th>
     <th class="tg-hgcj" colspan="3">cuDNN 5</th>
   </tr>
@@ -265,7 +265,7 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
 
 <table class="tg">
   <tr>
-    <th class="tg-hgcj" rowspan="2">Network: GoogLeNet Batch 64</th>
+    <th class="tg-hgcj" rowspan="2">Network: <br>GoogLeNet Batch 64</th>
     <th class="tg-hgcj" colspan="3">cuDNN4</th>
     <th class="tg-hgcj" colspan="3">cuDNN 5</th>
   </tr>
@@ -326,11 +326,10 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
 
 <table class="tg">
   <tr>
-    <th class="tg-hgcj" rowspan="2">Network: GoogLeNet Batch 128</th>
+    <th class="tg-hgcj" rowspan="2">Network: <br>GoogLeNet Batch 128</th>
     <th class="tg-hgcj" colspan="3">cuDNN4</th>
     <th class="tg-hgcj" colspan="3">cuDNN 5</th>
   </tr>
-  <tr>
     <td class="tg-aa40">Tegra X1 *1<br>(FP32)</td>
     <td class="tg-hgcj">Tegra X1 *1<br>(FP16)</td>
     <td class="tg-aa40">Titan X *2<br>(FP32)</td>
@@ -391,7 +390,7 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
 
 <table class="tg">
   <tr>
-    <th class="tg-hgcj" rowspan="2">Network: Vgg16 Batch 1</th>
+    <th class="tg-hgcj" rowspan="2">Network: <br>Vgg16 Batch 1</th>
     <th class="tg-hgcj" colspan="3">cuDNN4</th>
     <th class="tg-hgcj" colspan="3">cuDNN 5</th>
   </tr>
@@ -453,7 +452,7 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
 </style>
 <table class="tg">
   <tr>
-    <th class="tg-hgcj" rowspan="2">Network: Vgg16 Batch 64</th>
+    <th class="tg-hgcj" rowspan="2">Network: <br>Vgg16 Batch 64</th>
     <th class="tg-hgcj" colspan="3">cuDNN4</th>
     <th class="tg-hgcj" colspan="3">cuDNN 5</th>
   </tr>
@@ -514,7 +513,7 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
 
 <table class="tg">
   <tr>
-    <th class="tg-hgcj" rowspan="2">Network: Vgg16 Batch 128</th>
+    <th class="tg-hgcj" rowspan="2">Network: <br>Vgg16 Batch 128</th>
     <th class="tg-hgcj" colspan="3">cuDNN4</th>
     <th class="tg-hgcj" colspan="3">cuDNN 5</th>
   </tr>
