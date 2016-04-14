@@ -15,31 +15,220 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
 
 **AlexNet**
 
-| Network: AlexNet Batch 1     | Tegra X1 (FP32) #1 | Tegra X1 (FP16) #1 | Titan X (FP32) #2 |
-| ---------------------------- |:---------------:|:---------------:|:--------------:|
-| Average Forward Pass (ms)    | 21.9            | 15.4            | 2.5            |
-| Average Forward Pass (fps)   | 45.7            | 65.1            | 408.2          |
-| Memory (Mbytes)              | 1372            | 930             |                |
-| GPU Utilization Average      | 97%             | 32%             |                |
-| GPU Frequency (MHz)          | 691             | 691             |                |
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 7px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 7px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-s6z2{text-align:center}
+.tg .tg-hgcj{font-weight:bold;text-align:center}
+.tg .tg-aa40{font-weight:bold;text-align:center}
+.tg .tg-h0x1{text-align:center}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-hgcj" rowspan="2">Network: AlexNet Batch 1</th>
+    <th class="tg-hgcj" colspan="3">cuDNN4</th>
+    <th class="tg-hgcj" colspan="3">cuDNN5</th>
+  </tr>
+  <tr>
+    <td class="tg-aa40">Tegra X1 *1<br>(FP32)</td>
+    <td class="tg-hgcj">Tegra X1 *1<br>(FP16)</td>
+    <td class="tg-aa40">Titan X *2<br>(FP32)</td>
+    <td class="tg-hgcj">Tegra X1 *1<br>(FP32)</td>
+    <td class="tg-aa40">Tegra X1 *1<br>(FP16)</td>
+    <td class="tg-hgcj">Titan X *2<br>(FP32)</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Average Forward Pass (ms)</td>
+    <td class="tg-h0x1">21.9</td>
+    <td class="tg-s6z2">15.4</td>
+    <td class="tg-h0x1">2.5</td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Average Forwards Pass (fps)</td>
+    <td class="tg-h0x1">45.7</td>
+    <td class="tg-s6z2">65.1</td>
+    <td class="tg-h0x1">408.2</td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Memory (MBytes)</td>
+    <td class="tg-h0x1">1372</td>
+    <td class="tg-s6z2">930</td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">GPU Utilization Average</td>
+    <td class="tg-h0x1">97%</td>
+    <td class="tg-s6z2">32%</td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">GPU Frequency (MHz)</td>
+    <td class="tg-h0x1">691</td>
+    <td class="tg-s6z2">691</td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+</table>
 
-| Network: AlexNet Batch 64    | Tegra X1 (FP32) | Tegra X1 (FP16) | Titan X (FP32) |
-| ---------------------------- |:---------------:|:---------------:|:--------------:|
-| Average Forward Pass (ms)    | 501.2           | 252.8           | 23.4           |
-| Average Forward Pass (fps)   | 127.7           | 253.1           | 2732.7         |
-| Memory (Mbytes)              | 2679            | 972             |                |
-| GPU Utilization Average      | 99%             | 99%             |                |
-| GPU Frequency (MHz)          | 691             | 691             |                |
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 7px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 7px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-s6z2{text-align:center}
+.tg .tg-hgcj{font-weight:bold;text-align:center}
+.tg .tg-aa40{font-weight:bold;text-align:center}
+.tg .tg-h0x1{text-align:center}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-hgcj" rowspan="2">Network: AlexNet Batch 64</th>
+    <th class="tg-hgcj" colspan="3">cuDNN4</th>
+    <th class="tg-hgcj" colspan="3">cuDNN 5</th>
+  </tr>
+  <tr>
+    <td class="tg-aa40">Tegra X1 *1<br>(FP32)</td>
+    <td class="tg-hgcj">Tegra X1 *1<br>(FP16)</td>
+    <td class="tg-aa40">Titan X *2<br>(FP32)</td>
+    <td class="tg-hgcj">Tegra X1 *1<br>(FP32)</td>
+    <td class="tg-aa40">Tegra X1 *1<br>(FP16)</td>
+    <td class="tg-hgcj">Titan X *2<br>(FP32)</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Average Forward Pass (ms)</td>
+    <td class="tg-h0x1">501.2</td>
+    <td class="tg-s6z2">252.8</td>
+    <td class="tg-h0x1">23.4</td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Average Forwards Pass (fps)</td>
+    <td class="tg-h0x1">127.7</td>
+    <td class="tg-s6z2">253.1</td>
+    <td class="tg-h0x1">2732.7</td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Memory (MBytes)</td>
+    <td class="tg-h0x1">2679</td>
+    <td class="tg-s6z2">972</td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">GPU Utilization Average</td>
+    <td class="tg-h0x1">99%</td>
+    <td class="tg-s6z2">99%</td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">GPU Frequency (MHz)</td>
+    <td class="tg-h0x1">691</td>
+    <td class="tg-s6z2">691</td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+</table>
 
-| Network: AlexNet Batch 128   | Tegra X1 (FP32) | Tegra X1 (FP16) | Titan X (FP32) |
-| ---------------------------- |:---------------:|:---------------:| :-------------:|
-| Average Forward Pass (ms)    | 834.2           | 496.6           | 40.3           |
-| Average Forward Pass (fps)   | 153.4           | 257.8           | 3178.5         |
-| Memory (Mbytes)              | 2886            | 1146            |                |
-| GPU Utilization Average      | 99%             | 99%             |                |
-| GPU Frequency (MHz)          | 691             | 691             |                |
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 7px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 7px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-s6z2{text-align:center}
+.tg .tg-hgcj{font-weight:bold;text-align:center}
+.tg .tg-aa40{font-weight:bold;text-align:center}
+.tg .tg-h0x1{text-align:center}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-hgcj" rowspan="2">Network: AlexNet Batch 128</th>
+    <th class="tg-hgcj" colspan="3">cuDNN4</th>
+    <th class="tg-hgcj" colspan="3">cuDNN 5</th>
+  </tr>
+  <tr>
+    <td class="tg-aa40">Tegra X1 *1<br>(FP32)</td>
+    <td class="tg-hgcj">Tegra X1 *1<br>(FP16)</td>
+    <td class="tg-aa40">Titan X *2<br>(FP32)</td>
+    <td class="tg-hgcj">Tegra X1 *1<br>(FP32)</td>
+    <td class="tg-aa40">Tegra X1 *1<br>(FP16)</td>
+    <td class="tg-hgcj">Titan X *2<br>(FP32)</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Average Forward Pass (ms)</td>
+    <td class="tg-h0x1">834.2</td>
+    <td class="tg-s6z2">496.6</td>
+    <td class="tg-h0x1">40.3</td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Average Forwards Pass (fps)</td>
+    <td class="tg-h0x1">153.4</td>
+    <td class="tg-s6z2">257.8</td>
+    <td class="tg-h0x1">3178.5</td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Memory (MBytes)</td>
+    <td class="tg-h0x1">2886</td>
+    <td class="tg-s6z2">1146</td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">GPU Utilization Average</td>
+    <td class="tg-h0x1">99%</td>
+    <td class="tg-s6z2">99%</td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">GPU Frequency (MHz)</td>
+    <td class="tg-h0x1">691</td>
+    <td class="tg-s6z2">691</td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+    <td class="tg-h0x1"></td>
+    <td class="tg-s6z2"></td>
+  </tr>
+</table>
 
-<p>---------------------------------------------------------------------------------------------------------------------------------</p>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **GoogLeNet**
 
