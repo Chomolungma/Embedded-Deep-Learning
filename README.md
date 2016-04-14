@@ -76,16 +76,6 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
   </tr>
 </table>
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 7px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 7px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg .tg-s6z2{text-align:center}
-.tg .tg-hgcj{font-weight:bold;text-align:center}
-.tg .tg-aa40{font-weight:bold;text-align:center}
-.tg .tg-h0x1{text-align:center}
-.tg .tg-yw4l{vertical-align:top}
-</style>
 <table class="tg">
   <tr>
     <th class="tg-hgcj" rowspan="2">Network: AlexNet Batch 64</th>
@@ -102,7 +92,7 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
   </tr>
   <tr>
     <td class="tg-031e">Average Forward Pass (ms)</td>
-    <td class="tg-h0x1">501.2</td>
+    <td class="tg-h0x1"><center>501.2</center></td>
     <td class="tg-s6z2">252.8</td>
     <td class="tg-h0x1">23.4</td>
     <td class="tg-s6z2"></td>
@@ -147,16 +137,6 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
   </tr>
 </table>
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 7px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 7px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg .tg-s6z2{text-align:center}
-.tg .tg-hgcj{font-weight:bold;text-align:center}
-.tg .tg-aa40{font-weight:bold;text-align:center}
-.tg .tg-h0x1{text-align:center}
-.tg .tg-yw4l{vertical-align:top}
-</style>
 <table class="tg">
   <tr>
     <th class="tg-hgcj" rowspan="2">Network: AlexNet Batch 128</th>
