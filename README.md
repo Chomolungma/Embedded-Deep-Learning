@@ -34,45 +34,45 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
     <td class="tg-h0x1">21.9</td>
     <td class="tg-s6z2">15.4</td>
     <td class="tg-h0x1">2.5</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Average Forwards Pass (fps)</td>
     <td class="tg-h0x1">45.7</td>
     <td class="tg-s6z2">65.1</td>
     <td class="tg-h0x1">408.2</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Memory (MBytes)</td>
     <td class="tg-h0x1">1372</td>
     <td class="tg-s6z2">930</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Utilization Average</td>
     <td class="tg-h0x1">97%</td>
     <td class="tg-s6z2">32%</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Frequency (MHz)</td>
     <td class="tg-h0x1">691</td>
     <td class="tg-s6z2">691</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
 </table>
 
@@ -95,45 +95,45 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
     <td class="tg-h0x1"><center>501.2</center></td>
     <td class="tg-s6z2">252.8</td>
     <td class="tg-h0x1">23.4</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Average Forwards Pass (fps)</td>
     <td class="tg-h0x1">127.7</td>
     <td class="tg-s6z2">253.1</td>
     <td class="tg-h0x1">2732.7</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Memory (MBytes)</td>
     <td class="tg-h0x1">2679</td>
     <td class="tg-s6z2">972</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Utilization Average</td>
     <td class="tg-h0x1">99%</td>
     <td class="tg-s6z2">99%</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Frequency (MHz)</td>
     <td class="tg-h0x1">691</td>
     <td class="tg-s6z2">691</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
 </table>
 
@@ -156,45 +156,45 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
     <td class="tg-h0x1">834.2</td>
     <td class="tg-s6z2">496.6</td>
     <td class="tg-h0x1">40.3</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Average Forwards Pass (fps)</td>
     <td class="tg-h0x1">153.4</td>
     <td class="tg-s6z2">257.8</td>
     <td class="tg-h0x1">3178.5</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Memory (MBytes)</td>
     <td class="tg-h0x1">2886</td>
     <td class="tg-s6z2">1146</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Utilization Average</td>
     <td class="tg-h0x1">99%</td>
     <td class="tg-s6z2">99%</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Frequency (MHz)</td>
     <td class="tg-h0x1">691</td>
     <td class="tg-s6z2">691</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
 </table>
 
@@ -221,45 +221,45 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
     <td class="tg-h0x1">29.3</td>
     <td class="tg-s6z2">23.7</td>
     <td class="tg-h0x1">7.6</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Average Forwards Pass (fps)</td>
     <td class="tg-h0x1">34.2</td>
     <td class="tg-s6z2">42.1</td>
     <td class="tg-h0x1">131.4</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Memory (MBytes)</td>
     <td class="tg-h0x1">1274</td>
     <td class="tg-s6z2">950</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Utilization Average</td>
     <td class="tg-h0x1">97%</td>
     <td class="tg-s6z2">99%</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Frequency (MHz)</td>
     <td class="tg-h0x1">691</td>
     <td class="tg-s6z2">691</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
 </table>
 
@@ -282,45 +282,45 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
     <td class="tg-h0x1"></td>
     <td class="tg-s6z2">839.2</td>
     <td class="tg-h0x1">68.8</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Average Forwards Pass (fps)</td>
     <td class="tg-h0x1"></td>
     <td class="tg-s6z2">76.3</td>
     <td class="tg-h0x1">930.9</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Memory (MBytes)</td>
     <td class="tg-h0x1"></td>
     <td class="tg-s6z2">1726</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Utilization Average</td>
     <td class="tg-h0x1"></td>
     <td class="tg-s6z2">99%</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Frequency (MHz)</td>
     <td class="tg-h0x1">691</td>
     <td class="tg-s6z2">691</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
 </table>
 
@@ -342,45 +342,45 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
     <td class="tg-h0x1">N.A</td>
     <td class="tg-s6z2">1672.3</td>
     <td class="tg-h0x1">131.1</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Average Forwards Pass (fps)</td>
     <td class="tg-h0x1">N.A</td>
     <td class="tg-s6z2">76.5</td>
     <td class="tg-h0x1">976.6</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Memory (MBytes)</td>
     <td class="tg-h0x1">N.A</td>
     <td class="tg-s6z2">3387</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Utilization Average</td>
     <td class="tg-h0x1">N.A</td>
     <td class="tg-s6z2">99%</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Frequency (MHz)</td>
     <td class="tg-h0x1">N.A</td>
     <td class="tg-s6z2">691</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
 </table>
 
@@ -407,45 +407,45 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
     <td class="tg-h0x1">156.1</td>
     <td class="tg-s6z2">104.4</td>
     <td class="tg-h0x1">12</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Average Forwards Pass (fps)</td>
     <td class="tg-h0x1">6.4</td>
     <td class="tg-s6z2">9.6</td>
     <td class="tg-h0x1">83.5</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Memory (MBytes)</td>
     <td class="tg-h0x1">2019</td>
     <td class="tg-s6z2">1154</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Utilization Average</td>
     <td class="tg-h0x1">99%</td>
     <td class="tg-s6z2">99%</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Frequency (MHz)</td>
     <td class="tg-h0x1">691</td>
     <td class="tg-s6z2">691</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
 </table>
 
@@ -469,45 +469,45 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
     <td class="tg-h0x1"></td>
     <td class="tg-s6z2">5150.6</td>
     <td class="tg-h0x1">307.8</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Average Forwards Pass (fps)</td>
     <td class="tg-h0x1"></td>
     <td class="tg-s6z2">12.4</td>
     <td class="tg-h0x1">207.9</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Memory (MBytes)</td>
     <td class="tg-h0x1"></td>
     <td class="tg-s6z2">2971</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Utilization Average</td>
     <td class="tg-h0x1"></td>
     <td class="tg-s6z2">99%</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Frequency (MHz)</td>
     <td class="tg-h0x1"></td>
     <td class="tg-s6z2">691</td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
 </table>
 
@@ -530,44 +530,44 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
     <td class="tg-h0x1"></td>
     <td class="tg-s6z2"></td>
     <td class="tg-h0x1">606.8</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Average Forwards Pass (fps)</td>
     <td class="tg-h0x1"></td>
     <td class="tg-s6z2"></td>
     <td class="tg-h0x1">210.9</td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-031e">Memory (MBytes)</td>
     <td class="tg-h0x1"></td>
     <td class="tg-s6z2"></td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Utilization Average</td>
     <td class="tg-h0x1"></td>
     <td class="tg-s6z2"></td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
   <tr>
     <td class="tg-yw4l">GPU Frequency (MHz)</td>
     <td class="tg-h0x1"></td>
     <td class="tg-s6z2"></td>
     <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
-    <td class="tg-h0x1"></td>
-    <td class="tg-s6z2"></td>
+    <td class="tg-s6z2">TBC</td>
+    <td class="tg-h0x1">TBC</td>
+    <td class="tg-s6z2">TBC</td>
   </tr>
 </table>
