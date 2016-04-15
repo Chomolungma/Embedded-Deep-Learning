@@ -2,6 +2,8 @@
 
 `g++ -E -x c++ - -v `pkg-config opencv --cflags --libs` <<< '#include "opencv2/opencv.hpp"' | grep  "# 1 .*opencv2.*1"`
 
-command  git clone https://github.com/pjreddie/darknet.git
+<b>Command:</b> git clone https://github.com/pjreddie/darknet.git
+
 Error "fatal: unable to access 'https://github.com/pjreddie/darknet.git/': Could not resolve proxy: proxy"
-solution unset http_proxy; unset https_proxy
+
+<b>Solution:</b> unset http_proxy; unset https_proxy
