@@ -9,3 +9,6 @@ g++ -E -x c++ - -v `pkg-config opencv --cflags --libs` <<< '#include "opencv2/op
 Error "fatal: unable to access 'https://github.com/pjreddie/darknet.git/': Could not resolve proxy: proxy"
 
 <b>Solution:</b> unset http_proxy; unset https_proxy
+
+
+pkg-config --cflags --libs opencv
