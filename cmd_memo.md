@@ -18,5 +18,6 @@ make uninstall
 Uninstall opencv
 cd /usr/local/include
 sudo rm -rf opencv
+sudo rm -rf opencv2
 cd /usr/local/lib
 sudo rm libopencv_*
