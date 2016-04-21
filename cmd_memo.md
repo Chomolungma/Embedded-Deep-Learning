@@ -14,3 +14,9 @@ Error "fatal: unable to access 'https://github.com/pjreddie/darknet.git/': Could
 pkg-config --cflags --libs opencv
 pkg-config --modversion opencv
 make uninstall
+
+Uninstall opencv
+cd /usr/local/include
+sudo rm -rf opencv
+cd /usr/local/lib
+sudo rm libopencv_*
