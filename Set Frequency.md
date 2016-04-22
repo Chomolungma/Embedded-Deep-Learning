@@ -25,12 +25,13 @@ To set Frequency for Titan X,
 #6 Display Memory Utilization ratio
    nvidia-smi -l -i 0 -q -d UTILIZATION
 
-#7 Run the prototxt file
-  AlexNet:LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/bvlc_alexnet/deploy1.prototxt -gpu 0 -iterations 100`
-  
-  GoogLeNet:LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/bvlc_googlenet/deploy1.prototxt -gpu 0 -iterations 100`
-  
-  Vgg16:LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/vgg16/deploy1.prototxt -gpu 0 -iterations 100
+#7 Run the prototxt file*
+   AlexNet:LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/bvlc_alexnet/deploy1.prototxt -gpu 0 -iterations 100
+   GoogLeNet:LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/bvlc_googlenet/deploy1.prototxt -gpu 0 -iterations 100
+   Vgg16:LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/vgg16/deploy1.prototxt -gpu 0 -iterations 100
+   
+   * Make the necessary changes (batch no.) when reproducing benchmark results
+   --> deployx where x refers the batch no.  
   ```
 Frequency will be reset after session ended. <-- mean after reboot, freq back to default value
 
