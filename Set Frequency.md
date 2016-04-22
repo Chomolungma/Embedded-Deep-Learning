@@ -25,7 +25,7 @@ To set Frequency for Titan X,
 #6 Display Memory Utilization ratio
    $ nvidia-smi -l -i 0 -q -d UTILIZATION
 
-#7 Run the prototxt file*
+#7 Run the prototxt file for AlexNet, GoogLeNet and Vgg16 *
 
    AlexNet
    $ LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/bvlc_alexnet/deploy1.prototxt -gpu 0 -iterations 100
