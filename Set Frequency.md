@@ -26,8 +26,13 @@ To set Frequency for Titan X,
    nvidia-smi -l -i 0 -q -d UTILIZATION
 
 #7 Run the prototxt file
-   LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/bvlc_alexnet/deploy1.prototxt -gpu 0 -iterations 100 
 ```
+  <b>AlexNet:</b> ```LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/bvlc_alexnet/deploy1.prototxt -gpu 0 -iterations 100```
+  
+  <b>GoogLeNet:</b> ```LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/bvlc_googlenet/deploy1.prototxt -gpu 0 -iterations 100```
+  
+  <b>Vgg16:</b> ```LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/vgg16/deploy1.prototxt -gpu 0 -iterations 100 ```
+
 Frequency will be reset after session ended. <-- mean after reboot, freq back to default value
 
 To set Frequency for Jetson TX1,
