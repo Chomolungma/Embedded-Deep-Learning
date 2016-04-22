@@ -26,24 +26,23 @@ To set Frequency for Titan X,
    nvidia-smi -l -i 0 -q -d UTILIZATION
 
 #7 Run the prototxt file
-```
-  **AlexNet:**`LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/bvlc_alexnet/deploy1.prototxt -gpu 0 -iterations 100`
+  AlexNet:LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/bvlc_alexnet/deploy1.prototxt -gpu 0 -iterations 100`
   
-  **GoogLeNet:** `LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/bvlc_googlenet/deploy1.prototxt -gpu 0 -iterations 100`
+  GoogLeNet:LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/bvlc_googlenet/deploy1.prototxt -gpu 0 -iterations 100`
   
-  **Vgg16:**`LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/vgg16/deploy1.prototxt -gpu 0 -iterations 100`
-  
+  Vgg16:LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/vgg16/deploy1.prototxt -gpu 0 -iterations 100
+  ```
 Frequency will be reset after session ended. <-- mean after reboot, freq back to default value
 
 To set Frequency for Jetson TX1,
 
 ```
-# Change directory to 01-tx1-settting
+#1 Change directory to 01-tx1-settting
 cd /home/ubuntu/Programs/caffe-experimental-fp16/01-tx1-settting/
 
-# Change the frequency in tegra-analysis.sh
+#2 Change the frequency in tegra-analysis.sh
 sudo ./tegra-analysis.sh                               <--- to upload contents of this shell script
 
-# Run tegrastats
+#3 Run tegrastats
 sudo ./tegrastats
 ```
