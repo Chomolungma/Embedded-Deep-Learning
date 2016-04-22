@@ -3,11 +3,18 @@ Current working Environment Setup: Jetson TX1 (L4T R23.2) + OpenCv-3.1.0 + CUDA 
 
 <b>Uninstall Current OpenCV</b>
 ```
-cd /usr/local/include
-sudo rm -rf opencv
-sudo rm -rf opencv2
-cd /usr/local/lib
-sudo rm libopencv_*
+# Change Directory
+$ cd /usr/local/include
+
+# Remove openCV folder
+$ sudo rm -rf opencv
+$ sudo rm -rf opencv2
+
+# Change Directory
+$ cd /usr/local/lib
+
+# Remove all libopencv_ related files
+$ sudo rm libopencv_*
 ```
 <b>Install OpenCV-3.1.0 on Jetson TX1</b> [src: <a href="https://devtalk.nvidia.com/default/topic/917386/jetson-tx1/usb-3-0-port-unstable-on-jetson-tx1-/post/4835793/#4835793">Instructions to install OpenCV-3.1.0</a>]
 
