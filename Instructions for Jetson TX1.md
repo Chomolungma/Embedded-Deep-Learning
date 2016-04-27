@@ -6,10 +6,10 @@ To set Frequency,
 #1 Change Directory
    $ cd /home/ubuntu/Programs/caffe-experimental-fp16/01-tx1-settting/
 
-#2 Change the frequency in tegra-analysis.sh
+#2 Change the frequency in tegra-analysis.sh *
    $ ./tegra-analysis.sh 
 
-Frequency will be reset after session ended. <-- mean after reboot, freq back to default value
+* Frequency will be reset after session ended. <-- mean after reboot, freq back to default value
 ```
 To run tegrastats
 ```
