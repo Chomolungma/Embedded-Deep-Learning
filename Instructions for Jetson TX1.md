@@ -5,25 +5,28 @@ To set Frequency,
 ```
 #1 Change Directory
    $ cd /home/ubuntu/Programs/caffe-experimental-fp16/01-tx1-settting/
+   
+#2 Replace tegra-analysis.sh with paper-tegra-analysis-690M.sh
+   Src: https://github.com/charlyng/Embedded-Deep-Learning/blob/master/paper-tegra-analysis-690M.sh
 
-#2 Change the frequency in tegra-analysis.sh *
-   $ ./tegra-analysis.sh 
+#3 Change the frequency in tegra-analysis.sh *
+   $ ./paper-tegra-analysis-690M.sh 
 
 * Frequency will be reset after session ended. <-- mean after reboot, freq back to default value
 ```
 To run tegrastats
 ```
-#3 Run tegrastats
+#4 Run tegrastats
    $ ./tegrastats
 ```
 To run protxt file
 ```
-#4 Change Directory
+#5 Change Directory
    $ cd /home/ubuntu/Programs/caffe-experimental-fp16/
   
 FP32
 
-#5 Run the prototxt file for AlexNet, GoogLeNet and Vgg16 *
+#6 Run the prototxt file for AlexNet, GoogLeNet and Vgg16 *
    AlexNet
    $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib; ./build/tools/caffe time -model=models/bvlc_alexnet/deploy1.prototxt -gpu 0 --iterations 100
    
@@ -35,7 +38,7 @@ FP32
   
 FP16
 
-#6 Run the prototxt file for AlexNet, GoogLeNet and Vgg16 *
+#7 Run the prototxt file for AlexNet, GoogLeNet and Vgg16 *
    AlexNet
    $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib ./build/tools/caffe_fp16 time -model=models/bvlc_alexnet/deploy1.prototxt -gpu 0 --iterations 100
    
