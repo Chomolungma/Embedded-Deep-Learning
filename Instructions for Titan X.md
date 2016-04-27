@@ -27,10 +27,12 @@ To run nvidia-smi
 #7 To run nvidia-smi continuously at an interval of 5 secs (Default) / 1 ms
    $ nvidia-smi -l  / $ nvidia-smi --loop-ms=1
    
-#8 Display the following information in a textfile (Timestamp, Total memory, Memory used, Free memory, GPU Utilization, Memory Utilization, Current SM clocks, Current Graphics Clocks, Current Memory Clocks, User specified Graphics (shader) Clocks and User specified Memory Clocks)      
+#8 Display the following information in a textfile (Timestamp, Total memory, Memory used, Free memory, GPU Utilization, Memory Utilization, Current SM clocks, Current Graphics Clocks, Current Memory Clocks, User specified Graphics (shader) Clocks and User specified Memory Clocks) *
    $ nvidia-smi -i 0 --loop-ms=1 --format=csv --query-gpu=timestamp,memory.total,memory.used,memory.free,utilization.gpu,utilization.memory,clocks.sm,clocks.gr,clocks.mem,clocks.applications.gr,clocks.applications.mem > nvidia-smi.txt
 
-#9 Run the prototxt file for AlexNet, GoogLeNet and Vgg16 *
+* Refer to https://github.com/charlyng/Embedded-Deep-Learning/blob/master/nvidia-smi-query.log to query other properties. 
+
+#9 Run the prototxt file for AlexNet, GoogLeNet and Vgg16 **
 
    AlexNet
    $ LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/bvlc_alexnet/deploy1.prototxt -gpu 0 -iterations 100
@@ -41,7 +43,7 @@ To run nvidia-smi
    Vgg16
    $ LD_LIBRARY_PATH=~/Programs/opencv-2.4.10.1/build/lib ./build/tools/caffe time -model models/vgg16/deploy.1.prototxt -gpu 0 -iterations 100
    
-   * Make the necessary changes for different batch size to the above commands when reproducing benchmark results
+   ** Make the necessary changes for different batch size to the above commands when reproducing benchmark results
    Note: deployx where x refers the batch no.  
          --> For AlexNet & GoogLeNet, deployx
          --> For Vgg16, deploy.x
