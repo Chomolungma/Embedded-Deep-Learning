@@ -1,17 +1,24 @@
- You can also debug included headers and check that there is no mix of 2.4/3.1 headers [src https://github.com/Itseez/opencv/issues/6076]
+Troubleshooting
 
+<b>Darket (yolo)</b>
+
+Command: git clone https://github.com/pjreddie/darknet.git
+
+Error Message: Error "fatal: unable to access 'https://github.com/pjreddie/darknet.git/': Could not resolve proxy: proxy"
+
+Solution: `$ unset http_proxy; unset https_proxy`
+
+<b>OpenCV</b>
+
+Check that there is no mix of 2.4/3.2 headers [Src: https://github.com/Itseez/opencv/issues/6076]
+```
 g++ -E -x c++ - -v `pkg-config opencv --cflags --libs` <<< '#include "opencv2/opencv.hpp"' | grep  "# 1 .*opencv2.*1"
+```
 
-`g++ -E -x c++ - -v `pkg-config opencv --cflags --libs` <<< '#include "opencv2/opencv.hpp"' | grep  "# 1 .*opencv2.*1"`
+```
+$ pkg-config --cflags --libs opencv
 
-<b>Command:</b> git clone https://github.com/pjreddie/darknet.git
+$ pkg-config --modversion opencv
 
-Error "fatal: unable to access 'https://github.com/pjreddie/darknet.git/': Could not resolve proxy: proxy"
-
-<b>Solution:</b> unset http_proxy; unset https_proxy
-
-
-pkg-config --cflags --libs opencv
-pkg-config --modversion opencv
-make uninstall
-
+$ make uninstall
+```
