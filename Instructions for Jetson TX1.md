@@ -1,4 +1,4 @@
-Commands to install caffe,
+<b>Commands to install caffe</b>
 
 ```
 $ sudo add-apt-repository universe
@@ -29,7 +29,7 @@ $ make -j3 all
 $ make -j3 runtest
 ```
 
-To set Frequency,
+<b>Change Frequency Settings</b>
 
 > For Linux PC, please add sudo in front of each command. 
 
@@ -45,12 +45,12 @@ To set Frequency,
 
 * Frequency will be reset after session ended. <-- mean after reboot, freq back to default value
 ```
-To run tegrastats
+<b>Run tegrastats</b>
 ```
 #4 Run tegrastats
    $ ./tegrastats
 ```
-To run protxt file
+<b>Run prototxt file</b>
 ```
 #5 Change Directory
    $ cd /home/ubuntu/Programs/caffe-experimental-fp16/
