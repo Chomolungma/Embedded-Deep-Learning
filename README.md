@@ -15,7 +15,6 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
 
 **AlexNet**
 
-
 <table>
   <tr>
     <th rowspan="2">Network: AlexNet</th>
@@ -126,6 +125,127 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
     <td>691</td>
     <td>691</td>
     <td>1202</td>
+  </tr>
+</table>
+
+**Tegra X1 Comparison**
+
+<table>
+  <tr>
+    <th>Network: AlexNet</th>
+    <th>Batch<br>Size</th>
+    <th>Tegra X1<br>(FP32)</th>
+    <th>Tegra X1<br>(FP16)</th>
+    <th>Tegra X1<br>(FP32)</th>
+    <th>Tegra X1<br>(FP16)</th>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (ms)</td>
+    <td rowspan="5">1</td>
+    <td>21.9</td>
+    <td>15.4</td>
+    <td>19.9</td>
+    <td>13.3</td>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (fps)</td>
+    <td>45.7</td>
+    <td>65.1</td>
+    <td>50.3</td>
+    <td>75.1</td>
+  </tr>
+  <tr>
+    <td>Memory (Mbytes)</td>
+    <td>1372</td>
+    <td>930</td>
+    <td>1690</td>
+    <td>1543</td>
+  </tr>
+  <tr>
+    <td>GPU Utilization Average</td>
+    <td>97%</td>
+    <td>32%</td>
+    <td>97%</td>
+    <td>90%</td>
+  </tr>
+  <tr>
+    <td>GPU Frequency (MHz)</td>
+    <td>691</td>
+    <td>691</td>
+    <td>998</td>
+    <td>998</td>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (ms)</td>
+    <td rowspan="5">64</td>
+    <td>501.2</td>
+    <td>252.8</td>
+    <td>352.9</td>
+    <td>190.7</td>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (fps)</td>
+    <td>127.7</td>
+    <td>253.1</td>
+    <td>181.4</td>
+    <td>335.6</td>
+  </tr>
+  <tr>
+    <td>Memory (Mbytes)</td>
+    <td>2679</td>
+    <td>972</td>
+    <td>2654</td>
+    <td>1581</td>
+  </tr>
+  <tr>
+    <td>GPU Utilization Average</td>
+    <td>99%</td>
+    <td>99%</td>
+    <td>99%</td>
+    <td>99%</td>
+  </tr>
+  <tr>
+    <td>GPU Frequency (MHz)</td>
+    <td>691</td>
+    <td>691</td>
+    <td>998</td>
+    <td>998</td>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (ms)</td>
+    <td rowspan="5">128</td>
+    <td>834.2</td>
+    <td>496.6</td>
+    <td>643.7</td>
+    <td>372.1</td>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (fps)</td>
+    <td>153.4</td>
+    <td>257.8</td>
+    <td>198.9</td>
+    <td>344</td>
+  </tr>
+  <tr>
+    <td>Memory (Mbytes)</td>
+    <td>2886</td>
+    <td>1146</td>
+    <td>3155</td>
+    <td>1754</td>
+  </tr>
+  <tr>
+    <td>GPU Utilization Average</td>
+    <td>99%</td>
+    <td>99%</td>
+    <td>99%</td>
+    <td>99%</td>
+  </tr>
+  <tr>
+    <td>GPU Frequency (MHz)</td>
+    <td>691</td>
+    <td>691</td>
+    <td>998</td>
+    <td>998</td>
   </tr>
 </table>
 
@@ -246,6 +366,127 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
   </tr>
 </table>
 
+**Tegra X1 Comparison**
+
+<table>
+  <tr>
+    <th>Network: GoogLeNet</th>
+    <th>Batch<br>Size</th>
+    <th>Tegra X1<br>(FP32)</th>
+    <th>Tegra X1<br>(FP16)</th>
+    <th>Tegra X1<br>(FP32)</th>
+    <th>Tegra X1<br>(FP16)</th>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (ms)</td>
+    <td rowspan="5">1</td>
+    <td>29.3</td>
+    <td>23.7</td>
+    <td>23.5</td>
+    <td>17.1</td>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (fps)</td>
+    <td>34.2</td>
+    <td>42.1</td>
+    <td>42.5</td>
+    <td>58.5</td>
+  </tr>
+  <tr>
+    <td>Memory (Mbytes)</td>
+    <td>1274</td>
+    <td>950</td>
+    <td>1541</td>
+    <td>1541</td>
+  </tr>
+  <tr>
+    <td>GPU Utilization Average</td>
+    <td>97%</td>
+    <td>99%</td>
+    <td>96%</td>
+    <td>96%</td>
+  </tr>
+  <tr>
+    <td>GPU Frequency (MHz)</td>
+    <td>691</td>
+    <td>691</td>
+    <td>998</td>
+    <td>998</td>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (ms)</td>
+    <td rowspan="5">64</td>
+    <td>NA</td>
+    <td>839.2</td>
+    <td>NA</td>
+    <td>652.1</td>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (fps)</td>
+    <td>NA</td>
+    <td>76.3</td>
+    <td>NA</td>
+    <td>98.2</td>
+  </tr>
+  <tr>
+    <td>Memory (Mbytes)</td>
+    <td>NA</td>
+    <td>1726</td>
+    <td>NA</td>
+    <td>2317</td>
+  </tr>
+  <tr>
+    <td>GPU Utilization Average</td>
+    <td>NA</td>
+    <td>99%</td>
+    <td>NA</td>
+    <td>99%</td>
+  </tr>
+  <tr>
+    <td>GPU Frequency (MHz)</td>
+    <td>NA</td>
+    <td>691</td>
+    <td>NA</td>
+    <td>998</td>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (ms)</td>
+    <td rowspan="5">128</td>
+    <td>NA</td>
+    <td>1672.3</td>
+    <td>NA</td>
+    <td>1295.2</td>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (fps)</td>
+    <td>NA</td>
+    <td>76.5</td>
+    <td>NA</td>
+    <td>98.8</td>
+  </tr>
+  <tr>
+    <td>Memory (Mbytes)</td>
+    <td>NA</td>
+    <td>3387</td>
+    <td>NA</td>
+    <td>3372</td>
+  </tr>
+  <tr>
+    <td>GPU Utilization Average</td>
+    <td>NA</td>
+    <td>99%</td>
+    <td>NA</td>
+    <td>99%</td>
+  </tr>
+  <tr>
+    <td>GPU Frequency (MHz)</td>
+    <td>NA</td>
+    <td>691</td>
+    <td>NA</td>
+    <td>998</td>
+  </tr>
+</table>
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **Vgg16**
@@ -360,5 +601,90 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https
     <td>NA</td>
     <td>NA</td>
     <td>1202</td>
+  </tr>
+</table>
+
+**Tegra X1 Comparison**
+
+<table>
+  <tr>
+    <th>Network: Vgg16</th>
+    <th>Batch<br>Size</th>
+    <th>Tegra X1<br>(FP32)</th>
+    <th>Tegra X1<br>(FP16)</th>
+    <th>Tegra X1<br>(FP32)</th>
+    <th>Tegra X1<br>(FP16)</th>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (ms)</td>
+    <td rowspan="5">1</td>
+    <td>156.1</td>
+    <td>104.4</td>
+    <td>123.7</td>
+    <td>84.9</td>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (fps)</td>
+    <td>6.4</td>
+    <td>9.6</td>
+    <td>8.1</td>
+    <td>11.8</td>
+  </tr>
+  <tr>
+    <td>Memory (Mbytes)</td>
+    <td>2019</td>
+    <td>1154</td>
+    <td>2294</td>
+    <td>1745</td>
+  </tr>
+  <tr>
+    <td>GPU Utilization Average</td>
+    <td>99%</td>
+    <td>99%</td>
+    <td>99%</td>
+    <td>99%</td>
+  </tr>
+  <tr>
+    <td>GPU Frequency (MHz)</td>
+    <td>691</td>
+    <td>691</td>
+    <td>998</td>
+    <td>998</td>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (ms)</td>
+    <td rowspan="5">64</td>
+    <td>NA</td>
+    <td>5150.6</td>
+    <td>NA</td>
+    <td>3983.3</td>
+  </tr>
+  <tr>
+    <td>Average Forward Pass (fps)</td>
+    <td>NA</td>
+    <td>12.4</td>
+    <td>NA</td>
+    <td>16.1</td>
+  </tr>
+  <tr>
+    <td>Memory (Mbytes)</td>
+    <td>NA</td>
+    <td>2971</td>
+    <td>NA</td>
+    <td>3566</td>
+  </tr>
+  <tr>
+    <td>GPU Utilization Average</td>
+    <td>NA</td>
+    <td>99%</td>
+    <td>NA</td>
+    <td>99%</td>
+  </tr>
+  <tr>
+    <td>GPU Frequency (MHz)</td>
+    <td>NA</td>
+    <td>691</td>
+    <td>NA</td>
+    <td>998</td>
   </tr>
 </table>
