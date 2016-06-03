@@ -24,6 +24,9 @@ nvidia-docker
     
     Q: uvm issue 
     A: https://gist.github.com/Brainiarc7/bb4b3367acb673ab6c7e
+       http://askubuntu.com/questions/595486/ubuntu-14-04-nvidia-proprietry-346-drivers
+       sudo apt-get install nvidia-346 nvidia-settings nvidia-prime
+      sudo reboot
 
 C3D
 https://github.com/facebook/C3D
