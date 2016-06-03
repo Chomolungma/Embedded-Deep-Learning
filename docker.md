@@ -108,7 +108,8 @@ edit docker4c3d\C3D-master\Makefile.config
 		\#-gencode=arch=compute_50,code=compute_50   
 CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\  
 -gencode=arch=compute_52,code=compute_52
-***  
+***
+
 C3D-master# make -j
 ---------------
 
