@@ -38,6 +38,17 @@ nvidia-docker
 C3D
 https://github.com/facebook/C3D
 
+import docker image
+ubuntu@SA-ubuntu-GTX1080:~/Programs/docker4c3d$ sudo nvidia-docker load < ./docker-cuda7.5-c3d.tar
+
+export docker image
+	
+$ docker commit 3a09b2588478 mynewimage
+
+Save the mynewimage image to a tar file. 
+I will use the /tmp/ directory to save the image but you could easily use a NFS share to make it easier to move the completed tar file.
+$ docker save mynewimage > /tmp/mynewimage.tar
+
 install caffe dependency
 
 sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev
