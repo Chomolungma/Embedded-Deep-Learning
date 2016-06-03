@@ -34,7 +34,7 @@ create container for C3D
        sudo apt-get install nvidia-346 nvidia-settings nvidia-prime              <---- wrong method
       sudo reboot
 
-##copy CD3
+####copy CD3
 https://github.com/facebook/C3D
 
 ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker ps
@@ -43,28 +43,62 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 ##**save/load/export/import**
 
-ref http://tuhrig.de/difference-between-save-and-export-in-docker/
-Commit your changes and save the container to an image.
-
+ref http://tuhrig.de/difference-between-save-and-export-in-docker/  
+###Commit your changes and save the container to an image.
 ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker commit docker-c3d docker-cuda7.5-c3d-image
 
 $ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker save docker-cuda7.5-c3d-image > /tmp/docker-cuda7.5-c3d-image.tar
 
-###import docker image
-
+###import docker image  
 ubuntu@SA-ubuntu-GTX1080:~/Programs/docker4c3d$ sudo nvidia-docker load < ./docker-cuda7.5-c3d.tar
 
-
-Save the mynewimage image to a tar file. 
+###Save the mynewimage image to a tar file. 
 I will use the /tmp/ directory to save the image but you could easily use a NFS share to make it easier to move the completed tar file.
 $ docker save mynewimage > /tmp/mynewimage.tar
 
-install caffe dependency
-
+####install caffe dependency
+***
 sudo apt-get update
-sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev
+sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev  
+***
 
-edit docker4c3d\C3D-master\Makefile.config as follow to avoid problem of Check failed: error == cudaSuccess (8 vs. 0)  invalid device function
+###edit docker4c3d\C3D-master\Makefile.config
+to avoid problem of Check failed: error == cudaSuccess (8 vs. 0)  invalid device function
+
+***  
+\#CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \\  
+\#		-gencode arch=compute_20,code=sm_21 \\  
+\#		-gencode arch=compute_30,code=sm_30 \\  
+\#		-gencode arch=compute_35,code=sm_35 \\  
+		\#-gencode=arch=compute_50,code=sm_50  \\  
+		\#-gencode=arch=compute_50,code=compute_50   
+CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\  
+-gencode=arch=compute_52,code=compute_52
+***  
+root@647009cc74c2:/opt/docker-share/C3D-master# make -j  
+root@647009cc74c2:/opt/docker-share/C3D-master/examples/c3d_feature_extraction# sh c3d_sport1m_feature_extraction_frm.sh
+
+####start docker-cuda7.5-c3d  
+   map folders 
+   docker host' folder ($mkdir -p /home/ubuntu/Programs/docker4c3d) 
+   to  
+   docker container folder (/opt/C3Da)
+
+sudo nvidia-docker run --privileged=true -v /home/ubuntu/Programs/docker4c3d:/opt/C3Da -it --name "docker-cuda7.5-c3d" nvidia/cuda /bin/bash
+
+-----------------
+Q: no write permission at current folders and its sub-folder  
+A: at current folder, sudo chmod -R a+w ./  
+
+Q: Cannot connect to the Docker daemon. Is the docker daemon running on this host?  
+A:  
+sudo su -  
+service docker start  
+docker images
+
+Q: F0603 13:06:47.565624 25295 vol2col.cu:75] Check failed: error == cudaSuccess (8 vs. 0)  invalid device function  
+A:   
+1 edit docker4c3d\C3D-master\Makefile.config as follow, 
 ***
 \#CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \\  
 \#		-gencode arch=compute_20,code=sm_21 \\  
@@ -74,48 +108,7 @@ edit docker4c3d\C3D-master\Makefile.config as follow to avoid problem of Check f
 		\#-gencode=arch=compute_50,code=compute_50   
 CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\  
 -gencode=arch=compute_52,code=compute_52
-***
-root@647009cc74c2:/opt/docker-share/C3D-master# make -j
-
-root@647009cc74c2:/opt/docker-share/C3D-master/examples/c3d_feature_extraction# sh c3d_sport1m_feature_extraction_frm.sh
-
-start docker-cuda7.5-c3d
-
-   map folders 
-   docker host' folder ($mkdir -p /home/ubuntu/Programs/docker4c3d) 
-   to  
-   docker container folder (/opt/C3Da)
-
-sudo nvidia-docker run --privileged=true -v /home/ubuntu/Programs/docker4c3d:/opt/C3Da -it --name "docker-cuda7.5-c3d" nvidia/cuda /bin/bash
-
------------------
-Q: no write permission at current folders and its sub-folder
-
-A: at current folder, sudo chmod -R a+w ./
-
-Q: Cannot connect to the Docker daemon. Is the docker daemon running on this host?
-
-A:
-sudo su -
-service docker start
-docker images
-
-Q: F0603 13:06:47.565624 25295 vol2col.cu:75] Check failed: error == cudaSuccess (8 vs. 0)  invalid device function
-
-A: 
-1 edit docker4c3d\C3D-master\Makefile.config as follow, 
-#####CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \
-#####		-gencode arch=compute_20,code=sm_21 \
-#####		-gencode arch=compute_30,code=sm_30 \
-#####		-gencode arch=compute_35,code=sm_35
-		#-gencode=arch=compute_50,code=sm_50 \
-		#-gencode=arch=compute_50,code=compute_50
-CUDA_ARCH := -gencode=arch=compute_52,code=sm_52 \
--gencode=arch=compute_52,code=compute_52
-
+***  
 2 root@647009cc74c2:/opt/docker-share/C3D-master# make -j
-
-
-
 ---------------
 
