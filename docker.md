@@ -10,6 +10,8 @@ similar work
   
 Install Docker Engine
 
+  ref https://docs.docker.com/engine/installation/linux/ubuntulinux/
+  
 nvidia-docker
    
     https://hub.docker.com/r/skydjol/nvidia-docker/
