@@ -54,6 +54,20 @@ install caffe dependency
 sudo apt-get update
 sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev
 
+edit docker4c3d\C3D-master\Makefile.config as follow to avoid problem of Check failed: error == cudaSuccess (8 vs. 0)  invalid device function
+#####CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \
+#####		-gencode arch=compute_20,code=sm_21 \
+#####		-gencode arch=compute_30,code=sm_30 \
+#####		-gencode arch=compute_35,code=sm_35
+		#-gencode=arch=compute_50,code=sm_50 \
+		#-gencode=arch=compute_50,code=compute_50
+CUDA_ARCH := -gencode=arch=compute_52,code=sm_52 \
+-gencode=arch=compute_52,code=compute_52
+
+root@647009cc74c2:/opt/docker-share/C3D-master# make -j
+
+root@647009cc74c2:/opt/docker-share/C3D-master/examples/c3d_feature_extraction# sh c3d_sport1m_feature_extraction_frm.sh
+
 start docker-cuda7.5-c3d
 
    map folders 
