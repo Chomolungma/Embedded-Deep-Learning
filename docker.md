@@ -28,5 +28,11 @@ install caffe dependency
 sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev
 
 start docker-cuda7.5-c3d
-   shared folder between host and container /home/ubuntu/Programs/docker4c3d:/opt/C3Da
+
+   map folders 
+   docker host' folder ($mkdir -p /home/ubuntu/Programs/docker4c3d) 
+   to  
+   docker container folder (/opt/C3Da)
+
+
 sudo nvidia-docker run --privileged=true -v /home/ubuntu/Programs/docker4c3d:/opt/C3Da -it --name "docker-cuda7.5-c3d" nvidia/cuda /bin/bash
