@@ -42,7 +42,8 @@ ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 647009cc74c2        nvidia/cuda         "/bin/bash"         52 minutes ago      Up 52 minutes                           docker-c3d
 
-[save/load/export/import]
+**save/load/export/import**
+
 ref http://tuhrig.de/difference-between-save-and-export-in-docker/
 Commit your changes and save the container to an image.
 
