@@ -21,6 +21,9 @@ nvidia-docker
     compile nvidia-docker: sudo make -j
     install nvidia-docker: sudo make install
     run nvidia-docker-plugin: nvidia-docker-plugin 
+    
+    Q: uvm issue 
+    A: https://gist.github.com/Brainiarc7/bb4b3367acb673ab6c7e
 
 C3D
 https://github.com/facebook/C3D
