@@ -16,10 +16,16 @@ Install Docker Engine
 nvidia-docker
    
     https://hub.docker.com/r/skydjol/nvidia-docker/
-    download from https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ubuntu's ~/Programs/nvidia-docker
-    unzip ~/Programs/nvidia-docker$ unzip master.zip
-    compile nvidia-docker: sudo make -j
-    install nvidia-docker: sudo make install
+    download from 
+       https://github.com/NVIDIA/nvidia-docker/archive/master.zip 
+    store at ubuntu's 
+       ~/Programs/nvidia-docker/master.zip 
+    unzip 
+       ~/Programs/nvidia-docker$ unzip master.zip
+    compile nvidia-docker: 
+       sudo make -j
+    install nvidia-docker: 
+       sudo make install
     run nvidia-docker-plugin: nvidia-docker-plugin 
     
     Q: uvm issue 
