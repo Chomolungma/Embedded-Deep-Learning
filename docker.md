@@ -5,9 +5,11 @@ caffe
 reference
 
 similar work
+
   http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23
   
 nvidia-docker
+
     https://hub.docker.com/r/skydjol/nvidia-docker/
 
 C3D
