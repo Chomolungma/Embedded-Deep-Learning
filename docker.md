@@ -39,6 +39,7 @@ C3D
 https://github.com/facebook/C3D
 
 install caffe dependency
+
 sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev
 
 start docker-cuda7.5-c3d
