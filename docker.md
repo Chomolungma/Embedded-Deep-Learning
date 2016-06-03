@@ -98,7 +98,7 @@ docker images
 
 Q: F0603 13:06:47.565624 25295 vol2col.cu:75] Check failed: error == cudaSuccess (8 vs. 0)  invalid device function  
 A:   
-1 edit docker4c3d\C3D-master\Makefile.config as follow, 
+edit docker4c3d\C3D-master\Makefile.config
 ***
 \#CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \\  
 \#		-gencode arch=compute_20,code=sm_21 \\  
@@ -109,6 +109,6 @@ A:
 CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\  
 -gencode=arch=compute_52,code=compute_52
 ***  
-2 root@647009cc74c2:/opt/docker-share/C3D-master# make -j
+C3D-master# make -j
 ---------------
 
