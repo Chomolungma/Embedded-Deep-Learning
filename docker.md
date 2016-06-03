@@ -35,15 +35,23 @@ nvidia-docker
        sudo apt-get install nvidia-346 nvidia-settings nvidia-prime              <---- wrong method
       sudo reboot
 
-C3D
+CD3
 https://github.com/facebook/C3D
 
+ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+647009cc74c2        nvidia/cuda         "/bin/bash"         52 minutes ago      Up 52 minutes                           docker-c3d
+
+Commit your changes and save the container to an image called mynewimage.
+
+ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker commit docker-c3d docker-cuda7.5-c3d-image
+
+$ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker save docker-cuda7.5-c3d-image > /tmp/docker-cuda7.5-c3d-image.tar
+
 import docker image
+
 ubuntu@SA-ubuntu-GTX1080:~/Programs/docker4c3d$ sudo nvidia-docker load < ./docker-cuda7.5-c3d.tar
 
-export docker image
-	
-$ docker commit 3a09b2588478 mynewimage
 
 Save the mynewimage image to a tar file. 
 I will use the /tmp/ directory to save the image but you could easily use a NFS share to make it easier to move the completed tar file.
