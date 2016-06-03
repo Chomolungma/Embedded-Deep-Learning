@@ -51,7 +51,8 @@ $ docker save mynewimage > /tmp/mynewimage.tar
 
 install caffe dependency
 
-sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev
+sudo apt-get update
+sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev
 
 start docker-cuda7.5-c3d
 
@@ -68,6 +69,7 @@ Q: no write permission at current folders and its sub-folder
 A: at current folder, sudo chmod -R a+w ./
 
 Q: Cannot connect to the Docker daemon. Is the docker daemon running on this host?
+
 A:
 sudo su -
 service docker start
