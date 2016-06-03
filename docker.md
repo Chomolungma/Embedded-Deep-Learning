@@ -36,7 +36,7 @@ start docker-cuda7.5-c3d
 
 sudo nvidia-docker run --privileged=true -v /home/ubuntu/Programs/docker4c3d:/opt/C3Da -it --name "docker-cuda7.5-c3d" nvidia/cuda /bin/bash
 
-###########
 Q: no write permission at current folders and its sub-folder
+
 A: at current folder, sudo chmod -R a+w ./
-###########
+
