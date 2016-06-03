@@ -41,6 +41,9 @@ ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 647009cc74c2        nvidia/cuda         "/bin/bash"         52 minutes ago      Up 52 minutes                           docker-c3d
 
+###create docker-c3d
+root@SA-ubuntu-GTX1080:/home/ubuntu/Programs/docker4c3d/C3D-master# sudo nvidia-docker run --privileged=true -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share -it --name "docker-c3d" nvidia/cuda /bin/bash
+
 ##**save/load/export/import**
 
 ref http://tuhrig.de/difference-between-save-and-export-in-docker/  
@@ -51,6 +54,12 @@ $ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker save docker-cuda7.5-c3d-image
 
 ###import docker image  
 ubuntu@SA-ubuntu-GTX1080:~/Programs/docker4c3d$ sudo nvidia-docker load < ./docker-cuda7.5-c3d.tar
+
+###run import docker 
+   map Ellen's c3d source in /home/Ellen/Programs/docker4c3d <-- win7 can access this folder using winscp
+   to  
+   Ellen's docker container folder (/opt/docker-share/Ellen) <-- docker container can access this folder  
+$sudo nvidia-docker run --privileged=true -v /home/Ellen/Programs/docker4c3d:/opt/docker-share/Ellen -it --name "docker-c3d-Ellen" nvidia/cuda /bin/bash
 
 ###Save the mynewimage image to a tar file. 
 I will use the /tmp/ directory to save the image but you could easily use a NFS share to make it easier to move the completed tar file.
@@ -85,7 +94,6 @@ root@647009cc74c2:/opt/docker-share/C3D-master/examples/c3d_feature_extraction# 
    docker container folder (/opt/C3Da)
 
 sudo nvidia-docker run --privileged=true -v /home/ubuntu/Programs/docker4c3d:/opt/C3Da -it --name "docker-cuda7.5-c3d" nvidia/cuda /bin/bash
-
 -----------------
 Q: no write permission at current folders and its sub-folder  
 A: at current folder, sudo chmod -R a+w ./  
