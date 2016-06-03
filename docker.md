@@ -9,8 +9,13 @@ similar work
   http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23
   
 nvidia-docker
-
+   
     https://hub.docker.com/r/skydjol/nvidia-docker/
+    download from https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ubuntu's ~/Programs/nvidia-docker
+    unzip ~/Programs/nvidia-docker$ unzip master.zip
+    compile nvidia-docker: make -j
+    install nvidia-docker: make install
+    run nvidia-docker-plugin: nvidia-docker-plugin 
 
 C3D
 https://github.com/facebook/C3D
