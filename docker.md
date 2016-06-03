@@ -42,10 +42,11 @@ Q: no write permission at current folders and its sub-folder
 
 A: at current folder, sudo chmod -R a+w ./
 
----------------
-
 Q: Cannot connect to the Docker daemon. Is the docker daemon running on this host?
 A:
 sudo su -
 service docker start
 docker images
+
+---------------
+
