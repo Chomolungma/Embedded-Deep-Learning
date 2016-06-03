@@ -111,5 +111,7 @@ CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\
 ***
 
 C3D-master# make -j
+then 
+
 ---------------
 
