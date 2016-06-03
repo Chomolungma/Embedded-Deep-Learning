@@ -17,8 +17,8 @@ nvidia-docker
     https://hub.docker.com/r/skydjol/nvidia-docker/
     download from https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ubuntu's ~/Programs/nvidia-docker
     unzip ~/Programs/nvidia-docker$ unzip master.zip
-    compile nvidia-docker: make -j
-    install nvidia-docker: make install
+    compile nvidia-docker: sudo make -j
+    install nvidia-docker: sudo make install
     run nvidia-docker-plugin: nvidia-docker-plugin 
 
 C3D
