@@ -7,6 +7,7 @@ reference
 similar work
 
   http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23
+  https://github.com/tensorflow/tensorflow/issues/970
   
 Install Docker Engine
 
