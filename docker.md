@@ -26,12 +26,13 @@ nvidia-docker
        sudo make -j
     install nvidia-docker: 
        sudo make install
-    run nvidia-docker-plugin: nvidia-docker-plugin 
+    run nvidia-docker-plugin: 
+       nvidia-docker-plugin 
     
     Q: uvm issue 
-    A: https://gist.github.com/Brainiarc7/bb4b3367acb673ab6c7e
+    A: https://gist.github.com/Brainiarc7/bb4b3367acb673ab6c7e 
        http://askubuntu.com/questions/595486/ubuntu-14-04-nvidia-proprietry-346-drivers
-       sudo apt-get install nvidia-346 nvidia-settings nvidia-prime
+       sudo apt-get install nvidia-346 nvidia-settings nvidia-prime              <---- wrong method
       sudo reboot
 
 C3D
