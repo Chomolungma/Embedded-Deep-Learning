@@ -42,7 +42,7 @@ ref http://tuhrig.de/difference-between-save-and-export-in-docker/
 at ubuntu terminal-1    
   $nvidia-docker-plugin <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
 at terminal-2  
-  ~/Programs/docker4c3d/C3D-master$ sudo nvidia-docker run --privileged=true -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share -it --name "docker-c3d" nvidia/cuda /bin/bash
+  $ sudo nvidia-docker run --privileged=true --env http_proxy="http://ip.adr.of.office-proxy:office-proxy-port" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share -it --name "docker-c3d" nvidia/cuda /bin/bash
 at terminal-2, docker container  
   #
 ####install caffe dependency
