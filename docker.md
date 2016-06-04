@@ -11,7 +11,7 @@ our targets are
   http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23  
   https://github.com/tensorflow/tensorflow/issues/970  
   
-##system this steps were tested
+##tested system
 Ubuntu 14.04.3  
 docker engine 1.11.2 
 
