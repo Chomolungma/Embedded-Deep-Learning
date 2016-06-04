@@ -4,12 +4,12 @@
 $cmd@docker-host  
 \#cmd@docker-container
 
-##**target**
+##target
 refer to picture at https://github.com/NVIDIA/nvidia-docker/blob/master/README.md  
 our targets are
-1)setup container1 for c3d for user1
-2)save container1  
-3)load container1  
+1)setup container1 for c3d for user1  
+2)save container1   
+3)load container1    
 
 ##similar work  
   http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23  
@@ -34,10 +34,10 @@ at another terminal
 ref https://github.com/facebook/C3D
 download https://github.com/facebook/C3D/archive/master.zip to /home/ellen/Programs/docker4c3d/master.zip
 at /home/ellen/Programs/docker4c3d/
-	$unzip master.zip <- later we map this host folder to container's folder
+	$unzip master.zip <- later we map resulted /master folder to container1's folder
 
 ##use docker  
-###create container1 to run c3d  
+###create container1 to run downloaded C3D
 at ubuntu terminal-1  
 	$nvidia-docker-plugin <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
 at terminal-2  
