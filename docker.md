@@ -1,5 +1,9 @@
 #**Guide to use docker image file for c3d**
 
+##command convention  
+$cmd@docker-host  
+\#cmd@docker-container
+
 ##**target**
 refer to picture at https://github.com/NVIDIA/nvidia-docker/blob/master/README.md  
 our targets are
@@ -14,10 +18,6 @@ our targets are
 ##tested system
 Ubuntu 14.04.3  
 docker engine 1.11.2 
-
-##command convention  
-$cmd-@docker-host  
-\#cmd@docker-container
 
 ##install/download  
 ###docker Engine  <- skip if already installed  
