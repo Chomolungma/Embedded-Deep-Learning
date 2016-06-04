@@ -19,11 +19,11 @@ create container for C3D
     unzip 
        ~/Programs/nvidia-docker$ unzip master.zip
     compile nvidia-docker: 
-       sudo make -j
+       $sudo make -j
     install nvidia-docker: 
-       sudo make install
+       $sudo make install
     run nvidia-docker-plugin: 
-       nvidia-docker-plugin 
+       $nvidia-docker-plugin 
     
 ##copy CD3
 https://github.com/facebook/C3D
@@ -33,12 +33,27 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 647009cc74c2        nvidia/cuda         "/bin/bash"         52 minutes ago      Up 52 minutes                           docker-c3d
 
 ##create docker-c3d
-root@SA-ubuntu-GTX1080:/home/ubuntu/Programs/docker4c3d/C3D-master# sudo nvidia-docker run --privileged=true -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share -it --name "docker-c3d" nvidia/cuda /bin/bash
 
 #use docker
 ##**create, save/load, export/import, stop**
 
 ref http://tuhrig.de/difference-between-save-and-export-in-docker/  
+### create container1 named "docker-c3d-ellen"
+at ubuntu terminal-1    
+  $nvidia-docker-plugin
+at terminal-2  
+  ~/Programs/docker4c3d/C3D-master$ sudo nvidia-docker run --privileged=true -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share -it --name "docker-c3d" nvidia/cuda /bin/bash
+at terminal-2, docker container  
+  #
+####install caffe dependency
+***
+sudo apt-get update
+sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev  
+***
+
+
+  $sudo nvidia-docker run --privileged=true -v /home/ellen/Programs/docker4c3d:/opt/docker-share/ellen -it --name "docker-c3d-ellen" nvidia/cuda /bin/bash
+  
 ###Commit your changes and save the container to an image.
 ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker commit docker-c3d docker-cuda7.5-c3d-image
 
@@ -51,7 +66,7 @@ ubuntu@SA-ubuntu-GTX1080:~/Programs/docker4c3d$ sudo nvidia-docker load < ./dock
    map Ellen's c3d source in /home/ellen/Programs/docker4c3d <-- win7 can access this folder using winscp
    to  
    Ellen's docker container folder (/opt/docker-share/ellen) <-- docker container can access this folder  
-$sudo nvidia-docker run --privileged=true -v /home/ellen/Programs/docker4c3d:/opt/docker-share/ellen -it --name "docker-c3d-Ellen" nvidia/cuda /bin/bash
+
 
 ###Save the mynewimage image to a tar file. 
 I will use the /tmp/ directory to save the image but you could easily use a NFS share to make it easier to move the completed tar file.
@@ -60,12 +75,6 @@ $ docker save mynewimage > /tmp/mynewimage.tar
 #file sharing between windows and ubuntu  
 using winscp to drag&drop files/folders between windowsPC and ubuntuPC, to read+write ubuntuPC files/folders  
 ref https://winscp.net/eng/docs/guide_install
-
-####install caffe dependency
-***
-sudo apt-get update
-sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev  
-***
 
 ###edit docker4c3d\C3D-master\Makefile.config
 to avoid problem of Check failed: error == cudaSuccess (8 vs. 0)  invalid device function
@@ -128,9 +137,13 @@ A: ref http://c-nergy.be/blog/?p=5874
    $sudo apt-get install xrdp  
    $sudo apt-get install lxde  
    $echo lxsession -s LXDE -e LXDE > ~/.xsession 
-   use win7 remote desktop to connect ubuntu's IP
-   
+   use win7 remote desktop to connect ubuntu's IP  
 
+Q: docker's #sudo apt-get update behind a proxy not workig
+A: edit /etc/default/docker as follow
+# If you need Docker to use an HTTP proxy, it can also be specified here.
+#export http_proxy="http://127.0.0.1:3128/"
+export http_proxy="http://your.proxy.here:your_port_here/"
 
 ---------------
 
