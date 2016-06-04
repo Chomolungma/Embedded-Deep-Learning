@@ -72,40 +72,42 @@ ref https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-container
 Q: no write permission at current folders and its sub-folder  
 A: at current folder, sudo chmod -R a+w ./  
 
-Q: Cannot connect to the Docker daemon. Is the docker daemon running on this host?  
+Q: Cannot connect to the Docker daemon. Is the docker daemon running on this host?      
 A: wrong "nvidia-docker", correct "sudo nvidia-docker"
 
-Q: how to install caffe dependencies in c3d?
+Q: how to install caffe dependencies in c3d?  
 A:
-	\#sudo apt-get update <-if can't update, check proxy setting above
-	\#sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev 
+***
+\#sudo apt-get update <-if can't update, check proxy setting above
+\#sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev 
+***
 
-Q: how to solve error == cudaSuccess (8 vs. 0)  invalid device function?  
+Q: how to solve error == cudaSuccess (8 vs. 0)  invalid device function?      
 A: edit docker4c3d\C3D-master\Makefile.config    
-***  
+***
 \#filename docker4c3d\C3D-master\Makefile.config  
 \#CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \\  
 \#\...  
 \#-gencode=arch=compute_50,code=compute_50  
 CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\  
 -gencode=arch=compute_52,code=compute_52  
-***
+***  
 
-Q: how to enable remote GUI access from windows rdp to ubuntu machine?
+Q: how to enable remote GUI access from windows rdp to ubuntu machine?    
 A: ref http://c-nergy.be/blog/?p=5874   
-***
+***  
    $sudo apt-get udpate  
    $sudo apt-get install xrdp  
    $sudo apt-get install lxde  
    $echo lxsession -s LXDE -e LXDE > ~/.xsession 
    use win7 remote desktop to connect ubuntu's IP  
-***
+***  
 
-Q: "\#sudo apt-get update" fail behind proxy, work without proxy, why?  
+Q: "\#sudo apt-get update" fail behind proxy, work without proxy, why?      
 A: set proxy when start a container $docker run --env http_proxy="http://1.2.3.4:5678"   
 edit /etc/default/docker; then $sudo service docker restart<- this method not effecive current system I tested
 
-Q: how to attach to a running container?  
+Q: how to attach to a running container?      
 A:
 ***
 $sudo nvidia-docker attach container-name
@@ -114,14 +116,14 @@ $sudo attach docker-attach container-name
 if error "You cannot attach to a stopped container, start it first"
 ***
 
-Q: how to check version of ubuntu & docker-engine?  
+Q: how to check version of ubuntu & docker-engine?      
 A:
 ***
 $cat /etc/issue
 $sudo docker version
 ***
 
-Q: how to share files between docker container, docker host and windows PC?  
+Q: how to share files between docker container, docker host and windows PC?      
 A: map container folder to host folder, read/write between win7 and host-folder using winscp  
 ref https://winscp.net/eng/docs/guide_install
 
