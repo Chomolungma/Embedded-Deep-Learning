@@ -6,7 +6,10 @@ create container for C3D
 ##similar work  
   http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23
   https://github.com/tensorflow/tensorflow/issues/970
-  
+
+##system infor  
+ubuntu 14.04 <- not supporting systemctl
+
 ##Install Docker Engine  
   ref https://docs.docker.com/engine/installation/linux/ubuntulinux/
   
@@ -42,9 +45,10 @@ ref http://tuhrig.de/difference-between-save-and-export-in-docker/
 at ubuntu terminal-1    
   $nvidia-docker-plugin <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
 at terminal-2  
-  $ sudo nvidia-docker run --privileged=true --env http_proxy="http://ip.adr.of.office-proxy:office-proxy-port" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share -it --name "docker-c3d" nvidia/cuda /bin/bash
+  $ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash
+  replace above proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com
+  replace above proxy-port 5678 with port you set in internet browser
 at terminal-2, docker container  
-  #
 ####install caffe dependency
 ***
 sudo apt-get update
