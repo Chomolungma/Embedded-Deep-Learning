@@ -3,7 +3,7 @@
 ##**target**
 refer to picture at https://github.com/NVIDIA/nvidia-docker/blob/master/README.md  
 our targets are
-1)setup container1 for c3d for user1 (ellen)  
+1)setup container1 for c3d for user1
 2)save container1  
 3)load container1  
 
@@ -19,75 +19,47 @@ docker engine 1.11.2
 $cmd-@docker-host  
 \#cmd@docker-container
 
-##install/download
-###docker Engine  
-    ref https://docs.docker.com/engine/installation/linux/ubuntulinux/
-###invidia-docker  
+##install/download  
+###docker Engine  <- skip if already installed  
+	ref https://docs.docker.com/engine/installation/linux/ubuntulinux/  
+###invidia-docker  <- skip if already installed  
 	ref https://hub.docker.com/r/skydjol/nvidia-docker/  
-	-store downloaded https://github.com/NVIDIA/nvidia-docker/archive/master.zip   to ubuntu's  ~/Programs/nvidia-docker/master.zip 
-\    -unzip 
-\       ~/Programs/nvidia-docker$ unzip master.zip
-\    -compile nvidia-docker: 
-\       $sudo make -j
-\    -install nvidia-docker: 
-\       $sudo make install
-\    -run nvidia-docker-plugin:  <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
-\       $nvidia-docker-plugin 
-    
-###CD3
-ref https://github.com/facebook/C3D
-    ####download https://github.com/facebook/C3D/archive/master.zip and store at /home/ellen/Programs/docker4c3d
-    ####unzip
-       ~/Programs/docker4c3d$ unzip master.zip <- unzipped folder is mirrored to container
+    	ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
+	-download https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
+	at ~/Programs/nvidia-docker
+	$unzip master.zip; cd master; sudo make -j; sudo make install; nvidia-docker run --rm nvidia/cuda nvidia-smi  
+	at another terminal  
+	$nvidia-docker-plugin
+###CD3  
+	ref https://github.com/facebook/C3D
+    	download https://github.com/facebook/C3D/archive/master.zip to /home/ellen/Programs/docker4c3d/master.zip
+	at /home/ellen/Programs/docker4c3d/
+	$unzip master.zip <- later we map this host folder to container's folder
 
-ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker ps
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-647009cc74c2        nvidia/cuda         "/bin/bash"         52 minutes ago      Up 52 minutes                           docker-c3d
-
-##create docker-c3d
-
-#use docker
-##**create, save/load, export/import, stop**
-
-ref http://tuhrig.de/difference-between-save-and-export-in-docker/  
-### create container1 named "docker-c3d-ellen"
-at ubuntu terminal-1    
-  $nvidia-docker-plugin <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
-at terminal-2  
-  $ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
-  replace above proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
-  replace above proxy-port 5678 with port you set in internet browser  
-at terminal-2, docker container  
-####install caffe dependency
-***
-sudo apt-get update
-sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev  
-***
-
-
-  $sudo nvidia-docker run --privileged=true -v /home/ellen/Programs/docker4c3d:/opt/docker-share/ellen -it --name "docker-c3d-ellen" nvidia/cuda /bin/bash
-  
-###Commit your changes and save the container to an image.
-ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker commit docker-c3d docker-cuda7.5-c3d-image
-
-$ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker save docker-cuda7.5-c3d-image > /tmp/docker-cuda7.5-c3d-image.tar
-
-###import docker image  
-ubuntu@SA-ubuntu-GTX1080:~/Programs/docker4c3d$ sudo nvidia-docker load < ./docker-cuda7.5-c3d.tar
-
+##use docker  
+###create container1 to run c3d  
+	at ubuntu terminal-1  
+  	$nvidia-docker-plugin <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
+	at terminal-2  
+  	$sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
+  		replace above proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
+  		replace above proxy-port 5678 with port you set in internet browser  
+	\#cd /opt/docker-share/ubuntu; 
+	\#sudo apt-get update <-if can't update, check proxy setting above
+	\#sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev 
+	
+###save/load container1 
+	ref http://tuhrig.de/difference-between-save-and-export-in-docker/ 
+	$sudo nvidia-docker commit container-name image-name <-if not saves, lost container changes when stop container or reboot
+	$sudo nvidia-docker image-name > /opt/docker-share/ubuntu/image-name.tar <-to check why image-name.tar about 2Gbyte
+###import docker image
+	~/Programs/docker4c3d$sudo nvidia-docker load < ./image-name.tar  
 ###run imported docker image
-   map Ellen's c3d source in /home/ellen/Programs/docker4c3d <-- win7 can access this folder using winscp
-   to  
-   Ellen's docker container folder (/opt/docker-share/ellen) <-- docker container can access this folder  
-
-
-###Save the mynewimage image to a tar file. 
-I will use the /tmp/ directory to save the image but you could easily use a NFS share to make it easier to move the completed tar file.
-$ docker save mynewimage > /tmp/mynewimage.tar
-
-#file sharing between windows and ubuntu  
-using winscp to drag&drop files/folders between windowsPC and ubuntuPC, to read+write ubuntuPC files/folders  
-ref https://winscp.net/eng/docs/guide_install
+	$sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
+	  	replace proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
+	  	replace proxy-port 5678 based on internet browser setting  
+	to save changes as image, refer save/load container1 
+	
 
 ###edit docker4c3d\C3D-master\Makefile.config
 to avoid problem of Check failed: error == cudaSuccess (8 vs. 0)  invalid device function
@@ -154,16 +126,19 @@ Q: "\#sudo apt-get update" fail behind proxy, work without proxy
 A: set proxy when start a container $docker run --env http_proxy="http://1.2.3.4:5678" 
 edit /etc/default/docker; then $sudo service docker restart<- this method not effecive current system I tested
 
-Q: 
-$ sudo nvidia-docker attach docker-cuda7.5-c3d
-You cannot attach to a stopped container, start it first
-ellen@SA-ubuntu-GTX1080:~/Programs/docker4c3d/C3D-master$ sudo nvidia-docker start docker-cuda7.5-c3d
-docker-cuda7.5-c3d
-ellen@SA-ubuntu-GTX1080:~/Programs/docker4c3d/C3D-master$ sudo attach docker-cuda7.5-c3d
+Q: how to attach to a running container
+A:	$sudo nvidia-docker attach container-name
+	if error "You cannot attach to a stopped container, start it first"
+	$sudo nvidia-docker start container-name
+	$sudo attach docker-attach container-name
 
-Q: how to check version of ubuntu & docker-engine
-A:$ cat /etc/issue
-  $sudo docker version
+Q: how to check version of ubuntu & docker-engine?
+A:	$cat /etc/issue
+  	$sudo docker version
+
+Q:how to share files between docker container, docker host and windows PC?  
+A:	map container folder to host folder, read/write between win7 and host-folder using winscp  
+		ref https://winscp.net/eng/docs/guide_install
 
 ---------------
 
