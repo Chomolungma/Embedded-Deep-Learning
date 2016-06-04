@@ -36,7 +36,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 root@SA-ubuntu-GTX1080:/home/ubuntu/Programs/docker4c3d/C3D-master# sudo nvidia-docker run --privileged=true -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share -it --name "docker-c3d" nvidia/cuda /bin/bash
 
 #use docker
-##**save/load/export/import**
+##**create, save/load, export/import, stop**
 
 ref http://tuhrig.de/difference-between-save-and-export-in-docker/  
 ###Commit your changes and save the container to an image.
