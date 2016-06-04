@@ -1,20 +1,19 @@
 #**Guide to use docker image file for c3d**
 
 ##**target**
-refer picture at https://github.com/NVIDIA/nvidia-docker/blob/master/README.md  
+refer to picture at https://github.com/NVIDIA/nvidia-docker/blob/master/README.md  
+our targets are
 1)setup container1 for c3d for user1 (ellen)  
 2)save container1  
 3)load container1  
 
 ##similar work  
-  http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23
-  https://github.com/tensorflow/tensorflow/issues/970
+  http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23  
+  https://github.com/tensorflow/tensorflow/issues/970  
   
-##block diagram
-
-##system infor  
-Ubuntu 14.04.3
-docker engine 1.11.2 <-ref search "version" in this page
+##system this steps were tested
+Ubuntu 14.04.3  
+docker engine 1.11.2 
 
 ##command convention  
 $cmd-@docker-host  
