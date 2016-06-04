@@ -126,7 +126,9 @@ CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\
 ***
 
 C3D-master# make -j
-then 
+
+Q: how to enable remote GUI access from windows rdp to ubuntu machine?
+A: ref http://askubuntu.com/questions/592537/can-i-access-to-ubuntu-from-windows-remotely?answertab=votes#tab-top  
 
 ---------------
 
