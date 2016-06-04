@@ -11,7 +11,7 @@ create container for C3D
   ref https://docs.docker.com/engine/installation/linux/ubuntulinux/
   
 ##install nvidia-docker  
-    https://hub.docker.com/r/skydjol/nvidia-docker/
+    ref https://hub.docker.com/r/skydjol/nvidia-docker/
     download from 
        https://github.com/NVIDIA/nvidia-docker/archive/master.zip 
     store at ubuntu's 
@@ -22,7 +22,7 @@ create container for C3D
        $sudo make -j
     install nvidia-docker: 
        $sudo make install
-    run nvidia-docker-plugin: 
+    run nvidia-docker-plugin:  <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
        $nvidia-docker-plugin 
     
 ##copy CD3
@@ -40,7 +40,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 ref http://tuhrig.de/difference-between-save-and-export-in-docker/  
 ### create container1 named "docker-c3d-ellen"
 at ubuntu terminal-1    
-  $nvidia-docker-plugin
+  $nvidia-docker-plugin <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
 at terminal-2  
   ~/Programs/docker4c3d/C3D-master$ sudo nvidia-docker run --privileged=true -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share -it --name "docker-c3d" nvidia/cuda /bin/bash
 at terminal-2, docker container  
@@ -141,9 +141,17 @@ A: ref http://c-nergy.be/blog/?p=5874
 
 Q: docker's #sudo apt-get update behind a proxy not workig
 A: edit /etc/default/docker as follow
-# If you need Docker to use an HTTP proxy, it can also be specified here.
-#export http_proxy="http://127.0.0.1:3128/"
+\#If you need Docker to use an HTTP proxy, it can also be specified here.
+\#export http_proxy="http://127.0.0.1:3128/"
 export http_proxy="http://your.proxy.here:your_port_here/"
+then 
+$sudo service docker restart
+
+ellen@SA-ubuntu-GTX1080:~/Programs/docker4c3d/C3D-master$ sudo nvidia-docker attach docker-cuda7.5-c3d
+You cannot attach to a stopped container, start it first
+ellen@SA-ubuntu-GTX1080:~/Programs/docker4c3d/C3D-master$ sudo nvidia-docker start docker-cuda7.5-c3d
+docker-cuda7.5-c3d
+ellen@SA-ubuntu-GTX1080:~/Programs/docker4c3d/C3D-master$ sudo attach docker-cuda7.5-c3d
 
 ---------------
 
