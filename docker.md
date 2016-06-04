@@ -2,9 +2,9 @@
 
 ##**target**
 refer picture at https://github.com/NVIDIA/nvidia-docker/blob/master/README.md
-1)setup container1 for c3d for user1 (ellen)
-2)save container1
-3)load container1
+1)setup container1 for c3d for user1 (ellen)  
+2)save container1  
+3)load container1  
 
 ##similar work  
   http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23
