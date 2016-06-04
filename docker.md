@@ -1,42 +1,45 @@
 #**Guide to use docker image file for c3d**
 
 ##**target**
-load/import existing container of a C3D
-create container for C3D
+refer picture at https://github.com/NVIDIA/nvidia-docker/blob/master/README.md
+1)setup container1 for c3d for user1 (ellen)
+2)save container1
+3)load container1
 
 ##similar work  
   http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23
   https://github.com/tensorflow/tensorflow/issues/970
+  
+##block diagram
 
 ##system infor  
 Ubuntu 14.04.3
 docker engine 1.11.2 <-ref search "version" in this page
-##command convention
 
-$cmd-@docker-host
+##command convention  
+$cmd-@docker-host  
 \#cmd@docker-container
 
-
-##Install Docker Engine  
-  ref https://docs.docker.com/engine/installation/linux/ubuntulinux/
-  
-##install nvidia-docker  
+##install/download
+###docker Engine  
+    ref https://docs.docker.com/engine/installation/linux/ubuntulinux/
+###invidia-docker  
     ref https://hub.docker.com/r/skydjol/nvidia-docker/
-    download from 
-       https://github.com/NVIDIA/nvidia-docker/archive/master.zip 
-    store at ubuntu's 
-       ~/Programs/nvidia-docker/master.zip 
-    unzip 
+    ####store downloaded https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ubuntu's  ~/Programs/nvidia-docker/master.zip 
+    ####unzip 
        ~/Programs/nvidia-docker$ unzip master.zip
-    compile nvidia-docker: 
+    ####compile nvidia-docker: 
        $sudo make -j
-    install nvidia-docker: 
+    ####install nvidia-docker: 
        $sudo make install
-    run nvidia-docker-plugin:  <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
+    ####run nvidia-docker-plugin:  <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
        $nvidia-docker-plugin 
     
-##copy CD3
-https://github.com/facebook/C3D
+###CD3
+ref https://github.com/facebook/C3D
+    ####download https://github.com/facebook/C3D/archive/master.zip and store at /home/ellen/Programs/docker4c3d
+    ####unzip
+       ~/Programs/docker4c3d$ unzip master.zip <- unzipped folder is mirrored to container
 
 ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
