@@ -3,17 +3,14 @@
 load/import existing container of a C3D
 create container for C3D
 
-##similar work
-
+##similar work  
   http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23
   https://github.com/tensorflow/tensorflow/issues/970
   
-##Install Docker Engine
-
+##Install Docker Engine  
   ref https://docs.docker.com/engine/installation/linux/ubuntulinux/
   
-##install nvidia-docker
-   
+##install nvidia-docker  
     https://hub.docker.com/r/skydjol/nvidia-docker/
     download from 
        https://github.com/NVIDIA/nvidia-docker/archive/master.zip 
@@ -28,12 +25,6 @@ create container for C3D
     run nvidia-docker-plugin: 
        nvidia-docker-plugin 
     
-    Q: uvm issue 
-    A: https://gist.github.com/Brainiarc7/bb4b3367acb673ab6c7e 
-       http://askubuntu.com/questions/595486/ubuntu-14-04-nvidia-proprietry-346-drivers
-       sudo apt-get install nvidia-346 nvidia-settings nvidia-prime              <---- wrong method
-      sudo reboot
-
 ##copy CD3
 https://github.com/facebook/C3D
 
@@ -57,14 +48,18 @@ $ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker save docker-cuda7.5-c3d-image
 ubuntu@SA-ubuntu-GTX1080:~/Programs/docker4c3d$ sudo nvidia-docker load < ./docker-cuda7.5-c3d.tar
 
 ###run imported docker image
-   map Ellen's c3d source in /home/Ellen/Programs/docker4c3d <-- win7 can access this folder using winscp
+   map Ellen's c3d source in /home/ellen/Programs/docker4c3d <-- win7 can access this folder using winscp
    to  
-   Ellen's docker container folder (/opt/docker-share/Ellen) <-- docker container can access this folder  
-$sudo nvidia-docker run --privileged=true -v /home/Ellen/Programs/docker4c3d:/opt/docker-share/Ellen -it --name "docker-c3d-Ellen" nvidia/cuda /bin/bash
+   Ellen's docker container folder (/opt/docker-share/ellen) <-- docker container can access this folder  
+$sudo nvidia-docker run --privileged=true -v /home/ellen/Programs/docker4c3d:/opt/docker-share/ellen -it --name "docker-c3d-Ellen" nvidia/cuda /bin/bash
 
 ###Save the mynewimage image to a tar file. 
 I will use the /tmp/ directory to save the image but you could easily use a NFS share to make it easier to move the completed tar file.
 $ docker save mynewimage > /tmp/mynewimage.tar
+
+#file sharing between windows and ubuntu  
+using winscp to drag&drop files/folders between windowsPC and ubuntuPC, to read+write ubuntuPC files/folders  
+ref https://winscp.net/eng/docs/guide_install
 
 ####install caffe dependency
 ***
