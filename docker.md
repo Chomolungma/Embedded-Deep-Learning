@@ -128,7 +128,14 @@ CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\
 C3D-master# make -j
 
 Q: how to enable remote GUI access from windows rdp to ubuntu machine?
-A: ref http://askubuntu.com/questions/592537/can-i-access-to-ubuntu-from-windows-remotely?answertab=votes#tab-top  
+A: ref http://c-nergy.be/blog/?p=5874 
+   $sudo apt-get udpate  
+   $sudo apt-get install xrdp  
+   $sudo apt-get install lxde  
+   $echo lxsession -s LXDE -e LXDE > ~/.xsession 
+   use win7 remote desktop to connect ubuntu's IP
+   
+
 
 ---------------
 
