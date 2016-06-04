@@ -41,7 +41,9 @@ at /home/ellen/Programs/docker4c3d/
 at ubuntu terminal-1  
 	$nvidia-docker-plugin <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
 at terminal-2 <- notice long command  
+***
  $sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
+*** 
 replace above proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
 replace above proxy-port 5678 with port you set in internet browser  
 	\#cd /opt/docker-share/ubuntu    
@@ -58,9 +60,6 @@ ref http://tuhrig.de/difference-between-save-and-export-in-docker/
 	$sudo nvidia-docker load < /home/ubuntu/Programs/docker4c3d/image-name.tar  
 	$sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
 ***	
-replace proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
-replace proxy-port 5678 based on internet browser setting  
-to save changes as image, refer save/load container1  
 
 ###stop docker container  
 ref https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers/  
@@ -78,7 +77,7 @@ A: wrong "nvidia-docker", correct "sudo nvidia-docker"
 Q: how to install caffe dependencies in c3d?  
 A:
 ***
-\#sudo apt-get update <-if can't update, check proxy setting above
+\#sudo apt-get update <-if can't update, check proxy setting above  
 \#sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev 
 ***
 
@@ -95,7 +94,7 @@ CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\
 
 Q: how to enable remote GUI access from windows rdp to ubuntu machine?    
 A: ref http://c-nergy.be/blog/?p=5874   
-***  
+***
    $sudo apt-get udpate  
    $sudo apt-get install xrdp  
    $sudo apt-get install lxde  
@@ -110,16 +109,16 @@ edit /etc/default/docker; then $sudo service docker restart<- this method not ef
 Q: how to attach to a running container?      
 A:
 ***
-$sudo nvidia-docker attach container-name
-$sudo nvidia-docker start container-name
-$sudo attach docker-attach container-name
+$sudo nvidia-docker attach container-name  
+$sudo nvidia-docker start container-name  
+$sudo attach docker-attach container-name  
 if error "You cannot attach to a stopped container, start it first"
 ***
 
 Q: how to check version of ubuntu & docker-engine?      
 A:
 ***
-$cat /etc/issue
+$cat /etc/issue  
 $sudo docker version
 ***
 
