@@ -1,12 +1,13 @@
 #**Guide to use docker image file for c3d**
 
-##command convention  
+##convention  
 $cmd@docker-host  
-\#cmd@docker-container
+\#cmd@docker-container  
+replace "/home/ubuntu" with "/home/your-user-name"
 
 ##target
 refer to picture at https://github.com/NVIDIA/nvidia-docker/blob/master/README.md  
-our targets are
+our targets are  
 1)setup container1 for c3d for user1  
 2)save container1   
 3)load container1    
@@ -32,8 +33,8 @@ at another terminal
 	$nvidia-docker-plugin
 ###CD3  
 ref https://github.com/facebook/C3D
-download https://github.com/facebook/C3D/archive/master.zip to /home/ellen/Programs/docker4c3d/master.zip
-at /home/ellen/Programs/docker4c3d/
+download https://github.com/facebook/C3D/archive/master.zip to /home/ubuntu/Programs/docker4c3d/master.zip
+at /home/ubuntu/Programs/docker4c3d/
 	$unzip master.zip <- later we map resulted /master folder to container1's folder
 
 ##use docker  
@@ -109,7 +110,7 @@ edit /etc/default/docker; then $sudo service docker restart<- this method not ef
 Q: how to attach to a running container?      
 A:
 ***
-$sudo nvidia-docker attach container-name  <-if error "cannot attach stopped container, start it first", refer below
+$sudo nvidia-docker attach container-name  <-if error "cannot attach stopped container, start it first", refer below  
 $sudo nvidia-docker start container-name  
 $sudo attach docker-attach container-name  
 
