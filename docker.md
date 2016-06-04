@@ -1,4 +1,5 @@
 #**Guide to use docker image file for c3d**
+
 ##**target**
 load/import existing container of a C3D
 create container for C3D
@@ -8,7 +9,13 @@ create container for C3D
   https://github.com/tensorflow/tensorflow/issues/970
 
 ##system infor  
-ubuntu 14.04 <- not supporting systemctl
+Ubuntu 14.04.3
+docker engine 1.11.2 <-ref search "version" in this page
+##command convention
+
+$cmd-@docker-host
+\#cmd@docker-container
+
 
 ##Install Docker Engine  
   ref https://docs.docker.com/engine/installation/linux/ubuntulinux/
@@ -84,11 +91,9 @@ ref https://winscp.net/eng/docs/guide_install
 to avoid problem of Check failed: error == cudaSuccess (8 vs. 0)  invalid device function
 
 ***  
+\#filename docker4c3d\C3D-master\Makefile.config
 \#CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \\  
-\#		-gencode arch=compute_20,code=sm_21 \\  
-\#		-gencode arch=compute_30,code=sm_30 \\  
-\#		-gencode arch=compute_35,code=sm_35 \\  
-		\#-gencode=arch=compute_50,code=sm_50  \\  
+\#\...
 		\#-gencode=arch=compute_50,code=compute_50   
 CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\  
 -gencode=arch=compute_52,code=compute_52
@@ -143,17 +148,20 @@ A: ref http://c-nergy.be/blog/?p=5874
    $echo lxsession -s LXDE -e LXDE > ~/.xsession 
    use win7 remote desktop to connect ubuntu's IP  
 
-Q: docker's #sudo apt-get update behind a proxy not workig
+Q: "\#sudo apt-get update" fail behind proxy, work without proxy
 A: set proxy when start a container $docker run --env http_proxy="http://1.2.3.4:5678" 
-edit /etc/default/docker <- not effective in ubuntu 14.04 + docker versionXX
-then 
-$sudo service docker restart
+edit /etc/default/docker; then $sudo service docker restart<- this method not effecive current system I tested
 
-ellen@SA-ubuntu-GTX1080:~/Programs/docker4c3d/C3D-master$ sudo nvidia-docker attach docker-cuda7.5-c3d
+Q: 
+$ sudo nvidia-docker attach docker-cuda7.5-c3d
 You cannot attach to a stopped container, start it first
 ellen@SA-ubuntu-GTX1080:~/Programs/docker4c3d/C3D-master$ sudo nvidia-docker start docker-cuda7.5-c3d
 docker-cuda7.5-c3d
 ellen@SA-ubuntu-GTX1080:~/Programs/docker4c3d/C3D-master$ sudo attach docker-cuda7.5-c3d
+
+Q: how to check version of ubuntu & docker-engine
+A:$ cat /etc/issue
+  $sudo docker version
 
 ---------------
 
