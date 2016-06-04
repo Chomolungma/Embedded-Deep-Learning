@@ -39,9 +39,9 @@ at /home/ellen/Programs/docker4c3d/
 ##use docker  
 ###create container1 to run downloaded C3D
 at ubuntu terminal-1  
-	$nvidia-docker-plugin <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
-at terminal-2  <-- notice long command  
-	$sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
+	$nvidia-docker-plugin <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
+at terminal-2 <- notice long command
+ $sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
 replace above proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
 replace above proxy-port 5678 with port you set in internet browser  
 	\#cd /opt/docker-share/ubuntu  
@@ -50,14 +50,18 @@ replace above proxy-port 5678 with port you set in internet browser
 	
 ###save/load container1 
 ref http://tuhrig.de/difference-between-save-and-export-in-docker/ 
-	$sudo nvidia-docker commit container-name image-name <-if not saves, lost container changes when stop container or reboot
-	$sudo nvidia-docker image-name > /opt/docker-share/ubuntu/image-name.tar <-to check why image-name.tar about 2Gbyte
-###import docker image  
+	$sudo nvidia-docker commit container-name image-name  
+	<-if not saves, lost container changes when stop container or reboot  
+	$sudo nvidia-docker image-name > /opt/docker-share/ubuntu/image-name.tar  
+	<-to check why image-name.tar about 2Gbyte  
+	
+###import+run docker image  
+***
 	~/Programs/docker4c3d$sudo nvidia-docker load < ./image-name.tar  
-###run imported docker image
 	$sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
-	  	replace proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
-	  	replace proxy-port 5678 based on internet browser setting  
+***	
+replace proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
+replace proxy-port 5678 based on internet browser setting  
 to save changes as image, refer save/load container1  
 
 
