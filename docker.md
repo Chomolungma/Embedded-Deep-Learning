@@ -57,7 +57,7 @@ ref http://tuhrig.de/difference-between-save-and-export-in-docker/
 	
 ###import+run docker image  
 ***
-	~/Programs/docker4c3d$sudo nvidia-docker load < ./image-name.tar  
+	$sudo nvidia-docker load < /home/ubuntu/Programs/docker4c3d/image-name.tar  
 	$sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
 ***	
 replace proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
