@@ -48,15 +48,13 @@ replace above proxy-port 5678 with port you set in internet browser
 	#make -j  <-check error's keyword at Q&A  
 	#cd master/examples/c3d_feature_extraction; sh c3d_sport1m_feature_extraction_frm.sh  
 	
-###save/load container1 
-ref http://tuhrig.de/difference-between-save-and-export-in-docker/ 
-	$sudo nvidia-docker commit container-name image-name  
-	<-if not saves, lost container changes when stop container or reboot  
-	$sudo nvidia-docker image-name > /opt/docker-share/ubuntu/image-name.tar  
+###commit/save/load container1 
+ref http://tuhrig.de/difference-between-save-and-export-in-docker/  
 	<-to check why image-name.tar about 2Gbyte  
-	
-###import+run docker image  
+	<-if not saved, lost container changes when stop container or reboot  
 ***
+	$sudo nvidia-docker commit container-name image-name    
+	$sudo nvidia-docker image-name > /opt/docker-share/ubuntu/image-name.tar  
 	$sudo nvidia-docker load < /home/ubuntu/Programs/docker4c3d/image-name.tar  
 	$sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
 ***	
@@ -64,20 +62,12 @@ replace proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com
 replace proxy-port 5678 based on internet browser setting  
 to save changes as image, refer save/load container1  
 
-
-####start docker-cuda7.5-c3d  
-   map folders 
-   docker host' folder ($mkdir -p /home/ubuntu/Programs/docker4c3d) 
-   to  
-   docker container folder (/opt/C3Da)
-
-sudo nvidia-docker run --privileged=true -v /home/ubuntu/Programs/docker4c3d:/opt/C3Da -it --name "docker-cuda7.5-c3d" nvidia/cuda /bin/bash
-
 ###stop docker container  
-ref https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers/
-$sudo docker ps  
-$sudo docker stop docker-c3d-ellen  
+ref https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers/  
+	$sudo docker ps -a
+	$sudo docker stop container-name
 
+##Q&A
 -----------------
 Q: no write permission at current folders and its sub-folder  
 A: at current folder, sudo chmod -R a+w ./  
