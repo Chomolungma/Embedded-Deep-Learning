@@ -40,12 +40,12 @@ at /home/ellen/Programs/docker4c3d/
 ###create container1 to run downloaded C3D
 at ubuntu terminal-1  
 	$nvidia-docker-plugin <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
-at terminal-2  <-- notice long command
-  	$sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
-  		replace above proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
-  		replace above proxy-port 5678 with port you set in internet browser  
-	\#cd /opt/docker-share/ubuntu;  
-	#make -j  
+at terminal-2  <-- notice long command  
+	$sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
+replace above proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
+replace above proxy-port 5678 with port you set in internet browser  
+	\#cd /opt/docker-share/ubuntu  
+	#make -j  <-check error's keyword at Q&A
 	#cd master/examples/c3d_feature_extraction; sh c3d_sport1m_feature_extraction_frm.sh
 	
 ###save/load container1 
