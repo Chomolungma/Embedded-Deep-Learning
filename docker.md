@@ -20,7 +20,7 @@ Ubuntu 14.04.3
 docker engine 1.11.2 
 
 ##install/download  
-###docker Engine  <- skip if already installed  
+###docker Engine <- skip if already installed  
 	ref https://docs.docker.com/engine/installation/linux/ubuntulinux/  
 ###invidia-docker  <- skip if already installed  
 	ref https://hub.docker.com/r/skydjol/nvidia-docker/  
