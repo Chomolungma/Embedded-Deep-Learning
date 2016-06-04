@@ -109,10 +109,10 @@ edit /etc/default/docker; then $sudo service docker restart<- this method not ef
 Q: how to attach to a running container?      
 A:
 ***
-$sudo nvidia-docker attach container-name  
+$sudo nvidia-docker attach container-name  <-if error "cannot attach stopped container, start it first", refer below
 $sudo nvidia-docker start container-name  
 $sudo attach docker-attach container-name  
-if error "You cannot attach to a stopped container, start it first"
+
 ***
 
 Q: how to check version of ubuntu & docker-engine?      
