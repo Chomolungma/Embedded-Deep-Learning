@@ -23,8 +23,8 @@ $cmd-@docker-host
 ###docker Engine  
 \    ref https://docs.docker.com/engine/installation/linux/ubuntulinux/
 ###invidia-docker  
-\    ref https://hub.docker.com/r/skydjol/nvidia-docker/
-\    ####store downloaded https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ubuntu's  ~/Programs/nvidia-docker/master.zip 
+\    ref https://hub.docker.com/r/skydjol/nvidia-docker/  
+\    ####store downloaded https://github.com/NVIDIA/nvidia-docker/archive/master.zip   to ubuntu's  ~/Programs/nvidia-docker/master.zip 
     ####unzip 
        ~/Programs/nvidia-docker$ unzip master.zip
     ####compile nvidia-docker: 
