@@ -34,16 +34,17 @@ create container for C3D
        sudo apt-get install nvidia-346 nvidia-settings nvidia-prime              <---- wrong method
       sudo reboot
 
-####copy CD3
+##copy CD3
 https://github.com/facebook/C3D
 
 ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 647009cc74c2        nvidia/cuda         "/bin/bash"         52 minutes ago      Up 52 minutes                           docker-c3d
 
-###create docker-c3d
+##create docker-c3d
 root@SA-ubuntu-GTX1080:/home/ubuntu/Programs/docker4c3d/C3D-master# sudo nvidia-docker run --privileged=true -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share -it --name "docker-c3d" nvidia/cuda /bin/bash
 
+#use docker
 ##**save/load/export/import**
 
 ref http://tuhrig.de/difference-between-save-and-export-in-docker/  
@@ -55,7 +56,7 @@ $ubuntu@SA-ubuntu-GTX1080:/opt$ sudo nvidia-docker save docker-cuda7.5-c3d-image
 ###import docker image  
 ubuntu@SA-ubuntu-GTX1080:~/Programs/docker4c3d$ sudo nvidia-docker load < ./docker-cuda7.5-c3d.tar
 
-###run import docker 
+###run imported docker image
    map Ellen's c3d source in /home/Ellen/Programs/docker4c3d <-- win7 can access this folder using winscp
    to  
    Ellen's docker container folder (/opt/docker-share/Ellen) <-- docker container can access this folder  
@@ -94,6 +95,12 @@ root@647009cc74c2:/opt/docker-share/C3D-master/examples/c3d_feature_extraction# 
    docker container folder (/opt/C3Da)
 
 sudo nvidia-docker run --privileged=true -v /home/ubuntu/Programs/docker4c3d:/opt/C3Da -it --name "docker-cuda7.5-c3d" nvidia/cuda /bin/bash
+
+###stop docker container  
+ref https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers/
+$sudo docker ps  
+$sudo docker stop docker-c3d-ellen  
+
 -----------------
 Q: no write permission at current folders and its sub-folder  
 A: at current folder, sudo chmod -R a+w ./  
