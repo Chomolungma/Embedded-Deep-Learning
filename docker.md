@@ -20,60 +20,46 @@ Ubuntu 14.04.3
 docker engine 1.11.2 
 
 ##install/download  
-###docker Engine <- skip if already installed  
-	ref https://docs.docker.com/engine/installation/linux/ubuntulinux/  
+###docker engine <- skip if already installed  
+ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)  
 ###invidia-docker  <- skip if already installed  
-	ref https://hub.docker.com/r/skydjol/nvidia-docker/  
-    	ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
-	-download https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
-	at ~/Programs/nvidia-docker
+ref https://hub.docker.com/r/skydjol/nvidia-docker/  
+ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
+-download https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
+at ~/Programs/nvidia-docker
 	$unzip master.zip; cd master; sudo make -j; sudo make install; nvidia-docker run --rm nvidia/cuda nvidia-smi  
-	at another terminal  
+at another terminal  
 	$nvidia-docker-plugin
 ###CD3  
-	ref https://github.com/facebook/C3D
-    	download https://github.com/facebook/C3D/archive/master.zip to /home/ellen/Programs/docker4c3d/master.zip
-	at /home/ellen/Programs/docker4c3d/
+ref https://github.com/facebook/C3D
+download https://github.com/facebook/C3D/archive/master.zip to /home/ellen/Programs/docker4c3d/master.zip
+at /home/ellen/Programs/docker4c3d/
 	$unzip master.zip <- later we map this host folder to container's folder
 
 ##use docker  
 ###create container1 to run c3d  
-	at ubuntu terminal-1  
-  	$nvidia-docker-plugin <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
-	at terminal-2  
+at ubuntu terminal-1  
+	$nvidia-docker-plugin <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
+at terminal-2  
   	$sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
   		replace above proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
   		replace above proxy-port 5678 with port you set in internet browser  
-	\#cd /opt/docker-share/ubuntu; 
-	\#sudo apt-get update <-if can't update, check proxy setting above
-	\#sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev 
+	\#cd /opt/docker-share/ubuntu;  
+	#make -j  
+	#cd master/examples/c3d_feature_extraction; sh c3d_sport1m_feature_extraction_frm.sh
 	
 ###save/load container1 
-	ref http://tuhrig.de/difference-between-save-and-export-in-docker/ 
+ref http://tuhrig.de/difference-between-save-and-export-in-docker/ 
 	$sudo nvidia-docker commit container-name image-name <-if not saves, lost container changes when stop container or reboot
 	$sudo nvidia-docker image-name > /opt/docker-share/ubuntu/image-name.tar <-to check why image-name.tar about 2Gbyte
-###import docker image
+###import docker image  
 	~/Programs/docker4c3d$sudo nvidia-docker load < ./image-name.tar  
 ###run imported docker image
 	$sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
 	  	replace proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
 	  	replace proxy-port 5678 based on internet browser setting  
-	to save changes as image, refer save/load container1 
-	
+to save changes as image, refer save/load container1  
 
-###edit docker4c3d\C3D-master\Makefile.config
-to avoid problem of Check failed: error == cudaSuccess (8 vs. 0)  invalid device function
-
-***  
-\#filename docker4c3d\C3D-master\Makefile.config
-\#CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \\  
-\#\...
-		\#-gencode=arch=compute_50,code=compute_50   
-CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\  
--gencode=arch=compute_52,code=compute_52
-***  
-root@647009cc74c2:/opt/docker-share/C3D-master# make -j  
-root@647009cc74c2:/opt/docker-share/C3D-master/examples/c3d_feature_extraction# sh c3d_sport1m_feature_extraction_frm.sh
 
 ####start docker-cuda7.5-c3d  
    map folders 
@@ -98,21 +84,20 @@ sudo su -
 service docker start  
 docker images
 
-Q: F0603 13:06:47.565624 25295 vol2col.cu:75] Check failed: error == cudaSuccess (8 vs. 0)  invalid device function  
+Q: how to install caffe dependencies in c3d?
+A:
+	\#sudo apt-get update <-if can't update, check proxy setting above
+	\#sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev 
+
+Q: how to solve error == cudaSuccess (8 vs. 0)  invalid device function?
 A:   
 edit docker4c3d\C3D-master\Makefile.config
-***
-\#CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \\  
-\#		-gencode arch=compute_20,code=sm_21 \\  
-\#		-gencode arch=compute_30,code=sm_30 \\  
-\#		-gencode arch=compute_35,code=sm_35 \\  
-		\#-gencode=arch=compute_50,code=sm_50  \\  
-		\#-gencode=arch=compute_50,code=compute_50   
-CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\  
--gencode=arch=compute_52,code=compute_52
-***
-
-C3D-master# make -j
+	\#filename docker4c3d\C3D-master\Makefile.config
+	\#CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \\  
+	\#\...  
+	\#-gencode=arch=compute_50,code=compute_50   
+	CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\  
+	-gencode=arch=compute_52,code=compute_52  
 
 Q: how to enable remote GUI access from windows rdp to ubuntu machine?
 A: ref http://c-nergy.be/blog/?p=5874 
