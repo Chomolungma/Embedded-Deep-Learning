@@ -45,9 +45,9 @@ ref http://tuhrig.de/difference-between-save-and-export-in-docker/
 at ubuntu terminal-1    
   $nvidia-docker-plugin <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin
 at terminal-2  
-  $ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash
-  replace above proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com
-  replace above proxy-port 5678 with port you set in internet browser
+  $ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
+  replace above proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
+  replace above proxy-port 5678 with port you set in internet browser  
 at terminal-2, docker container  
 ####install caffe dependency
 ***
@@ -144,10 +144,8 @@ A: ref http://c-nergy.be/blog/?p=5874
    use win7 remote desktop to connect ubuntu's IP  
 
 Q: docker's #sudo apt-get update behind a proxy not workig
-A: edit /etc/default/docker as follow
-\#If you need Docker to use an HTTP proxy, it can also be specified here.
-\#export http_proxy="http://127.0.0.1:3128/"
-export http_proxy="http://your.proxy.here:your_port_here/"
+A: set proxy when start a container $docker run --env http_proxy="http://1.2.3.4:5678" 
+edit /etc/default/docker <- not effective in ubuntu 14.04 + docker versionXX
 then 
 $sudo service docker restart
 
