@@ -1,89 +1,98 @@
-#**Guide to use docker image file for c3d**
+**Guide to use docker image file for c3d**
 
-##convention  
-$cmd@docker-host  
-\#cmd@docker-container  
-replace "/home/ubuntu" with "/home/your-user-name"
+##Convention  
+$ cmd@docker-host  
+$ cmd@docker-container  
+Replace "/home/ubuntu" with "/home/your-user-name"
 
-##target
-refer to picture at https://github.com/NVIDIA/nvidia-docker/blob/master/README.md  
-our targets are  
-1)setup container1 for c3d for user1  
-2)save container1   
-3)load container1    
+##Target
+Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/blob/master/README.md">Nvidia Docker</a> 
+<p>Our targets are as follows:  
+1) Setup container1 for c3d for user1  
+2) Save container1   
+3) Load container1    
 
-##similar work  
-  http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23  
-  https://github.com/tensorflow/tensorflow/issues/970  
+##Similar Work  
+  <a href ="http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23">Qiita - daxanya1</a>  
+  <a href ="https://github.com/tensorflow/tensorflow/issues/970">Tensorflow GitHub</a>  
   
-##tested system
+##Tested System
 Ubuntu 14.04.3  
 docker engine 1.11.2 
 
-##install/download  
-###docker engine <- skip if already installed  
+##Install/Download  
+###Docker Engine <- skip if already installed  
 ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)  
-###invidia-docker  <- skip if already installed  
+###Nvidia-docker <- skip if already installed  
 ref https://hub.docker.com/r/skydjol/nvidia-docker/  
 ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
--download https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
+-Download https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
 at ~/Programs/nvidia-docker
-	$unzip master.zip; cd master; sudo make -j; sudo make install; nvidia-docker run --rm nvidia/cuda nvidia-smi  
+	`$ unzip master.zip; cd master; sudo make -j; sudo make install; nvidia-docker run --rm nvidia/cuda nvidia-smi`  
 at another terminal  
-	$nvidia-docker-plugin
+	`$ nvidia-docker-plugin`
 ###CD3  
 ref https://github.com/facebook/C3D
 download https://github.com/facebook/C3D/archive/master.zip to /home/ubuntu/Programs/docker4c3d/master.zip
 at /home/ubuntu/Programs/docker4c3d/
-	$unzip master.zip <- later we map resulted /master folder to container1's folder
+	`$ unzip master.zip` <- later we map resulted /master folder to container1's folder
 
-##use docker  
-###create container1 to run downloaded C3D
+##Use docker  
+###Create container1 to run downloaded C3D
 at ubuntu terminal-1  
-	$nvidia-docker-plugin <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
+	`$ nvidia-docker-plugin` <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
 at terminal-2 <- notice long command  
 ***
- $sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
+`$ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash`  
 *** 
-replace above proxy-ip 1.2.3.4 with ip returned by $ping proxy.your.company.com  
-replace above proxy-port 5678 with port you set in internet browser  
-	\#cd /opt/docker-share/ubuntu    
-	#make -j  <-check error's keyword at Q&A  
-	#cd master/examples/c3d_feature_extraction; sh c3d_sport1m_feature_extraction_frm.sh  
+Replace above proxy-ip 1.2.3.4 with ip returned by $ ping proxy.your.company.com  
+Replace above proxy-port 5678 with port you set in internet browser  
+```
+	cd /opt/docker-share/ubuntu    
+	make -j  <-check error's keyword at Q&A  
+	cd master/examples/c3d_feature_extraction; sh c3d_sport1m_feature_extraction_frm.sh  
+```
 	
-###commit/save/load container1 
+###Commit/Save/Load container1 
 ref http://tuhrig.de/difference-between-save-and-export-in-docker/  
 	<-to check why image-name.tar about 2Gbyte  
 	<-if not saved, lost container changes when stop container or reboot  
-***
-	$sudo nvidia-docker commit container-name image-name    
-	$sudo nvidia-docker image-name > /opt/docker-share/ubuntu/image-name.tar  
-	$sudo nvidia-docker load < /home/ubuntu/Programs/docker4c3d/image-name.tar  
-	$sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
-***	
+```
+	$ sudo nvidia-docker commit container-name image-name    
+	$ sudo nvidia-docker image-name > /opt/docker-share/ubuntu/image-name.tar  
+	$ sudo nvidia-docker load < /home/ubuntu/Programs/docker4c3d/image-name.tar  
+	$ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
+```	
 
-###stop docker container  
+###Stop docker container  
 ref https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers/  
-	$sudo docker ps -a
-	$sudo docker stop container-name
+```
+	$ sudo docker ps -a
+	$ sudo docker stop container-name
+```
 
 ##Q&A
 -----------------
 Q: no write permission at current folders and its sub-folder  
-A: at current folder, sudo chmod -R a+w ./  
+A: At current folder, sudo chmod -R a+w ./  
 
-Q: Cannot connect to the Docker daemon. Is the docker daemon running on this host?      
-A: wrong "nvidia-docker", correct "sudo nvidia-docker"
+Q: Error: Cannot connect to the Docker daemon. Is the docker daemon running on this host?      
+A: Add sudo in front of nvidia-docker
+   <p>Wrong: "nvidia-docker"
+   <p>Correct: "sudo nvidia-docker"
 
-Q: how to install caffe dependencies in c3d?  
+Q: How do I install caffe dependencies in c3d?  
 A:
-***
-\#sudo apt-get update <-if can't update, check proxy setting above  
-\#sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev 
-***
+```
+# If can't update, check proxy setting as shown above  
+$ sudo apt-get update
 
-Q: how to solve error == cudaSuccess (8 vs. 0)  invalid device function?      
-A: edit docker4c3d\C3D-master\Makefile.config    
+# Install the library dependencies
+$ sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev 
+```
+
+Q: How do I solve error == cudaSuccess (8 vs. 0)  invalid device function?      
+A: Edit docker4c3d\C3D-master\Makefile.config    
 ***
 \#filename docker4c3d\C3D-master\Makefile.config  
 \#CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \\  
@@ -93,37 +102,36 @@ CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\
 -gencode=arch=compute_52,code=compute_52  
 ***  
 
-Q: how to enable remote GUI access from windows rdp to ubuntu machine?    
+Q:How do I enable remote GUI access from windows rdp to ubuntu machine?    
 A: ref http://c-nergy.be/blog/?p=5874   
-***
-   $sudo apt-get udpate  
-   $sudo apt-get install xrdp  
-   $sudo apt-get install lxde  
-   $echo lxsession -s LXDE -e LXDE > ~/.xsession 
+```
+   $ sudo apt-get update  
+   $ sudo apt-get install xrdp  
+   $ sudo apt-get install lxde  
+   $ echo lxsession -s LXDE -e LXDE > ~/.xsession 
    use win7 remote desktop to connect ubuntu's IP  
-***  
+```
 
 Q: "\#sudo apt-get update" fail behind proxy, work without proxy, why?      
-A: set proxy when start a container $docker run --env http_proxy="http://1.2.3.4:5678"   
-edit /etc/default/docker; then $sudo service docker restart<- this method not effecive current system I tested
+A: Set proxy when start a container $ docker run --env http_proxy="http://1.2.3.4:5678"   
+edit /etc/default/docker; then $ sudo service docker restart<- this method not effecive current system I tested
 
-Q: how to attach to a running container?      
+Q: How do I attach to a running container?      
 A:
-***
-$sudo nvidia-docker attach container-name  <-if error "cannot attach stopped container, start it first", refer below  
-$sudo nvidia-docker start container-name  
-$sudo attach docker-attach container-name  
+```
+$ sudo nvidia-docker attach container-name  <-if error "cannot attach stopped container, start it first", refer below  
+$ sudo nvidia-docker start container-name  
+$ sudo attach docker-attach container-name  
+```
 
-***
-
-Q: how to check version of ubuntu & docker-engine?      
+Q: How do I check the version of ubuntu & docker-engine?      
 A:
-***
-$cat /etc/issue  
-$sudo docker version
-***
+```
+$ cat /etc/issue  
+$ sudo docker version
+```
 
-Q: how to share files between docker container, docker host and windows PC?      
+Q: How do I share files between docker container, docker host and windows PC?      
 A: map container folder to host folder, read/write between win7 and host-folder using winscp  
 ref https://winscp.net/eng/docs/guide_install
 
