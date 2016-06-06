@@ -149,8 +149,7 @@ Change
 \#-gencode=arch=compute_50,code=compute_50  
 
 To
-CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\  
--gencode=arch=compute_52,code=compute_52  
+CUDA_ARCH := -gencode=arch=compute_52,code=sm_52 -gencode=arch=compute_52,code=compute_52  
  
 # cd ..
 # cd ..
