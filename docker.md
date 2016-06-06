@@ -51,9 +51,9 @@ Replace above proxy-port 5678 with port you set in internet browser
 *** 
 
 ```
-	cd /opt/docker-share/ubuntu    
-	make -j  <-check error's keyword at Q&A  
-	cd master/examples/c3d_feature_extraction; sh c3d_sport1m_feature_extraction_frm.sh  
+	#cd /opt/docker-share/ubuntu    
+	#make -j  <-check error's keyword at Q&A  
+	#cd C3D-master/examples/c3d_feature_extraction; sh c3d_sport1m_feature_extraction_frm.sh  
 ```
 	
 ###Commit/Save/Load container1 
