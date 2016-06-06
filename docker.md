@@ -1,8 +1,8 @@
 **Guide to use docker image file for c3d**
 
 ##Convention  
-$ cmd@docker-host  
-$ cmd@docker-container  
+$cmd@docker-host <-$   
+#cmd@docker-container <-#  
 Replace "/home/ubuntu" with "/home/your-user-name"
 
 ##Target
