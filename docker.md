@@ -121,9 +121,9 @@ A: ref http://c-nergy.be/blog/?p=5874
    use win7 remote desktop to connect ubuntu's IP  
 ```
 
-Q: "\#sudo apt-get update" fail behind proxy, work without proxy, why?      
-A: Set proxy when start a container $ docker run --env http_proxy="http://1.2.3.4:5678"   
-edit /etc/default/docker; then $ sudo service docker restart<- this method not effecive current system I tested
+Q: `#sudo apt-get update` fail behind proxy, work without proxy, why?      
+A: Set proxy when start a container `$ docker run --env http_proxy="http://1.2.3.4:5678"`   
+edit /etc/default/docker; then `$ sudo service docker restart`<- this method not effecive current system I tested
 
 Q: How do I attach to a running container?      
 A:
@@ -149,14 +149,16 @@ Error: listen tcp 127.0.0.1:3476: bind: address already in use
 A: 
 ```
 $ ps aux | grep nvidia-docker-plugin
+
 Display
 root     xxxxx  0.0  0.0  75368  4004 pts/32   S+   11:44   0:00 sudo nvidia-docker-plugin
 $ sudo kill xxxxx
+
 # To check if the program is still running
 $ ps aux | grep nvidia-docker-plugin
 ```
 Q: My IP address is not showing. How do I find my IP address?
-A: 
+<p>A: 
 ```
 $ sudo ipconfig eth0 down
 $ sudo ipconfig eth0 up
