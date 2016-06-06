@@ -33,14 +33,14 @@ at another terminal
 	`$ sudo nvidia-docker-plugin`
 ###C3D  
 ref https://github.com/facebook/C3D
-<p>download https://github.com/facebook/C3D/archive/master.zip to /home/ubuntu/Programs/docker4c3d/master.zip
+<p>download https://github.com/facebook/C3D/archive/master.zip to /home/ubuntu/Programs/docker4c3d/C3D-master.zip
 at /home/ubuntu/Programs/docker4c3d/
-	`$ unzip master.zip` <- later we map resulted /master folder to container1's folder
+	`$ unzip C3D-master.zip` <- later we map resulted /C3D-master folder to container1's folder
 
 ##Use docker  
 ###Create container1 to run downloaded C3D
 at ubuntu terminal-1  
-	`$ nvidia-docker-plugin` <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
+	`$sudo nvidia-docker-plugin` <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
 at terminal-2 <- notice long command  
 ***
 `$ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash`  
