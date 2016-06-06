@@ -113,10 +113,12 @@ ref http://tuhrig.de/difference-between-save-and-export-in-docker/
 	<-to check why image-name.tar about 2Gbyte  
 	<-if not saved, lost container changes when stop container or reboot  
 ```
-	$ sudo nvidia-docker commit container-name image-name    
-	$ sudo nvidia-docker save image-name > /home/ubuntu/docker4c3d/image-name.tar  
-	$ sudo nvidia-docker load < /home/ubuntu/Programs/docker4c3d/image-name.tar  
-	$ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
+	$ sudo docker commit container-name image-name    
+	$ sudo docker save image-name > /home/ubuntu/docker4c3d/image-name.tar  
+	$ sudo docker rmi images-name <- check deleted
+	$ sudo docker load < /home/ubuntu/Programs/docker4c3d/image-name.tar  
+	$ sudo docker rmi images-name <- check loaded
+	$ sudo docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" image-name /bin/bash  
 ```	
 
 ###Stop docker container  
