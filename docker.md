@@ -6,8 +6,8 @@ $ cmd@docker-container
 Replace "/home/ubuntu" with "/home/your-user-name"
 
 ##Target
-Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/blob/master/README.md">Nvidia Docker</a> 
-<p>Our targets are as follows:  
+Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/blob/master/README.md">Nvidia Docker</a>. 
+<p>Our targets are as follow:  
 1) Setup container1 for c3d for user1  
 2) Save container1   
 3) Load container1    
@@ -33,7 +33,7 @@ at another terminal
 	`$ nvidia-docker-plugin`
 ###CD3  
 ref https://github.com/facebook/C3D
-download https://github.com/facebook/C3D/archive/master.zip to /home/ubuntu/Programs/docker4c3d/master.zip
+<p>download https://github.com/facebook/C3D/archive/master.zip to /home/ubuntu/Programs/docker4c3d/master.zip
 at /home/ubuntu/Programs/docker4c3d/
 	`$ unzip master.zip` <- later we map resulted /master folder to container1's folder
 
