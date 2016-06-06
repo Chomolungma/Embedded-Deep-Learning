@@ -23,19 +23,58 @@ docker engine 1.11.2
 ##Install/Download  
 ###Docker Engine <- skip if already installed  
 ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)  
+```
+#1 To check your kernel version
+   $ uname -r
+
+#2 Update your apt sources
+   $ sudo apt-get update
+
+#3 Update package information, ensure that APT works with the https method, and that CA certificates are installed
+   $ sudo apt-get install apt-transport-https ca-certificates
+
+#4 Add new GPG key
+   $ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+
+#5 Open the /etc/apt/sources.list.d/docker.list file in your favorite editor
+   If the file doesn’t exist, create it.
+   
+#6 Remove any existing entries.
+
+#7 Add an entry for Ubuntu operating system
+   $ deb https://apt.dockerproject.org/repo ubuntu-trusty main
+
+#8 Press Ctrl + X, followed by pressing Y and enter
+
+#9 Update the APT package index
+   $ sudo apt-get update
+   
+#10 Purge the old repo if it exists
+    $ sudo apt-get purge lxc-docker
+   
+#11 Verify that APT is pulling from the right repository
+    $ apt-cache policy docker-engine
+
+#12 Update your package manager
+   $ sudo apt-get update
+   
+#13 Install the recommended package
+ 
+
+```
 ###Nvidia-docker <- skip if already installed  
 ref https://hub.docker.com/r/skydjol/nvidia-docker/  
 ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
 -Download https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
 at ~/Programs/nvidia-docker
-	`$ unzip master.zip; cd master; sudo make -j; sudo make install; nvidia-docker run --rm nvidia/cuda nvidia-smi`  
+	`$ unzip master.zip; cd master; sudo make -j; sudo make install; sudo nvidia-docker run --rm nvidia/cuda nvidia-smi`  
 at another terminal  
 	`$ sudo nvidia-docker-plugin`
 ###C3D  
 ref https://github.com/facebook/C3D
 <p>download https://github.com/facebook/C3D/archive/master.zip to /home/ubuntu/Programs/docker4c3d/C3D-master.zip
 at /home/ubuntu/Programs/docker4c3d/
-	`$ unzip C3D-master.zip` <- later we map resulted /C3D-master folder to container1's folder
+	<p>`$ unzip C3D-master.zip` <- later we map resulted /C3D-master folder to container1's folder
 at /home/ubuntu/Programs/docker4c3d/C3D-master
 copy or duplicate Makefile.config.example to Makefile.config
 
