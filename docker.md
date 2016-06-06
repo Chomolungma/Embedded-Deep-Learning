@@ -102,12 +102,13 @@ $ sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev
 
 Q: How do I solve error == cudaSuccess (8 vs. 0)  invalid device function?      
 A: Edit docker4c3d\C3D-master\Makefile.config    
-***
+```
 Change
 \#filename docker4c3d\C3D-master\Makefile.config  
 \#CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \\  
 \#\...  
 \#-gencode=arch=compute_50,code=compute_50  
+
 To
 CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\  
 -gencode=arch=compute_52,code=compute_52  
@@ -116,7 +117,7 @@ CUDA_ARCH := -gencode=arch=compute_52,code=sm_52  \\
 # cd ..
 # make clean
 # make -j
-***  
+``` 
 
 Q:How do I enable remote GUI access from windows rdp to ubuntu machine?    
 A: ref http://c-nergy.be/blog/?p=5874   
