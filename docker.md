@@ -41,10 +41,10 @@ copy or duplicate Makefile.config.example to Makefile.config
 
 ##Use docker  
 ###Create container1 to run downloaded C3D
-<b> at ubuntu terminal-1  <\b>
+<b> at ubuntu terminal-1  </b>
 	`$sudo nvidia-docker-plugin` <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
 	
-<b> at terminal-2 <\b> <- notice long command  
+<b> at terminal-2 </b> <- notice long command  
 replace below 
 1)proxy-ip 1.2.3.4 with ip returned by $ ping proxy.your.company.com  
 2)"home/docker-share/ubuntu" with "/home/docker-share/your-username"
@@ -154,12 +154,13 @@ root     xxxxx  0.0  0.0  75368  4004 pts/32   S+   11:44   0:00 sudo nvidia-doc
 $ sudo kill xxxxx
 # To check if the program is still running
 $ ps aux | grep nvidia-docker-plugin
-
+```
 Q: My IP address is not showing. How do I find my IP address?
 A: 
 ```
 $ sudo ipconfig eth0 down
 $ sudo ipconfig eth0 up
 ```
+
 ---------------
 
