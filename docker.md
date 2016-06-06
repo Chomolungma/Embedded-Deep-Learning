@@ -144,5 +144,22 @@ Q: How do I share files between docker container, docker host and windows PC?
 A: map container folder to host folder, read/write between win7 and host-folder using winscp  
 ref https://winscp.net/eng/docs/guide_install
 
+Q: How do I solve this error?
+Error: listen tcp 127.0.0.1:3476: bind: address already in use    
+A: 
+```
+$ ps aux | grep nvidia-docker-plugin
+Display
+root     xxxxx  0.0  0.0  75368  4004 pts/32   S+   11:44   0:00 sudo nvidia-docker-plugin
+$ sudo kill xxxxx
+# To check if the program is still running
+$ ps aux | grep nvidia-docker-plugin
+
+Q: My IP address is not showing. How do I find my IP address?
+A: 
+```
+$ sudo ipconfig eth0 down
+$ sudo ipconfig eth0 up
+```
 ---------------
 
