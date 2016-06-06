@@ -23,43 +23,50 @@ docker engine 1.11.2
 ##Install/Download  
 ###Docker Engine <- skip if already installed  
 ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)  
+
+###Prerequisites
 ```
-#1 To check your kernel version
-   $ uname -r
+1. To check your kernel version
+$ uname -r
 
-#2 Update your apt sources
-   $ sudo apt-get update
+2. Update your apt sources
+$ sudo apt-get update
 
-#3 Update package information, ensure that APT works with the https method, and that CA certificates are installed
-   $ sudo apt-get install apt-transport-https ca-certificates
+3. Update package information, ensure that APT works with the https method, and that CA certificates are installed
+$ sudo apt-get install apt-transport-https ca-certificates
 
-#4 Add new GPG key
-   $ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+4. Add new GPG key
+$ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 
-#5 Open the /etc/apt/sources.list.d/docker.list file in your favorite editor
+5. Open the /etc/apt/sources.list.d/docker.list file in your favorite editor
    If the file doesn’t exist, create it.
    
-#6 Remove any existing entries.
+6. Remove any existing entries.
 
-#7 Add an entry for Ubuntu operating system
-   $ deb https://apt.dockerproject.org/repo ubuntu-trusty main
+7. Add an entry for Ubuntu operating system
+$ deb https://apt.dockerproject.org/repo ubuntu-trusty main
 
-#8 Press Ctrl + X, followed by pressing Y and enter
+8. Press Ctrl + X, followed by pressing Y and enter
 
-#9 Update the APT package index
-   $ sudo apt-get update
+9. Update the APT package index
+$ sudo apt-get update
    
-#10 Purge the old repo if it exists
-    $ sudo apt-get purge lxc-docker
+10. Purge the old repo if it exists
+$ sudo apt-get purge lxc-docker
    
-#11 Verify that APT is pulling from the right repository
-    $ apt-cache policy docker-engine
+11. Verify that APT is pulling from the right repository
+$ apt-cache policy docker-engine
 
-#12 Update your package manager
-   $ sudo apt-get update
+12. Update your package manager
+$ sudo apt-get update
    
-#13 Install the recommended package
- 
+13. Install the recommended package
+$ sudo apt-get install linux-image-extra-$(uname -r)
+
+14. Install apparmor
+$ sudo apt-get install apparmor
+
+15. 
 
 ```
 ###Nvidia-docker <- skip if already installed  
