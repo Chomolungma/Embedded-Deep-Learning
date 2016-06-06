@@ -31,7 +31,7 @@ at ~/Programs/nvidia-docker
 	`$ unzip master.zip; cd master; sudo make -j; sudo make install; nvidia-docker run --rm nvidia/cuda nvidia-smi`  
 at another terminal  
 	`$ sudo nvidia-docker-plugin`
-###CD3  
+###C3D  
 ref https://github.com/facebook/C3D
 <p>download https://github.com/facebook/C3D/archive/master.zip to /home/ubuntu/Programs/docker4c3d/master.zip
 at /home/ubuntu/Programs/docker4c3d/
