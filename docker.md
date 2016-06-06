@@ -39,9 +39,10 @@ at /home/ubuntu/Programs/docker4c3d/
 
 ##Use docker  
 ###Create container1 to run downloaded C3D
-at ubuntu terminal-1  
+<b> at ubuntu terminal-1  <\b>
 	`$sudo nvidia-docker-plugin` <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
-at terminal-2 <- notice long command  
+	
+<\b> at terminal-2 <\b> <- notice long command  
 ***
 `$ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash`  
 *** 
