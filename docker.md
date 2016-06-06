@@ -45,9 +45,12 @@ copy or duplicate Makefile.config.example to Makefile.config
 	`$sudo nvidia-docker-plugin` <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
 	
 <b> at terminal-2 <\b> <- notice long command  
-Replace above proxy-ip 1.2.3.4 with ip returned by $ ping proxy.your.company.com  
-replace below "home/docker-share/ubuntu" with "/home/docker-share/your-username"
-Replace above proxy-port 5678 with port you set in internet browser  
+replace below 
+1)proxy-ip 1.2.3.4 with ip returned by $ ping proxy.your.company.com  
+2)"home/docker-share/ubuntu" with "/home/docker-share/your-username"
+3)"home/ubuntu" with "/home/your-username"
+4)proxy-port 5678 with port you set in internet browser 
+
 ***
 `$ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash`  
 *** 
