@@ -15,7 +15,7 @@ Guide to use docker image file for C3D
     * [pre-commit.com](#pre-commitcom).
 
 ****
-[Convention](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Convention)
+##Convention
 $cmd@docker-host <-$   
 \#cmd@docker-container <-\#  
 Replace "/home/ubuntu" with "/home/your-user-name"
