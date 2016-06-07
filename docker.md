@@ -6,7 +6,7 @@ Guide to use docker image file for C3D
   * [Related Work](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Related-Work)
   * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested-System)
   * [Installation of Docker Engine](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Installation-of-Docker-Engine)
-    * [Prerequisites](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Installation-of-Docker-Engine#Prerequisites)
+    * [Prerequisites](#Prerequisites)
   * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
   * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
   * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
@@ -39,7 +39,7 @@ Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/b
 ### Installation of Docker Engine <- skip if already installed  
 ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)  
 
-###Prerequisites
+#Prerequisites
 ```
 1. To check your kernel version
 $ uname -r
