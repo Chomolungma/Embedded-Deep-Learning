@@ -1,7 +1,7 @@
 Guide to use docker image file for C3D
 =======================================
 
-  * [Convention](#Convention)
+  * [Convention](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Convention)
   * [Target](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Target)
   * [Related Work](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Related-Work)
   * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested-System)
@@ -16,7 +16,7 @@ Guide to use docker image file for C3D
 
 ****
 
-##Convention  
+<a herf="https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Convention">Convention</a>  
 $cmd@docker-host <-$   
 \#cmd@docker-container <-\#  
 Replace "/home/ubuntu" with "/home/your-user-name"
@@ -39,7 +39,7 @@ Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/b
 ### Installation of Docker Engine <- skip if already installed  
 ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)  
 
-#Prerequisites
+###Prerequisites
 ```
 1. To check your kernel version
 $ uname -r
