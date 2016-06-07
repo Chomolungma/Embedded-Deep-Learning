@@ -129,7 +129,7 @@ At /home/ubuntu/Programs/docker4c3d/C3D-master
 <p>`$ cp Makefile.config.example Makefile.config`
 ##Use docker  
 ###Create container1 to run downloaded C3D
-<b>At ubuntu terminal-1</b>
+<b>At ubuntu terminal-1</b>  
 	`$ sudo nvidia-docker-plugin` <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
 	
 <b>At ubuntu terminal-2</b> <- notice long command  
