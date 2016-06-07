@@ -96,7 +96,7 @@ $ sudo docker run hello-world
 ```
 
 ###Nvidia Docker 
-<- skip if already installed  
+* Note: Please skip this section if it is already installed.  
 ref:      https://hub.docker.com/r/skydjol/nvidia-docker/  
           https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
 Download: https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
