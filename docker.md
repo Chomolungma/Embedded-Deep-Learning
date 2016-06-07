@@ -37,7 +37,8 @@ Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/b
 * Docker engine 1.11.2 
 
 ##Install/Download  
-###Docker Engine <- skip if already installed  
+###Docker Engine 
+<- skip if already installed  
 ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)  
 
 ```
@@ -94,7 +95,8 @@ $ sudo service docker start
 $ sudo docker run hello-world
 ```
 
-###Nvidia Docker <- skip if already installed  
+###Nvidia Docker 
+<- skip if already installed  
 ref:      https://hub.docker.com/r/skydjol/nvidia-docker/  
           https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
 Download: https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
