@@ -23,3 +23,7 @@ $ pkg-config --modversion opencv
 
 $ make uninstall
 ```
+
+<b> zip / unzip </b>
+$tar -czvf test.tar.gz test <- preserve symbolic links
+$tar -xhzvf test.tar.gz <-use "-h" argument to save the symlink
