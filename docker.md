@@ -41,6 +41,7 @@ Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/b
 <- skip if already installed  
 ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)  
 
+####install
 ```
 1. To check your kernel version
 $ uname -r
@@ -94,6 +95,9 @@ $ sudo service docker start
 18. Verify docker is installed correctly
 $ sudo docker run hello-world
 ```
+
+####uninstall
+sudo apt-get remove docker-engine
 
 ###Nvidia Docker 
 ####install
