@@ -45,6 +45,7 @@ ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)
 ```
 1. To check your kernel version
 $ uname -r
+* Docker requires kernel to be 3.10 at minimum.
 
 2. Update your apt sources
 $ sudo apt-get update
