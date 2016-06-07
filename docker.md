@@ -105,7 +105,7 @@ $ sudo docker run hello-world
 ref:      https://hub.docker.com/r/skydjol/nvidia-docker/  
           https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
 <p>Download: https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
-At ~/Programs/nvidia-docker
+<p>At ~/Programs/nvidia-docker
 	```
 	$ unzip nvidia-docker-master.zip; cd nvidia-docker-master; sudo make -j; sudo make install; 
 	$ sudo nvidia-docker run --rm nvidia/cuda nvidia-smi
