@@ -1,12 +1,12 @@
 Guide to use docker image file for C3D
 =======================================
 
-  * [Convention](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Convention)
+  * [Convention](#convention)
   * [Target](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Target)
   * [Related Work](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Related-Work)
   * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested-System)
   * [Installation of Docker Engine](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Installation-of-Docker-Engine)
-    * [Prerequisites](#Prerequisites)
+    * [Prerequisites](#prerequisites)
   * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
   * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
   * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
@@ -28,8 +28,8 @@ Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/b
 3) Load container1    
 
 ##Related Work  
-  <a href ="http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23">Qiita - daxanya1</a>  
-  <a href ="https://github.com/tensorflow/tensorflow/issues/970">Tensorflow GitHub</a>  
+  [Qiita - daxanya1](http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23)  
+  [Tensorflow GitHub](https://github.com/tensorflow/tensorflow/issues/970)  
   
 ##Tested System
 * Ubuntu 14.04.3  
