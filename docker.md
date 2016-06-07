@@ -41,7 +41,7 @@ Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/b
 <- skip if already installed  
 ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)  
 
-####install
+####Install
 ```
 1. To check your kernel version
 $ uname -r
@@ -96,23 +96,25 @@ $ sudo service docker start
 $ sudo docker run hello-world
 ```
 
-####uninstall
-sudo apt-get remove docker-engine
+####Uninstall
+`$ sudo apt-get remove docker-engine`
 
 ###Nvidia Docker 
-####install
+####Install
 <- skip if already installed  
 ref:      https://hub.docker.com/r/skydjol/nvidia-docker/  
           https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
 <p>Download: https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
-at ~/Programs/nvidia-docker
-	`$ unzip master.zip; cd master; sudo make -j; sudo make install;` 
-	`$ sudo nvidia-docker run --rm nvidia/cuda nvidia-smi`  
-at another terminal  
+At ~/Programs/nvidia-docker
+	```
+	$ unzip nvidia-docker-master.zip; cd nvidia-docker-master; sudo make -j; sudo make install; 
+	$ sudo nvidia-docker run --rm nvidia/cuda nvidia-smi
+	```
+<p>At another terminal  
 	`$ sudo nvidia-docker-plugin`
-####uninstall
-at ~/Programs/nvidia-docker/nvidia-docker-master
-`$sudo make uninstall`
+####Uninstall
+At ~/Programs/nvidia-docker/nvidia-docker-master
+`$ sudo make uninstall`
 
 ###C3D  
 ref https://github.com/facebook/C3D
@@ -120,20 +122,20 @@ ref https://github.com/facebook/C3D
 At /home/ubuntu/Programs/docker4c3d/
 	<p>`$ unzip C3D-master.zip` <- later we map resulted /C3D-master folder to container1's folder
 At /home/ubuntu/Programs/docker4c3d/C3D-master
-Copy or duplicate Makefile.config.example to Makefile.config
-`$ cp Makefile.config.example Makefile.config`
+<p>Copy or duplicate Makefile.config.example to Makefile.config
+<p>`$ cp Makefile.config.example Makefile.config`
 ##Use docker  
 ###Create container1 to run downloaded C3D
 <b>At ubuntu terminal-1</b>
 	`$ sudo nvidia-docker-plugin` <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
 	
 <b>At ubuntu terminal-2</b> <- notice long command  
-replace below
+Replace below
 <p>
-1)proxy-ip 1.2.3.4 with ip returned by $ ping proxy.your.company.com  
-2)"home/docker-share/ubuntu" with "/home/docker-share/your-username"
-3)"home/ubuntu" with "/home/your-username"
-4)proxy-port 5678 with port you set in internet browser 
+<p>1) proxy-ip 1.2.3.4 with ip returned by $ ping proxy.your.company.com  
+<p>2) "home/docker-share/ubuntu" with "/home/docker-share/your-username"
+<p>3) "home/ubuntu" with "/home/your-username"
+<p>4) proxy-port 5678 with port you set in internet browser 
 
 ***
 `$ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash`  
@@ -168,16 +170,16 @@ ref https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-container
 
 ##Q&A
 -----------------
-Q: no write permission at current folders and its sub-folder  
-A: At current folder, sudo chmod -R a+w ./  
+<b>Q: How do I change my permission at current folders and its sub-folder?</b>  
+<p>A: Open the terminal. Go to your current folder and enter `sudo chmod -R a+w ./`  
 
-Q: Error: Cannot connect to the Docker daemon. Is the docker daemon running on this host?      
-A: Add sudo in front of nvidia-docker
+<b>Q: Error: Cannot connect to the Docker daemon. Is the docker daemon running on this host?</b>      
+<p>A: Add sudo in front of nvidia-docker
    <p>Wrong: "nvidia-docker"
    <p>Correct: "sudo nvidia-docker"
 
-Q: How do I install caffe dependencies in c3d?  
-A:
+<b>Q: How do I install caffe dependencies in c3d? </b>  
+<p>A:
 ```
 # If can't update, check proxy setting as shown above  
 $ sudo apt-get update
@@ -185,9 +187,8 @@ $ sudo apt-get update
 # Install the library dependencies
 $ sudo apt-get --assume-yes install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler; sudo apt-get --assume-yes install --no-install-recommends libboost-all-dev; sudo apt-get --assume-yes install libatlas-base-dev; sudo apt-get --assume-yes install libgflags-dev libgoogle-glog-dev liblmdb-dev 
 ```
-
-Q: How do I solve error == cudaSuccess (8 vs. 0)  invalid device function?      
-A: Edit docker4c3d\C3D-master\Makefile.config    
+<b>Q: How do I solve error == cudaSuccess (8 vs. 0)  invalid device function?</b>     
+<p>A: Edit docker4c3d\C3D-master\Makefile.config    
 ```
 Change
 \#filename docker4c3d\C3D-master\Makefile.config  
@@ -204,8 +205,8 @@ CUDA_ARCH := -gencode=arch=compute_52,code=sm_52 -gencode=arch=compute_52,code=c
 # make -j
 ``` 
 
-Q:How do I enable remote GUI access from windows rdp to ubuntu machine?    
-A: ref http://c-nergy.be/blog/?p=5874   
+<b>Q:How do I enable remote GUI access from windows rdp to ubuntu machine?</b>     
+<p>A: ref http://c-nergy.be/blog/?p=5874   
 ```
    $ sudo apt-get update  
    $ sudo apt-get install xrdp  
@@ -214,31 +215,31 @@ A: ref http://c-nergy.be/blog/?p=5874
    use win7 remote desktop to connect ubuntu's IP  
 ```
 
-Q: `#sudo apt-get update` fail behind proxy, work without proxy, why?      
-A: Set proxy when start a container `$ docker run --env http_proxy="http://1.2.3.4:5678"`   
+<b>Q: `#sudo apt-get update` fail behind proxy, work without proxy, why?</b>       
+<p>A: Set proxy when start a container `$ docker run --env http_proxy="http://1.2.3.4:5678"`   
 edit /etc/default/docker; then `$ sudo service docker restart`<- this method not effecive current system I tested
 
-Q: How do I attach to a running container?      
-A:
+<b>Q: How do I attach to a running container?</b>       
+<p>A:
 ```
 $ sudo nvidia-docker attach container-name  <-if error "cannot attach stopped container, start it first", refer below  
 $ sudo nvidia-docker start container-name  
 $ sudo attach docker-attach container-name  
 ```
 
-Q: How do I check the version of ubuntu & docker-engine?      
-A:
+<b>Q: How do I check the version of ubuntu & docker-engine?</b>       
+<p>A:
 ```
 $ cat /etc/issue  
 $ sudo docker version
 ```
 
-Q: How do I share files between docker container, docker host and windows PC?      
-A: map container folder to host folder, read/write between win7 and host-folder using winscp  
+<b>Q: How do I share files between docker container, docker host and windows PC?</b>       
+<p>A: map container folder to host folder, read/write between win7 and host-folder using winscp  
 ref https://winscp.net/eng/docs/guide_install
 
-Q: How do I solve this error?
-Error: listen tcp 127.0.0.1:3476: bind: address already in use    
+<b>Q: How do I solve this error?</b> 
+<p>Error: listen tcp 127.0.0.1:3476: bind: address already in use    
 A: 
 ```
 $ ps aux | grep nvidia-docker-plugin
@@ -250,7 +251,7 @@ $ sudo kill xxxxx
 # To check if the program is still running
 $ ps aux | grep nvidia-docker-plugin
 ```
-Q: My IP address is not showing. How do I find my IP address?
+<b>Q: My IP address is not showing. How do I find my IP address?</b> 
 <p>A: 
 ```
 $ sudo ipconfig eth0 down
