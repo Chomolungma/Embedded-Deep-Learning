@@ -1,4 +1,20 @@
-**Guide to use docker image file for c3d**
+Guide to use docker image file for C3D
+=======================================
+
+  * [Convention](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Convention)
+  * [Target](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Target)
+  * [Related Work](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Related-Work)
+  * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested-System)
+  * [Installation of Docker Engine](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Installation-of-Docker-Engine)
+    * [Prerequisites](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Installation-of-Docker-Engine#Prerequisites)
+  * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
+  * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
+  * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
+  * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
+  * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
+    * [pre-commit.com](#pre-commitcom).
+
+****
 
 ##Convention  
 $cmd@docker-host <-$   
@@ -12,16 +28,15 @@ Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/b
 2) Save container1   
 3) Load container1    
 
-##Similar Work  
+##Related Work  
   <a href ="http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23">Qiita - daxanya1</a>  
   <a href ="https://github.com/tensorflow/tensorflow/issues/970">Tensorflow GitHub</a>  
   
 ##Tested System
-Ubuntu 14.04.3  
-docker engine 1.11.2 
+* Ubuntu 14.04.3  
+* Docker engine 1.11.2 
 
-##Install/Download  
-###Docker Engine <- skip if already installed  
+### Installation of Docker Engine <- skip if already installed  
 ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)  
 
 ###Prerequisites
@@ -69,6 +84,10 @@ $ sudo apt-get install apparmor
 15. 
 
 ```
+
+##Install/Download  
+
+
 ###Nvidia-docker <- skip if already installed  
 ref https://hub.docker.com/r/skydjol/nvidia-docker/  
 ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
