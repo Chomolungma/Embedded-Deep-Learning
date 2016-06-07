@@ -36,7 +36,7 @@ Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/b
 * Ubuntu 14.04.3  
 * Docker engine 1.11.2 
 
-##Install/Download  
+##Install/Download/Uninstall  
 ###Docker Engine 
 <- skip if already installed  
 ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)  
@@ -96,14 +96,20 @@ $ sudo docker run hello-world
 ```
 
 ###Nvidia Docker 
+####install
 <- skip if already installed  
 ref:      https://hub.docker.com/r/skydjol/nvidia-docker/  
           https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
 <p>Download: https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
 at ~/Programs/nvidia-docker
-	`$ unzip master.zip; cd master; sudo make -j; sudo make install; sudo nvidia-docker run --rm nvidia/cuda nvidia-smi`  
+	`$ unzip master.zip; cd master; sudo make -j; sudo make install;` 
+	`$ sudo nvidia-docker run --rm nvidia/cuda nvidia-smi`  
 at another terminal  
 	`$ sudo nvidia-docker-plugin`
+####uninstall
+at ~/Programs/nvidia-docker
+`$make uninstall`
+
 ###C3D  
 ref https://github.com/facebook/C3D
 <p>download https://github.com/facebook/C3D/archive/master.zip to /home/ubuntu/Programs/docker4c3d/C3D-master.zip
