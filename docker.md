@@ -13,7 +13,7 @@ Guide to use docker image file for C3D
     * [Create container1 to run downloaded C3D](#create-container1-to-run-downloaded-c3d)
     * [Commit/Save/Load container1](#commitsaveload-container1)
     * [Stop Docker Container](#stop-docker-container)
-    * [Q&A](#q&a)
+    * [Q&A](#qa)
 
 ****
 ##Convention
