@@ -15,14 +15,13 @@ Guide to use docker image file for C3D
     * [pre-commit.com](#pre-commitcom).
 
 ****
-
-<a herf="https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Convention">Convention</a>  
+[Convention](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Convention)
 $cmd@docker-host <-$   
 \#cmd@docker-container <-\#  
 Replace "/home/ubuntu" with "/home/your-user-name"
 
 ##Target
-Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/blob/master/README.md">Nvidia Docker</a>. 
+Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/blob/master/README.md">Nvidia Docker</a>.
 <p>Our targets are as follow:  
 1) Setup container1 for c3d for user1  
 2) Save container1   
