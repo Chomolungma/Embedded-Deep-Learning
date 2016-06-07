@@ -260,6 +260,15 @@ $ ps aux | grep nvidia-docker-plugin
 $ sudo ipconfig eth0 down
 $ sudo ipconfig eth0 up
 ```
+Q: how to run X window in container?
+A: to check
+
+Q: can a container get librarys from 2 docker images? example, image1 provides cudnn4, image2 provides geany?
+A: 
+
+Q: what is the cuda version in current container?
+A: execute command below 
+`\# ls -all /usr/local/cuda`
 
 ---------------
 
