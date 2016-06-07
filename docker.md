@@ -107,8 +107,8 @@ at ~/Programs/nvidia-docker
 at another terminal  
 	`$ sudo nvidia-docker-plugin`
 ####uninstall
-at ~/Programs/nvidia-docker
-`$make uninstall`
+at ~/Programs/nvidia-docker/nvidia-docker-master
+`$sudo make uninstall`
 
 ###C3D  
 ref https://github.com/facebook/C3D
