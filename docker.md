@@ -5,7 +5,7 @@ Guide to use docker image file for C3D
   * [Target](#target)
   * [Related Work](#related-work)
   * [Tested System](#tested-system)
-  * [Install/Download](#installdownload)
+  * [Install/Download/Uninstall](#installdownloaduninstall)
     * [Docker Engine](#docker-engine)
     * [Nvidia Docker](#nvidia-docker)
     * [C3D](#c3d)
