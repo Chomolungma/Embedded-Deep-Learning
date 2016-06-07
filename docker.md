@@ -39,7 +39,7 @@ Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/b
 ### Installation of Docker Engine <- skip if already installed  
 ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)  
 
-###Prerequisites
+#Prerequisites
 ```
 1. To check your kernel version
 $ uname -r
