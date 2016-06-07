@@ -101,6 +101,8 @@ $ sudo docker run hello-world
 `$ sudo apt-get remove docker-engine`
 
 ###Nvidia Docker 
+ref https://hub.docker.com/r/skydjol/nvidia-docker/
+
 ####Install
 <- skip if already installed  
 ref:      https://hub.docker.com/r/skydjol/nvidia-docker/  
