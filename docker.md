@@ -2,10 +2,10 @@ Guide to use docker image file for C3D
 =======================================
 
   * [Convention](#convention)
-  * [Target](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Target)
-  * [Related Work](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Related-Work)
-  * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested-System)
-  * [Installation of Docker Engine](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Installation-of-Docker-Engine)
+  * [Target](#target)
+  * [Related Work](#related-work)
+  * [Tested System](#tested-system)
+  * [Installation of Docker Engine](#installation-of-docker-engine)
     * [Prerequisites](#prerequisites)
   * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
   * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
