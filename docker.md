@@ -99,7 +99,7 @@ $ sudo docker run hello-world
 <- skip if already installed  
 ref:      https://hub.docker.com/r/skydjol/nvidia-docker/  
           https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
-Download: https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
+<p>Download: https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
 at ~/Programs/nvidia-docker
 	`$ unzip master.zip; cd master; sudo make -j; sudo make install; sudo nvidia-docker run --rm nvidia/cuda nvidia-smi`  
 at another terminal  
@@ -107,18 +107,19 @@ at another terminal
 ###C3D  
 ref https://github.com/facebook/C3D
 <p>download https://github.com/facebook/C3D/archive/master.zip to /home/ubuntu/Programs/docker4c3d/C3D-master.zip
-at /home/ubuntu/Programs/docker4c3d/
+At /home/ubuntu/Programs/docker4c3d/
 	<p>`$ unzip C3D-master.zip` <- later we map resulted /C3D-master folder to container1's folder
-at /home/ubuntu/Programs/docker4c3d/C3D-master
-copy or duplicate Makefile.config.example to Makefile.config
-
+At /home/ubuntu/Programs/docker4c3d/C3D-master
+Copy or duplicate Makefile.config.example to Makefile.config
+`$ cp Makefile.config.example Makefile.config`
 ##Use docker  
 ###Create container1 to run downloaded C3D
-<b> at ubuntu terminal-1  </b>
+<b>At ubuntu terminal-1</b>
 	`$ sudo nvidia-docker-plugin` <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
 	
-<b> at terminal-2 </b> <- notice long command  
-replace below 
+<b>At ubuntu terminal-2</b> <- notice long command  
+replace below
+<p>
 1)proxy-ip 1.2.3.4 with ip returned by $ ping proxy.your.company.com  
 2)"home/docker-share/ubuntu" with "/home/docker-share/your-username"
 3)"home/ubuntu" with "/home/your-username"
