@@ -5,14 +5,15 @@ Guide to use docker image file for C3D
   * [Target](#target)
   * [Related Work](#related-work)
   * [Tested System](#tested-system)
-  * [Installation of Docker Engine](#installation-of-docker-engine)
-    * [Prerequisites](#prerequisites)
-  * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
-  * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
-  * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
-  * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
-  * [Tested System](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/docker.md#Tested System)
-    * [pre-commit.com](#pre-commitcom).
+  * [Install/Download](#install-download)
+    * [Docker Engine](#docker-engine)
+    * [Nvidia Docker](#nvidia-docker)
+    * [C3D](#c3d)
+  * [Use docker](#use-docker)
+    * [Create container1 to run downloaded C3D](#create-container1-to-run-download-c3d)
+    * [Commit/Save/Load container1](#commit-save-load-container1)
+    * [Stop Docker Container](#stop-docker-container)
+    * 
 
 ****
 ##Convention
@@ -35,10 +36,10 @@ Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/b
 * Ubuntu 14.04.3  
 * Docker engine 1.11.2 
 
-### Installation of Docker Engine <- skip if already installed  
+##Install/Download  
+###Docker Engine <- skip if already installed  
 ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)  
 
-###Prerequisites
 ```
 1. To check your kernel version
 $ uname -r
@@ -60,7 +61,7 @@ $ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 
 7. Add an entry for Ubuntu operating system
 $ deb https://apt.dockerproject.org/repo ubuntu-trusty main
 
-8. Press Ctrl + X, followed by pressing Y and enter
+8. Press Ctrl + X, followed by pressing Y and enter 
 
 9. Update the APT package index
 $ sudo apt-get update
@@ -80,17 +81,23 @@ $ sudo apt-get install linux-image-extra-$(uname -r)
 14. Install apparmor
 $ sudo apt-get install apparmor
 
-15. 
+15. Update your APT package index
+$ sudo apt-get update
 
+16. Install Docker
+$ sudo apt-get install docker-engine
+
+17. Start the docker daemon
+$ sudo service docker start
+
+18. Verify docker is installed correctly
+$ sudo docker run hello-world
 ```
 
-##Install/Download  
-
-
-###Nvidia-docker <- skip if already installed  
-ref https://hub.docker.com/r/skydjol/nvidia-docker/  
-ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
--Download https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
+###Nvidia Docker <- skip if already installed  
+ref:      https://hub.docker.com/r/skydjol/nvidia-docker/  
+          https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
+Download: https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
 at ~/Programs/nvidia-docker
 	`$ unzip master.zip; cd master; sudo make -j; sudo make install; sudo nvidia-docker run --rm nvidia/cuda nvidia-smi`  
 at another terminal  
@@ -106,7 +113,7 @@ copy or duplicate Makefile.config.example to Makefile.config
 ##Use docker  
 ###Create container1 to run downloaded C3D
 <b> at ubuntu terminal-1  </b>
-	`$sudo nvidia-docker-plugin` <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
+	`$ sudo nvidia-docker-plugin` <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
 	
 <b> at terminal-2 </b> <- notice long command  
 replace below 
