@@ -272,9 +272,7 @@ Q: can a container get librarys from 2 docker images? example, image1 provides c
 A: 
 
 Q: how to access symbolic linked file in host's folder (mapped to docker)?  
-A: to check
-
-
+A: symblic link in host-folder (mapped to container) is visible to container  
 
 
 ---------------
