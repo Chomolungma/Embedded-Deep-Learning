@@ -41,14 +41,14 @@ Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/b
 ref (https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-an-ubuntu-14-04-vps)
 <p>To add user:
 <br>`sudo adduser newuser`
-<br>To grant Privileges:
+<p>To grant Privileges:
 <br>`sudo visudo`
-<br>Search for the line that looks like this:
+<p>Search for the line that looks like this:
 <br>`root    ALL=(ALL:ALL) ALL`
 
 <p>Below this line, copy the format you see here, changing only the word "root" to reference the new user that you would like to give sudo privileges to:
-<p>`root    ALL=(ALL:ALL) ALL`
-<p>`newuser ALL=(ALL:ALL) ALL`
+<br>`root    ALL=(ALL:ALL) ALL`
+<br>`newuser ALL=(ALL:ALL) ALL`
 
 ##Install/Download/Uninstall  
 ###Docker Engine 
