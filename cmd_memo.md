@@ -27,3 +27,18 @@ $ make uninstall
 <b> zip / unzip </b>
 $tar -czvf test.tar.gz test <- preserve symbolic links
 $tar -xhzvf test.tar.gz <-use "-h" argument to save the symlink
+
+###windows comamnd
+####create virtual drive
+ref https://technet.microsoft.com/ja-jp/library/bb491006.aspx
+ref http://www.ntwind.com/software/utilities/visual-subst.html
+
+start windows comamnd prompt as admin, 
+>cd n:      <- check N drive exist?
+>subst N: C:\Users\avc2\Downloads\weisheng\N-drive
+>cd n:      <- check created
+
+####delete virtual drive
+>cd n:     <- check exist
+>subst N: /d <- delete
+>cd n:     <- check created
