@@ -98,7 +98,14 @@ $ sudo docker run hello-world
 ```
 
 ####Uninstall
-`$ sudo apt-get remove docker-engine`
+To uninstall the Docker package:
+<p>`$ sudo apt-get purge docker-engine`
+
+To uninstall the Docker package and dependencies that are no longer needed:
+<p>`$ sudo apt-get autoremove --purge docker-engine`
+
+The above commands will not remove images, containers, volumes, or user created configuration files on your host. If you wish to delete all images, containers, and volumes run the following command:
+<p>`$ rm -rf /var/lib/docker`
 
 ###Nvidia Docker 
 ref https://hub.docker.com/r/skydjol/nvidia-docker/
