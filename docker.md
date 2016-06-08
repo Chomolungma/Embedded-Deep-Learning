@@ -192,7 +192,7 @@ ref https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-container
 ##Q&A
 -----------------
 <b>Q: How do I change my permission at current folders and its sub-folder?</b>  
-<p>A: Open the terminal. Go to your current folder and enter `sudo chmod -R a+w ./`  
+<p>A: Open the terminal. Go to your current folder and enter `$sudo chmod -R a+w ./`  
 
 <b>Q: Error: Cannot connect to the Docker daemon. Is the docker daemon running on this host?</b>      
 <p>A: Add sudo in front of nvidia-docker
