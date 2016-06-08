@@ -43,7 +43,7 @@ ref (https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-user
 <p>Search for the line that looks like this:
 <p>`root    ALL=(ALL:ALL) ALL`
 
-<p>Below this line, copy the format you see here, changing only the word "root" to reference the new user that you would like to give <p>sudo privileges to:
+<p>Below this line, copy the format you see here, changing only the word "root" to reference the new user that you would like to give sudo privileges to:
 <p>`root    ALL=(ALL:ALL) ALL`
 <p>`newuser ALL=(ALL:ALL) ALL`
 
