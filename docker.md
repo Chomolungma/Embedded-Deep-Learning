@@ -4,7 +4,8 @@ Guide to use docker image file for C3D
   * [Convention](#convention)
   * [Target](#target)
   * [Related Work](#related-work)
-  * [Tested System](#tested-system)
+  * [Environment Setup](#environment-setup)
+  * [Add User](#add-user)
   * [Install/Download/Uninstall](#installdownloaduninstall)
     * [Docker Engine](#docker-engine)
     * [Nvidia Docker](#nvidia-docker)
@@ -32,16 +33,18 @@ Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/b
   [Qiita - daxanya1](http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23)  
   [Tensorflow GitHub](https://github.com/tensorflow/tensorflow/issues/970)  
   
-##Tested System
+##Environment Setup
 * Ubuntu 14.04.3  
 * Docker engine 1.11.2 
 
 ##Add User
 ref (https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-an-ubuntu-14-04-vps)
-<p>`sudo adduser newuser`
-<p>`sudo visudo`
-<p>Search for the line that looks like this:
-<p>`root    ALL=(ALL:ALL) ALL`
+<p>To add user:
+<br>`sudo adduser newuser`
+<br>To grant Privileges:
+<br>`sudo visudo`
+<br>Search for the line that looks like this:
+<br>`root    ALL=(ALL:ALL) ALL`
 
 <p>Below this line, copy the format you see here, changing only the word "root" to reference the new user that you would like to give sudo privileges to:
 <p>`root    ALL=(ALL:ALL) ALL`
