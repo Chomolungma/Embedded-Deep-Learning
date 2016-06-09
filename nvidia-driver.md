@@ -1,6 +1,6 @@
 #How to install Nvidia Driver
 
-1) [Download the latest Nvidia Driver](http://www.nvidia.com/Download/index.aspx?lang=en-us)
+1) Download the latest Nvidia Driver from [Nvidia](http://www.nvidia.com/Download/index.aspx?lang=en-us).
 <br>2) Press Ctrl + Alt + F1.
 <br>3) Login with your username and password.
 <br>4) Stop the X Server
