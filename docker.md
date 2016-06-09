@@ -143,11 +143,17 @@ Please refer to [Installation of Nvidia Docker](https://hub.docker.com/r/skydjol
 
 ####Install
 -> skip if already installed
-<br>1. Download https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip
-<br>2. At ~/Programs/nvidia-docker,
-       `$ unzip nvidia-docker-master.zip; cd nvidia-docker-master; sudo make -j; sudo make install; sudo nvidia-docker-plugin`
-<br>3. Open a new another terminal,
-       `$ sudo nvidia-docker run --rm nvidia/cuda nvidia-smi`
+* Download https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip
+* At ~/Programs/nvidia-docker,
+```
+$ unzip nvidia-docker-master.zip
+$ cd nvidia-docker-master
+$ sudo make -j
+$ sudo make install
+$ sudo nvidia-docker-plugin
+```
+* Open a new another terminal,
+`$ sudo nvidia-docker run --rm nvidia/cuda nvidia-smi`
 
 ####Uninstall
 At ~/Programs/nvidia-docker/nvidia-docker-master,
@@ -160,33 +166,27 @@ For more information, please refer to [C3D](https://github.com/facebook/C3D).
 <br>1. Download https://github.com/facebook/C3D/archive/master.zip to /home/ubuntu/Programs/docker4c3d/C3D-master.zip
 <br>2. At /home/ubuntu/Programs/docker4c3d/,
     <br>`$ unzip C3D-master.zip; cd C3D-master` <- later we map resulted /C3D-master folder to container1's folder
-<br>3. At /home/ubuntu/Programs/docker4c3d/C3D-master, Copy or duplicate Makefile.config.example to Makefile.config.
-        ```
-           $ cp Makefile.config.example Makefile.config
-           $ sudo make -j; sudo make install
-        ```
+<br>3. At /home/ubuntu/Programs/docker4c3d/C3D-master, copy or duplicate Makefile.config.example to Makefile.config.
+`$ cp Makefile.config.example Makefile.config`
+        
 ##Use docker  
 ###Create container1 to run downloaded C3D
 <b>At ubuntu terminal-1</b>  
-	`$ sudo nvidia-docker-plugin` <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
+   `$ sudo nvidia-docker-plugin` <- ref https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin  
 	
 <b>At ubuntu terminal-2</b> <- notice long command  
 Replace below
 <p>
 <p>1) proxy-ip 1.2.3.4 with ip returned by $ ping proxy.your.company.com  
-<p>2) "home/docker-share/ubuntu" with "/home/docker-share/your-username"
-<p>3) "home/ubuntu" with "/home/your-username"
+<p>2) "home/docker-share/<b>ubuntu</b>" with "/home/docker-share/<b>your-username</b>"
+<p>3) "home/<b>ubuntu</b>" with "/home/<b>your-username</b>"
 <p>4) proxy-port 5678 with port you set in internet browser 
-
-***
-`$ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash`  
-*** 
-
 ```
-	#cd /opt/docker-share/ubuntu    
-	#cd C3D-master  
-	#make -j  <-check error's keyword at Q&A  
-	#cd examples/c3d_feature_extraction; sh c3d_sport1m_feature_extraction_frm.sh  
+$ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" nvidia/cuda /bin/bash  
+# cd /opt/docker-share/ubuntu    
+# cd C3D-master  
+# make -j  <-check error's keyword at Q&A  
+# cd examples/c3d_feature_extraction; sh c3d_sport1m_feature_extraction_frm.sh  
 ```
 	
 ###Commit/Save/Load container1 
@@ -256,7 +256,7 @@ CUDA_ARCH := -gencode=arch=compute_52,code=sm_52 -gencode=arch=compute_52,code=c
    use win7 remote desktop to connect ubuntu's IP  
 ```
 
-<b>Q: `#sudo apt-get update` fail behind proxy, work without proxy, why?</b>       
+<b>Q: `# sudo apt-get update` fail behind proxy, work without proxy, why?</b>       
 <p>A: Set proxy when start a container `$ docker run --env http_proxy="http://1.2.3.4:5678"`   
 edit /etc/default/docker; then `$ sudo service docker restart`<- this method not effecive current system I tested
 
@@ -299,17 +299,17 @@ $ sudo ipconfig eth0 down
 $ sudo ipconfig eth0 up
 ```
 
-Q: what is the cuda version in current container?  
+Q: What is the cuda version in current container?  
 A: execute command below  
 `\# ls -all /usr/local/cuda`
 
-Q: how to run X window in container?  
+Q: How to run X window in container?  
 A: to check  
 
-Q: can a container get librarys from 2 docker images? example, image1 provides cudnn4, image2 provides geany?  
+Q: Can a container get librarys from 2 docker images? example, image1 provides cudnn4, image2 provides geany?  
 A: 
 
-Q: how to access symbolic linked file in host's folder (mapped to docker)?  
+Q: How to access symbolic linked file in host's folder (mapped to docker)?  
 A: symblic link in host-folder (mapped to container) is visible to container  
 
 
