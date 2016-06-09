@@ -143,8 +143,9 @@ Please refer to [Installation of Nvidia Docker](https://hub.docker.com/r/skydjol
 
 ####Install
 -> skip if already installed
-* Download https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip
-* At ~/Programs/nvidia-docker,
+<br>1. Download https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip
+<br>2. At ~/Programs/nvidia-docker,
+<br>
 ```
 $ unzip nvidia-docker-master.zip
 $ cd nvidia-docker-master
@@ -152,8 +153,8 @@ $ sudo make -j
 $ sudo make install
 $ sudo nvidia-docker-plugin
 ```
-* Open a new another terminal,
-`$ sudo nvidia-docker run --rm nvidia/cuda nvidia-smi`
+<br>3. Open a new another terminal,
+<br>`$ sudo nvidia-docker run --rm nvidia/cuda nvidia-smi`
 
 ####Uninstall
 At ~/Programs/nvidia-docker/nvidia-docker-master,
