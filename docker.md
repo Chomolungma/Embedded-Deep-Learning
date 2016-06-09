@@ -5,7 +5,7 @@ Guide to use docker image file for C3D
   * [Target](#target)
   * [Related Work](#related-work)
   * [Environment Setup](#environment-setup)
-  * [Add User](#add-user)
+  * [Add Multiple Users](#add-multiple-users)
   * [Install/Download/Uninstall](#installdownloaduninstall)
     * [Docker Engine](#docker-engine)
     * [Nvidia Docker](#nvidia-docker)
@@ -18,44 +18,60 @@ Guide to use docker image file for C3D
 
 ****
 ##Convention
-$cmd@docker-host <-$   
-\#cmd@docker-container <-\#  
-Replace "/home/ubuntu" with "/home/your-user-name"
+At docker-host,
+<br>Symbol: $
+<br>Example: <b>$</b>cmd@docker-host
+
+At Docker-container, 
+<br>Symbol: \#
+<br>Example: <b>#</b>cmd@docker-container
+
+Note: Replace "/home/<b>ubuntu</b>" with "/home/<b>your-user-name</b>"
 
 ##Target
-Refer to the illustration at <a href ="https://github.com/NVIDIA/nvidia-docker/blob/master/README.md">Nvidia Docker</a>.
-<p>Our targets are as follow:  
-1) Setup container1 for c3d for user1  
-2) Save container1   
-3) Load container1    
+For more information, refer to the illustration at [Nvidia Docker](https://github.com/NVIDIA/nvidia-docker/blob/master/README.md).
+
+Our targets are as follow:  
+<br>1. Install Docker Engine and Nvidia Docker
+<br>2. Setup container1 for C3D for user1  
+<br>3. Save container1   
+<br>4. Load container1    
 
 ##Related Work  
-  [Qiita - daxanya1](http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23)  
-  [Tensorflow GitHub](https://github.com/tensorflow/tensorflow/issues/970)  
+* [Qiita - daxanya1](http://qiita.com/daxanya1/items/f04c7f75a6d2ecb92b23)  
+* [Tensorflow GitHub](https://github.com/tensorflow/tensorflow/issues/970)  
   
 ##Environment Setup
 * Ubuntu 14.04.3  
 * Docker engine 1.11.2 
 
-##Add User
-ref (https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-an-ubuntu-14-04-vps)
+##Add Multiple Users
+For more information, please refer to [how to add and delete users on ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-an-ubuntu-14-04-vps).
 <p>To add user:
-<br>`sudo adduser newuser`
+<br>`$ sudo adduser newuser`
 <p>To grant Privileges:
-<br>`sudo visudo`
+<br>`$ sudo visudo`
 <p>Search for the line that looks like this:
 <br>`root    ALL=(ALL:ALL) ALL`
 
-<p>Below this line, copy the format you see here, changing only the word "root" to reference the new user that you would like to give sudo privileges to:
+Using the format of the root user, change root to the new user that you would like to give sudo privileges to:
 <br>`root    ALL=(ALL:ALL) ALL`
 <br>`newuser ALL=(ALL:ALL) ALL`
+<br>Press Ctrl + X, followed by pressing Y and enter to save and exit.
+
+For testing,
+<br>When signed in as the new user, try to execute commands as your regular user by typing commands as normal:
+<br>`$ some_command`
+
+and execute the same command with administrative privileges by typing sudo ahead of the command:
+<br>`sudo some_command`
 
 ##Install/Download/Uninstall  
 ###Docker Engine 
-<- skip if already installed  
-ref (https://docs.docker.com/engine/installation/linux/ubuntulinux/)  
+Please refer to [Installation of Docker Engine](https://docs.docker.com/engine/installation/linux/ubuntulinux/) for more information. 
 
 ####Install
+-> skip if already installed  
 ```
 1. To check your kernel version
 $ uname -r
@@ -113,40 +129,41 @@ $ sudo docker run hello-world
 
 ####Uninstall
 To uninstall the Docker package:
-<p>`$ sudo apt-get purge docker-engine`
+<br>`$ sudo apt-get purge docker-engine`
 
 To uninstall the Docker package and dependencies that are no longer needed:
-<p>`$ sudo apt-get autoremove --purge docker-engine`
+<br>`$ sudo apt-get autoremove --purge docker-engine`
 
-The above commands will not remove images, containers, volumes, or user created configuration files on your host. If you wish to delete all images, containers, and volumes run the following command:
-<p>`$ rm -rf /var/lib/docker`
+The above commands will not remove images, containers, volumes, or user created configuration files on your host. 
+<br>To delete all images, containers, and volumes run the following command:
+<br>`$ rm -rf /var/lib/docker`
 
 ###Nvidia Docker 
-ref https://hub.docker.com/r/skydjol/nvidia-docker/
+Please refer to [Installation of Nvidia Docker](https://hub.docker.com/r/skydjol/nvidia-docker/) and [Nvidia Docker Github](https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin) for more information. 
 
 ####Install
-<- skip if already installed  
-ref:      https://hub.docker.com/r/skydjol/nvidia-docker/  
-          https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin	
-<p>Download: https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip 
-<p>At ~/Programs/nvidia-docker
-        `$ unzip nvidia-docker-master.zip; cd nvidia-docker-master; sudo make -j; sudo make install;`
-<p>At another terminal  
-	`$ sudo nvidia-docker-plugin`
-<p>`$ sudo nvidia-docker run --rm nvidia/cuda nvidia-smi`
+-> skip if already installed
+<br>1. Download https://github.com/NVIDIA/nvidia-docker/archive/master.zip to ~/Programs/nvidia-docker/master.zip
+<br>2. At ~/Programs/nvidia-docker,
+    <br>`$ unzip nvidia-docker-master.zip; cd nvidia-docker-master; sudo make -j; sudo make install; sudo nvidia-docker-plugin`
+<br>3. Open a new another terminal,  
+    <br>`$ sudo nvidia-docker run --rm nvidia/cuda nvidia-smi`
 
 ####Uninstall
-At ~/Programs/nvidia-docker/nvidia-docker-master
-`$ sudo make uninstall`
+At ~/Programs/nvidia-docker/nvidia-docker-master,
+<br>`$ sudo make uninstall`
 
 ###C3D  
-ref https://github.com/facebook/C3D
-<p>download https://github.com/facebook/C3D/archive/master.zip to /home/ubuntu/Programs/docker4c3d/C3D-master.zip
-At /home/ubuntu/Programs/docker4c3d/
-	<p>`$ unzip C3D-master.zip` <- later we map resulted /C3D-master folder to container1's folder
-At /home/ubuntu/Programs/docker4c3d/C3D-master
-<p>Copy or duplicate Makefile.config.example to Makefile.config
-<p>`$ cp Makefile.config.example Makefile.config`
+For more information, please refer to [C3D](https://github.com/facebook/C3D).
+
+####Install
+<br>1. Download https://github.com/facebook/C3D/archive/master.zip to /home/ubuntu/Programs/docker4c3d/C3D-master.zip
+<br>2. At /home/ubuntu/Programs/docker4c3d/,
+    <br>`$ unzip C3D-master.zip; cd C3D-master` <- later we map resulted /C3D-master folder to container1's folder
+<br>3. At /home/ubuntu/Programs/docker4c3d/C3D-master, Copy or duplicate Makefile.config.example to Makefile.config.
+    <br>`$ cp Makefile.config.example Makefile.config`
+<br>4. `sudo make -j; sudo make install`
+
 ##Use docker  
 ###Create container1 to run downloaded C3D
 <b>At ubuntu terminal-1</b>  
