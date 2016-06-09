@@ -1,0 +1,29 @@
+ubuntu@tegra-ubuntu:~/Programs/caffe-master/01-tx1-settting$ sudo ./tegra-analysis.sh
+Enabling fan for safety...
+./tegra-analysis.sh: 15: ./tegra-analysis.sh: cannot create /sys/kernel/cluster/immediate: Directory nonexistent
+./tegra-analysis.sh: 16: ./tegra-analysis.sh: cannot create /sys/kernel/cluster/force: Directory nonexistent
+./tegra-analysis.sh: 17: ./tegra-analysis.sh: cannot create /sys/kernel/cluster/active: Directory nonexistent
+cat: /sys/kernel/cluster/active: No such file or directory
+Cluster:
+onlining CPUs: ignore errors...
+./tegra-analysis.sh: 23: ./tegra-analysis.sh: cannot create /sys/devices/system/cpu/cpu0/online: Directory nonexistent
+sh: echo: I/O error
+sh: echo: I/O error
+sh: echo: I/O error
+Online CPUs: 0-3
+CPU0: 1912500
+CPU1: 1912500
+CPU2: 1912500
+CPU3: 1912500
+GPU: 691200000
+EMC: 1600000000
+ubuntu@tegra-ubuntu:~/Programs/caffe-master/01-tx1-settting$
+
+
+-----------------
+
+RAM 901/3854MB (lfb 230x4MB) SWAP 0/0MB (cached 0MB) cpu [1%,1%,2%,1%]@1912 EMC 0%@1600 AVP 82%@12 VDE 0 GR3D 0%@691 EDP limit 1912
+RAM 901/3854MB (lfb 230x4MB) SWAP 0/0MB (cached 0MB) cpu [1%,1%,1%,1%]@1912 EMC 0%@1600 AVP 74%@12 VDE 0 GR3D 0%@691 EDP limit 1912
+RAM 901/3854MB (lfb 230x4MB) SWAP 0/0MB (cached 0MB) cpu [1%,0%,0%,0%]@1912 EMC 0%@1600 AVP 75%@12 VDE 0 GR3D 0%@691 EDP limit 1912
+RAM 901/3854MB (lfb 230x4MB) SWAP 0/0MB (cached 0MB) cpu [1%,0%,0%,1%]@1912 EMC 0%@1600 AVP 75%@12 VDE 0 GR3D 0%@691 EDP limit 1912
+RAM 901/3854MB (lfb 230x4MB) SWAP 0/0MB (cached 0MB) cpu [1%,0%,1%,0%]@1912 EMC 0%@1600 AVP 82%@12 VDE 0 GR3D 0%@691 EDP limit 1912
