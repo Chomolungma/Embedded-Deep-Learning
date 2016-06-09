@@ -310,7 +310,7 @@ $ sudo ipconfig eth0 up
 <b>Q: Can a container get librarys from 2 docker images? example, image1 provides cudnn4, image2 provides geany?</b>
 <br>A: 
 
-<b>Q: How to access symbolic linked file in host's folder (mapped to docker)?  
+<b>Q: How to access symbolic linked file in host's folder (mapped to docker)?</b>  
 <br>A: symblic link in host-folder (mapped to container) is visible to container  
 
 
