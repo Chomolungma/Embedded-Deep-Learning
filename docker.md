@@ -18,11 +18,11 @@ Guide to use docker image file for C3D
 
 ****
 ##Convention
-At docker-host,
+At Docker-Host,
 <br>Symbol: $
 <br>Example: <b>$</b>cmd@docker-host
 
-At Docker-container, 
+At Docker-Container, 
 <br>Symbol: \#
 <br>Example: <b>#</b>cmd@docker-container
 
