@@ -38,7 +38,7 @@ $ make -j3 runtest
    $ cd /home/ubuntu/Programs/caffe-experimental-fp16/01-tx1-settting/
    
 #2 Replace tegra-analysis.sh with paper-tegra-analysis-690M.sh
-   Src: https://github.com/charlyng/Embedded-Deep-Learning/blob/master/paper-tegra-analysis-690M.sh
+   Src: https://github.com/charlyng/Embedded-Deep-Learning/tree/fcc8b7e13dcfc5767da277700caf6a67e19a91b0/tx1-freq-settting
 
 #3 Change the frequency in tegra-analysis.sh *
    $ ./paper-tegra-analysis-690M.sh 
