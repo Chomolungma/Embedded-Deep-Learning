@@ -194,19 +194,19 @@ ref http://tuhrig.de/difference-between-save-and-export-in-docker/
 	<-to check why image-name.tar about 2Gbyte  
 	<-if not saved, lost container changes when stop container or reboot  
 ```
-	$ sudo nvidia-docker commit container-name image-name    
-	$ sudo nvidia-docker save image-name > /home/ubuntu/Programs/docker4c3d/image-name.tar  
-	$ sudo docker rmi images-name <- check deleted
-	$ sudo nvidia-docker load < /home/ubuntu/Programs/docker4c3d/image-name.tar  
-	$ sudo docker rmi images-name <- check loaded
-	$ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" image-name /bin/bash  
+$ sudo nvidia-docker commit container-name image-name    
+$ sudo nvidia-docker save image-name > /home/ubuntu/Programs/docker4c3d/image-name.tar  
+$ sudo docker rmi images-name <- check deleted
+$ sudo nvidia-docker load < /home/ubuntu/Programs/docker4c3d/image-name.tar  
+$ sudo docker rmi images-name <- check loaded
+$ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" image-name /bin/bash  
 ```	
 
 ###Stop docker container  
 ref https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers/  
 ```
-	$ sudo docker ps -a
-	$ sudo docker stop container-name
+$ sudo docker ps -a
+$ sudo docker stop container-name
 ```
 
 ##Q&A
@@ -249,11 +249,11 @@ CUDA_ARCH := -gencode=arch=compute_52,code=sm_52 -gencode=arch=compute_52,code=c
 <b>Q:How do I enable remote GUI access from windows rdp to ubuntu machine?</b>     
 <p>A: ref http://c-nergy.be/blog/?p=5874   
 ```
-   $ sudo apt-get update  
-   $ sudo apt-get install xrdp  
-   $ sudo apt-get install lxde  
-   $ echo lxsession -s LXDE -e LXDE > ~/.xsession 
-   use win7 remote desktop to connect ubuntu's IP  
+$ sudo apt-get update  
+$ sudo apt-get install xrdp  
+$ sudo apt-get install lxde  
+$ echo lxsession -s LXDE -e LXDE > ~/.xsession 
+use win7 remote desktop to connect ubuntu's IP  
 ```
 
 <b>Q: `# sudo apt-get update` fail behind proxy, work without proxy, why?</b>       
