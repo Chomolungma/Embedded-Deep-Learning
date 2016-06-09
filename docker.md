@@ -247,7 +247,7 @@ CUDA_ARCH := -gencode=arch=compute_52,code=sm_52 -gencode=arch=compute_52,code=c
 ``` 
 
 <b>Q:How do I enable remote GUI access from windows rdp to ubuntu machine?</b>     
-<p>A: ref http://c-nergy.be/blog/?p=5874   
+<br>A: ref http://c-nergy.be/blog/?p=5874   
 ```
 $ sudo apt-get update  
 $ sudo apt-get install xrdp  
@@ -257,11 +257,11 @@ use win7 remote desktop to connect ubuntu's IP
 ```
 
 <b>Q: `# sudo apt-get update` fail behind proxy, work without proxy, why?</b>       
-<p>A: Set proxy when start a container `$ docker run --env http_proxy="http://1.2.3.4:5678"`   
+<br>A: Set proxy when start a container `$ docker run --env http_proxy="http://1.2.3.4:5678"`   
 edit /etc/default/docker; then `$ sudo service docker restart`<- this method not effecive current system I tested
 
 <b>Q: How do I attach to a running container?</b>       
-<p>A:
+<br>A:
 ```
 $ sudo nvidia-docker attach container-name  <-if error "cannot attach stopped container, start it first", refer below  
 $ sudo nvidia-docker start container-name  
@@ -269,18 +269,18 @@ $ sudo attach docker-attach container-name
 ```
 
 <b>Q: How do I check the version of ubuntu & docker-engine?</b>       
-<p>A:
+<br>A:
 ```
 $ cat /etc/issue  
 $ sudo docker version
 ```
 
 <b>Q: How do I share files between docker container, docker host and windows PC?</b>       
-<p>A: map container folder to host folder, read/write between win7 and host-folder using winscp  
+<br>A: map container folder to host folder, read/write between win7 and host-folder using winscp  
 ref https://winscp.net/eng/docs/guide_install
 
 <b>Q: How do I solve this error?</b> 
-<p>Error: listen tcp 127.0.0.1:3476: bind: address already in use    
+<br>Error: listen tcp 127.0.0.1:3476: bind: address already in use    
 A: 
 ```
 $ ps aux | grep nvidia-docker-plugin
@@ -293,24 +293,24 @@ $ sudo kill xxxxx
 $ ps aux | grep nvidia-docker-plugin
 ```
 <b>Q: My IP address is not showing. How do I find my IP address?</b> 
-<p>A: 
+<br>A: 
 ```
 $ sudo ipconfig eth0 down
 $ sudo ipconfig eth0 up
 ```
 
-Q: What is the cuda version in current container?  
-A: execute command below  
+<b>Q: What is the cuda version in current container?</b>  
+<br>A: execute command below  
 `\# ls -all /usr/local/cuda`
 
-Q: How to run X window in container?  
-A: to check  
+<b>Q: How to run X window in container?</b>
+<br>A: to check  
 
-Q: Can a container get librarys from 2 docker images? example, image1 provides cudnn4, image2 provides geany?  
-A: 
+<b>Q: Can a container get librarys from 2 docker images? example, image1 provides cudnn4, image2 provides geany?</b>
+<br>A: 
 
-Q: How to access symbolic linked file in host's folder (mapped to docker)?  
-A: symblic link in host-folder (mapped to container) is visible to container  
+<b>Q: How to access symbolic linked file in host's folder (mapped to docker)?  
+<br>A: symblic link in host-folder (mapped to container) is visible to container  
 
 
 ---------------
