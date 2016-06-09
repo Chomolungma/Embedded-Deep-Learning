@@ -168,7 +168,7 @@ For more information, please refer to [C3D](https://github.com/facebook/C3D).
 <br>2. At /home/ubuntu/Programs/docker4c3d/,
     <br>`$ unzip C3D-master.zip; cd C3D-master` <- later we map resulted /C3D-master folder to container1's folder
 <br>3. At /home/ubuntu/Programs/docker4c3d/C3D-master, copy or duplicate Makefile.config.example to Makefile.config.
-`$ cp Makefile.config.example Makefile.config`
+    <br>`$ cp Makefile.config.example Makefile.config`
         
 ##Use docker  
 ###Create container1 to run downloaded C3D
