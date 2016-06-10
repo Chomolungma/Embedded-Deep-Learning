@@ -1,6 +1,7 @@
 Ubuntu Command
 ===============
 
+ * [Setup Openssh Server](#setup-openssh-server)
 ##Setup Openssh Server
 To install the OpenSSH client applications on your Ubuntu system:
 `$ sudo apt install openssh-client`
