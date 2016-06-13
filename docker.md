@@ -210,6 +210,11 @@ $ sudo docker ps -a
 $ sudo docker stop container-name
 ```
 
+###ssh client display ssh server GUI
+$ docker run -e DISPLAY -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host xclock
+$ nvidia docker
+
+
 ##Q&A
 -----------------
 <b>Q: How do I change my permission at current folders and its sub-folder?</b>  
