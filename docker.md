@@ -15,6 +15,7 @@ Guide to use docker image file for C3D
     * [Commit/Save/Load container1](#commitsaveload-container1)
     * [Stop Docker Container](#stop-docker-container)
     * [Q&A](#qa)
+    * [SSH Client Display ssh server GUI](#ssh-client-display-ssh-server-gui)
 
 ****
 ##Convention
@@ -203,6 +204,29 @@ $ sudo docker rmi images-name <- check loaded
 $ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" image-name /bin/bash  
 ```	
 
+Batch commands
+src: (http://honeyco.nyc/blog/docker-tips-and-tricks/)
+Sometimes it can be quicker to operate on multiple docker containers at once, especially while testing a new container to get the parameters correct.
+
+Remove all containers of a given image:
+
+docker rm `docker ps -a | grep 0fa4de | cut -f1 -d" "`
+# also this format uses xargs instead of backticks
+docker ps -a | grep 0fa4de | cut -d ' ' -f 1 | xargs docker rm
+
+# or if you need to stop them before removing replace rm with kill:
+```
+docker ps -a | grep 0fa4de | cut -d ' ' -f 1 | xargs docker kill
+docker ps -a | grep 0fa4de | cut -d ' ' -f 1 | xargs docker rm
+```
+
+Remove stopped containers:
+`docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm`
+
+You can use similar techniques for deleting images (though removing multiple images is less common):
+`docker ps -a | grep string-of-text | cut -d ' ' -f 1 | xargs docker rmi`
+
+
 ###Stop docker container  
 ref https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers/  
 ```
@@ -212,8 +236,7 @@ $ sudo docker stop container-name
 
 ###ssh client display ssh server GUI
 $ docker run -e DISPLAY -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host xclock
-$ nvidia docker
-
+<p>$ nvidia docker
 
 ##Q&A
 -----------------
