@@ -209,13 +209,12 @@ src: (http://honeyco.nyc/blog/docker-tips-and-tricks/)
 Sometimes it can be quicker to operate on multiple docker containers at once, especially while testing a new container to get the parameters correct.
 
 Remove all containers of a given image:
-
+```
 docker rm `docker ps -a | grep 0fa4de | cut -f1 -d" "`
 # also this format uses xargs instead of backticks
 docker ps -a | grep 0fa4de | cut -d ' ' -f 1 | xargs docker rm
 
 # or if you need to stop them before removing replace rm with kill:
-```
 docker ps -a | grep 0fa4de | cut -d ' ' -f 1 | xargs docker kill
 docker ps -a | grep 0fa4de | cut -d ' ' -f 1 | xargs docker rm
 ```
