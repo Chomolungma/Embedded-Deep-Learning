@@ -5,3 +5,9 @@ http://nv-tegra.nvidia.com/gitweb/?p=linux-3.10.git;a=summary
 
 ###caffe install
 https://github.com/tiangolo/caffe/blob/ubuntu-tutorial-b/docs/install_apt2.md
+
+tiff4 error
+/usr/lib/libopencv_highgui.so.2.4: undefined reference to TIFFRGBAImageOK@LIBTIFF_4.0' 1> 
+/usr/lib/libopencv_highgui.so.2.4: undefined reference toTIFFReadRGBAStrip@LIBTIFF_4.0'
+http://answers.opencv.org/question/35642/libtiff_40-link-errors/
+http://www.cnblogs.com/platero/p/4141063.html
