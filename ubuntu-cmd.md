@@ -10,3 +10,7 @@ To install the OpenSSH client applications on your Ubuntu system:
 To install the OpenSSH server application, and related support files:
 <br>`$ sudo apt install openssh-server`
 
+[remove raid]
+Q: in ubuntu usb bootdisk, harddisk not detected by installer, but detected by gparted
+$sudo dmraid -E -r /dev/sda <------- remove ALL raid infor
+$sudo dmraid -E -r /dev/sdb
