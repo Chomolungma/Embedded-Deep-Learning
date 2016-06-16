@@ -16,6 +16,7 @@ Guide to use docker image file for C3D
     * [Stop Docker Container](#stop-docker-container)
     * [Q&A](#qa)
     * [SSH Client Display ssh server GUI](#ssh-client-display-ssh-server-gui)
+    * [Create a docker group](#create-a-docker-group)
 
 ****
 ##Convention
@@ -252,6 +253,10 @@ If this fails with a message similar to this:
 
 `Cannot connect to the Docker daemon. Is 'docker daemon' running on this host?`
 <p>Check that the DOCKER_HOST environment variable is not set for your shell. If it is, unset it.
+
+###Transfer of files
+`$ scp <file.tar> ubuntu@12.34.56.78<Your IP Address>:12.34.89.10<Destination>`
+
 
 ##Q&A
 -----------------
