@@ -235,6 +235,7 @@ and execute the same command with administrative privileges by typing sudo ahead
 <br>`$ sudo some_command`
 
 ###Create a docker group
+Please refer to [how to create docker group](https://docs.docker.com/engine/installation/linux/ubuntulinux/#create-a-docker-group) for more information.
 Create the docker group
 <p>`$ sudo groupadd docker`
 
