@@ -5,7 +5,6 @@ Guide to use docker image file for C3D
   * [Target](#target)
   * [Related Work](#related-work)
   * [Environment Setup](#environment-setup)
-  * [Add Multiple Users](#add-multiple-users)
   * [Install/Download/Uninstall](#installdownloaduninstall)
     * [Docker Engine](#docker-engine)
     * [Nvidia Docker](#nvidia-docker)
@@ -14,10 +13,11 @@ Guide to use docker image file for C3D
     * [Create container1 to run downloaded C3D](#create-container1-to-run-downloaded-c3d)
     * [Commit/Save/Load container1](#commitsaveload-container1)
     * [Stop Docker Container](#stop-docker-container)
-    * [Q&A](#qa)
-    * [SSH Client Display ssh server GUI](#ssh-client-display-ssh-server-gui)
+    * [Add Multiple Users](#add-multiple-users)
     * [Create a docker group](#create-a-docker-group)
-
+    * [SSH Client Display ssh server GUI](#ssh-client-display-ssh-server-gui)
+  * [Q&A](#qa)
+  
 ****
 ##Convention
 At Docker-Host,
@@ -46,27 +46,6 @@ Our targets are as follow:
 ##Environment Setup
 * Ubuntu 14.04.3  
 * Docker engine 1.11.2 
-
-##Add Multiple Users
-For more information, please refer to [how to add and delete users on ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-an-ubuntu-14-04-vps).
-<p>To add user:
-<br>`$ sudo adduser newuser`
-<p>To grant Privileges:
-<br>`$ sudo visudo`
-<p>Search for the line that looks like this:
-<br>`root    ALL=(ALL:ALL) ALL`
-
-Using the format of the root user, change root to the new user that you would like to give sudo privileges to:
-<br>`root    ALL=(ALL:ALL) ALL`
-<br>`newuser ALL=(ALL:ALL) ALL`
-<br>Press Ctrl + X, followed by pressing Y and enter to save and exit.
-
-For testing,
-<br>When signed in as the new user, try to execute commands as your regular user by typing commands as normal:
-<br>`$ some_command`
-
-and execute the same command with administrative privileges by typing sudo ahead of the command:
-<br>`$ sudo some_command`
 
 ##Install/Download/Uninstall  
 ###Docker Engine 
@@ -234,12 +213,28 @@ $ sudo docker ps -a
 $ sudo docker stop container-name
 ```
 
-###ssh client display ssh server GUI
-`$ docker run -e DISPLAY -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host xclock`
-<p>`$ nvidia docker`
+###Add Multiple Users
+For more information, please refer to [how to add and delete users on ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-an-ubuntu-14-04-vps).
+<p>To add user:
+<br>`$ sudo adduser newuser`
+<p>To grant Privileges:
+<br>`$ sudo visudo`
+<p>Search for the line that looks like this:
+<br>`root    ALL=(ALL:ALL) ALL`
+
+Using the format of the root user, change root to the new user that you would like to give sudo privileges to:
+<br>`root    ALL=(ALL:ALL) ALL`
+<br>`newuser ALL=(ALL:ALL) ALL`
+<br>Press Ctrl + X, followed by pressing Y and enter to save and exit.
+
+For testing,
+<br>When signed in as the new user, try to execute commands as your regular user by typing commands as normal:
+<br>`$ some_command`
+
+and execute the same command with administrative privileges by typing sudo ahead of the command:
+<br>`$ sudo some_command`
 
 ###Create a docker group
-
 Create the docker group
 <p>`$ sudo groupadd docker`
 
@@ -257,6 +252,9 @@ If this fails with a message similar to this:
 ###Transfer of files
 `$ scp <file.tar> ubuntu@12.34.56.78<Your IP Address>:12.34.89.10<Destination>`
 
+###ssh client display ssh server GUI
+`$ docker run -e DISPLAY -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host xclock`
+<p>`$ nvidia docker`
 
 ##Q&A
 -----------------
