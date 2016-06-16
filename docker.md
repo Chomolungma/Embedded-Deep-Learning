@@ -234,8 +234,24 @@ $ sudo docker stop container-name
 ```
 
 ###ssh client display ssh server GUI
-$ docker run -e DISPLAY -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host xclock
-<p>$ nvidia docker
+`$ docker run -e DISPLAY -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host xclock`
+<p>`$ nvidia docker`
+
+###Create a docker group
+
+Create the docker group
+<p>`$ sudo groupadd docker`
+
+Add your user to docker group.
+<p>`$ sudo usermod -aG docker ubuntu`
+
+Verify your work by running docker without sudo.
+<p>`$ docker run hello-world`
+
+If this fails with a message similar to this:
+
+`Cannot connect to the Docker daemon. Is 'docker daemon' running on this host?`
+<p>Check that the DOCKER_HOST environment variable is not set for your shell. If it is, unset it.
 
 ##Q&A
 -----------------
@@ -334,11 +350,17 @@ $ sudo ipconfig eth0 up
 <b>Q: How to run X window in container?</b>
 <br>A: to check  
 
-<b>Q: Can a container get librarys from 2 docker images? example, image1 provides cudnn4, image2 provides geany?</b>
+<b>Q: Can a container get libraries from 2 docker images? example, image1 provides cudnn4, image2 provides geany?</b>
 <br>A: 
 
 <b>Q: How to access symbolic linked file in host's folder (mapped to docker)?</b>  
-<br>A: symblic link in host-folder (mapped to container) is visible to container  
+<br>A: symbolic link in host-folder (mapped to container) is visible to container  
+
+<b>Q: How I solve the following error?
+<br>docker: Error while pulling image: Get https://index.docker.io/v1/repositories/library/hello-world/images: dial tcp: lookup index.docker.io on 127.0.1.1:53: no such host.</b>
+<br>A: `$ nano /etc/apt/apt.conf`
+<br>   `$ Acquire::http_proxy="http://1.2.3.4:5678/";`
+<br>    Press Ctrl X, followed by Y and then enter.
 
 
 ---------------
