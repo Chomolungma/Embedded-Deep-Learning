@@ -237,13 +237,13 @@ and execute the same command with administrative privileges by typing sudo ahead
 ###Create a docker group
 Please refer to [how to create docker group](https://docs.docker.com/engine/installation/linux/ubuntulinux/#create-a-docker-group) for more information.
 <p>Create the docker group
-<p>`$ sudo groupadd docker`
+<br>`$ sudo groupadd docker`
 
 Add your user to docker group.
-<p>`$ sudo usermod -aG docker ubuntu`
+<br>`$ sudo usermod -aG docker ubuntu`
 
 Verify your work by running docker without sudo.
-<p>`$ docker run hello-world`
+<br>`$ docker run hello-world`
 
 If this fails with a message similar to this:
 
