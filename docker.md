@@ -200,7 +200,7 @@ $ sudo nvidia-docker commit container-name image-name
 $ sudo nvidia-docker save image-name > /home/ubuntu/Programs/docker4c3d/image-name.tar  
 $ sudo docker rmi images-name <- check deleted
 $ sudo nvidia-docker load < /home/ubuntu/Programs/docker4c3d/image-name.tar  
-$ sudo docker rmi images-name <- check loaded
+$ sudo docker images-name <- check loaded
 $ sudo nvidia-docker run --privileged=true --env http_proxy="http://1.2.3.4:5678" -v /home/ubuntu/Programs/docker4c3d:/opt/docker-share/ubuntu -it --name "container-name" image-name /bin/bash  
 ```	
 
