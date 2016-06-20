@@ -42,3 +42,24 @@ start windows comamnd prompt as admin,
 >cd n:     <- check exist  
 >subst N: /d <- delete  
 >cd n:     <- check created  
+
+mount thumbdrive as ubuntu folder
+http://askubuntu.com/questions/37767/how-to-access-a-usb-flash-drive-from-the-terminal-how-can-i-mount-a-flash-driv
+You'll need to know what the drive is called to mount it. To do that fire off:
+
+sudo fdisk -l
+
+You're looking for a partition that should look something like: /dev/sdb1. Remember what it's called.
+2. Create a mount point
+
+Create a new directory in /media so you can mount the drive onto the filesystem:
+
+sudo  mkdir /media/usb
+
+3. Mount!
+
+sudo mount /dev/sdb1 /media/usb
+
+When you're done, just fire off:
+
+sudo umount /media/usb
