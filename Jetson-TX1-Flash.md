@@ -35,7 +35,7 @@ JetPack L4T requires an ubuntu host x86_64 machine to flash your Jetson TX1.
 10. Select Device accesses Internet via router/switch for network layout.
 11. Select eth0 or eth1 depending on your setup for the interface to use for Internet access.
 12. A pop-up window will instruct ypu to put your device into Force USB Recovery Mode in order to flash the OS.
-    To flash OS,
+    <br>To flash OS,
     - Power down the device. If connected, remove the AC adaptor from the device. The device MUST be powered off, not in a suspend or sleep state.
     - Connect the Micro-B plug on the USB cable to the Recovery (USB Micro-B) Port on the device and the other end to an available USB port on the host PC.
     - Connect the power adaptor to the device.
