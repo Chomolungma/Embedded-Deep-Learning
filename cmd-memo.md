@@ -63,3 +63,8 @@ sudo mount /dev/sdb1 /media/usb
 When you're done, just fire off:
 
 sudo umount /media/usb
+
+
+$ sudo mkdir /media/usb1
+$ sudo mount -t ntfs-3g /dev/sda1 /media/usb1
+$ sudo chmod -R 777 /media/usb1
