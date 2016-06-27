@@ -1,5 +1,4 @@
-Installing JetPack L4T
------------------------
+# Installing JetPack L4T
 
 Please refer to [installation of JetPack L4T](http://docs.nvidia.com/jetpack-l4t/index.html#developertools/mobile/jetpack/l4t/2.2/jetpack_l4t_install.htm) and [youtube video on JetPack installation](http://jetsonhacks.com/2015/11/18/jetpack-2-0-nvack-jetson-tx1/) for more information.
 
