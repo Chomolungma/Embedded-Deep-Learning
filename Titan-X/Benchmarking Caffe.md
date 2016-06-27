@@ -1,3 +1,5 @@
+#Benchmarking Caffe for Titan X
+
 To set Frequency,
 
 > For Linux PC, please add sudo in front of each command. 
