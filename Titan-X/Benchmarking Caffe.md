@@ -32,7 +32,7 @@ To run nvidia-smi
 #8 Display the following information in a textfile (Timestamp, Total memory, Memory used, Free memory, GPU Utilization, Memory Utilization, Current SM clocks, Current Graphics Clocks, Current Memory Clocks, User specified Graphics (shader) Clocks and User specified Memory Clocks) *
    $ nvidia-smi -i 0 --loop-ms=1 --format=csv --query-gpu=timestamp,memory.total,memory.used,memory.free,utilization.gpu,utilization.memory,clocks.sm,clocks.gr,clocks.mem,clocks.applications.gr,clocks.applications.mem > nvidia-smi.txt
 
-* Refer to https://github.com/charlyng/Embedded-Deep-Learning/blob/master/nvidia-smi-query.log to query other properties. 
+* Refer to https://github.com/charlyng/Embedded-Deep-Learning/blob/master/Titan-x/nvidia-smi-query.log to query other properties. 
 
 #9 Run the prototxt file for AlexNet, GoogLeNet and Vgg16 **
 
