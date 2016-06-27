@@ -29,7 +29,18 @@ To run nvidia-smi
 #7 To run nvidia-smi continuously at an interval of 5 secs (Default) / 1 ms
    $ nvidia-smi -l  / $ nvidia-smi --loop-ms=1
    
-#8 Display the following information in a textfile (Timestamp, Total memory, Memory used, Free memory, GPU Utilization, Memory Utilization, Current SM clocks, Current Graphics Clocks, Current Memory Clocks, User specified Graphics (shader) Clocks and User specified Memory Clocks) *
+#8 Display the following information in a textfile *
+   - Timestamp
+   - Total memory
+   - Memory used
+   - Free memory
+   - GPU Utilization
+   - Memory Utilization
+   - Current SM clocks
+   - Current Graphics Clocks
+   - Current Memory Clocks
+   - User specified Graphics (shader) Clocks
+   - User specified Memory Clocks
    $ nvidia-smi -i 0 --loop-ms=1 --format=csv --query-gpu=timestamp,memory.total,memory.used,memory.free,utilization.gpu,utilization.memory,clocks.sm,clocks.gr,clocks.mem,clocks.applications.gr,clocks.applications.mem > nvidia-smi.txt
 
 * Refer to nvidia-smi-query.log to query other properties. 
