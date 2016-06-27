@@ -18,7 +18,7 @@ $ cd /usr/local/lib
 # Remove all libopencv_ related files
 $ sudo rm libopencv_*
 ```
-<b>Install OpenCV-3.1.0 on Jetson TX1</b> [src: <a href="https://devtalk.nvidia.com/default/topic/917386/jetson-tx1/usb-3-0-port-unstable-on-jetson-tx1-/post/4835793/#4835793">Instructions to install OpenCV-3.1.0</a>]
+<b>Install OpenCV-3.1.0 on Jetson TX1</b> [[src: Instructions to install OpenCV-3.1.0]](https://devtalk.nvidia.com/default/topic/917386/jetson-tx1/usb-3-0-port-unstable-on-jetson-tx1-/post/4835793/#4835793)
 
 1.  Download "OpenCV for Linux/Mac (Version 3.1)" from http://opencv.org/downloads.html
 
