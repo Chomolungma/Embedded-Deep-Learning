@@ -1,5 +1,4 @@
-Nvidia Benchmarking
-====================
+#Nvidia Benchmarking
 
 Simple benchmarking of public open-source implementations of caffe. A summary is provided in the section below.
 
@@ -7,11 +6,11 @@ Machine: 6-core Intel Xeon E5-2620 v3 CPU @ 2.4GHz + NVIDIA GeForce GTX Titan X 
 
 Jetson: Nvidia Tegra X1 + Ubuntu 14.04.1 LTS
 
-I took reference from <a href="https://www.nvidia.com/content/tegra/embedded-systems/pdf/jetson_tx1_whitepaper.pdf">Nvidia Jetson TX1 Whitepaper</a> and extracted the source from <a href="https://github.com/NVIDIA/caffe/tree/caffe-0.14"> [2] NVIDIA/caffe/tree/caffe-0.14</a> for Titan X and <a href="https://github.com/NVIDIA/caffe/tree/experimental/fp16"> [1] NVIDIA/caffe/tree/experimental/fp16</a> for Jetson TX1. 
+I took reference from [Nvidia Jetson TX1 Whitepaper](https://www.nvidia.com/content/tegra/embedded-systems/pdf/jetson_tx1_whitepaper.pdf)  and extracted the source from [ NVIDIA/caffe/tree/caffe-0.14](https://github.com/NVIDIA/caffe/tree/caffe-0.14)  for Titan X and [NVIDIA/caffe/tree/experimental/fp16](https://github.com/NVIDIA/caffe/tree/experimental/fp16) for Jetson TX1. 
 
-In the following codes, I have edited <a href="https://github.com/charlyng/Embedded-Deep-Learning/blob/master/caffe.cpp">charlyng/Embedded-Deep-Learning/caffe.cpp</a> to disable the full backward pass and clock the time for a full forward pass only for 100 iterations. 
+In the following codes, I have edited [charlyng/Embedded-Deep-Learning/caffe.cpp](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/caffe.cpp) to disable the full backward pass and clock the time for a full forward pass only for 100 iterations. 
 
-Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to <a href="https://github.com/charlyng/Embedded-Deep-Learning/blob/master/Set%20Frequency.md">charlyng/Embedded-Deep-Learning/Set Frequency.md</a>). Thereafter, I run caffe time on AlexNet, GoogLeNet and Vgg16 on Jetson TX1 (FP32), caffe_fp16 time on Jetson TX1 (FP16) and caffe time on Titan X (FP32) for Batch 1, 64 and 128 (Refer to commands in cmd_AlexNet.md, cmd_GoogLeNet.md, cmd_Vgg16.md).
+Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to [charlyng/Embedded-Deep-Learning/Set Frequency.md](https://github.com/charlyng/Embedded-Deep-Learning/blob/master/Set%20Frequency.md)). Thereafter, I run caffe time on AlexNet, GoogLeNet and Vgg16 on Jetson TX1 (FP32), caffe_fp16 time on Jetson TX1 (FP16) and caffe time on Titan X (FP32) for Batch 1, 64 and 128 (Refer to commands in cmd_AlexNet.md, cmd_GoogLeNet.md, cmd_Vgg16.md).
 
 **AlexNet**
 
