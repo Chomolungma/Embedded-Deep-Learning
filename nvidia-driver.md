@@ -15,5 +15,4 @@
    ```
 6. Follow the instructions to complete install.
 
-boot into command line mode
-http://ubuntuhandbook.org/index.php/2014/01/boot-into-text-console-ubuntu-linux-14-04/
+If you are unable to get into the command line mode, please refer the [link](http://ubuntuhandbook.org/index.php/2014/01/boot-into-text-console-ubuntu-linux-14-04/) here.
