@@ -16,6 +16,7 @@ Guide to use docker image file for C3D
     * [Add Multiple Users](#add-multiple-users)
     * [Create a docker group](#create-a-docker-group)
     * [SSH Client Display ssh server GUI](#ssh-client-display-ssh-server-gui)
+  * [Building an image from Dockerfile](#building-an-image-from-dockerfile) 
   * [Q&A](#qa)
   
 ****
@@ -256,6 +257,43 @@ If this fails with a message similar to this:
 ###ssh client display ssh server GUI
 `$ docker run -e DISPLAY -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host xclock`
 <p>`$ nvidia docker`
+
+##Building an image from Dockerfile
+
+```
+# Create a directory
+$ mkdir docker-xeyes
+
+# Create a dockerfile
+$ touch dockerfile
+
+# Open the dockerfile
+$ gedit dockerfile
+
+# Each instructions creates a new layer of the image.
+FROM ubuntu:14.04
+RUN apt-get update 
+RUN apt-get upgrade -y
+RUN apt-get install -y x11-apps
+
+CMD xeyes
+
+# Build the dockerfile
+$ docker build -t docker-xeyes-container
+
+# Create a .run file
+$ 
+
+# Type the following into .run file
+docker run -t --rm \
+  -e DISPLAY=$DISPLAY \
+  -u $(id -u) \
+  -v /tmp/.x11-unix:/tmp/.x11-unix \
+  "$@" docker-xeyes-container /bin/bash
+
+# Run container from image
+$ ./run-with-x11.sh
+```
 
 ##Q&A
 -----------------
