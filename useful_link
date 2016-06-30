@@ -11,3 +11,5 @@ tiff4 error
 /usr/lib/libopencv_highgui.so.2.4: undefined reference toTIFFReadRGBAStrip@LIBTIFF_4.0'
 http://answers.opencv.org/question/35642/libtiff_40-link-errors/
 http://www.cnblogs.com/platero/p/4141063.html
+
+http://www.tablesgenerator.com/html_tables
