@@ -16,7 +16,6 @@ Guide to use docker image file for C3D
     * [Add Multiple Users](#add-multiple-users)
     * [Create a docker group](#create-a-docker-group)
   * [Build your own images](#build-your-own-images)
-    * [Building an image from Dockerfile](#building-an-image-from-dockerfile) 
     * [SSH Client Display ssh server GUI](#ssh-client-display-ssh-server-gui)
   * [Q&A](#qa)
   
