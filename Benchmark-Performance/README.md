@@ -35,7 +35,9 @@ Next, I set Jetson TX1 and Titan X to a fixed frequency (Refer to [charlyng/Embe
     <td>21.9</td>
     <td>15.4</td>
     <td>2.5</td>
-    <td colspan="3" rowspan="5">TBC</td>
+  <td>tbd</td>
+  <td>tbd</td>
+  <td>tbd</td>
   </tr>
   <tr>
     <td>Average Forward Pass (fps)</td>
