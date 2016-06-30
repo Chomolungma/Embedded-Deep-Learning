@@ -15,8 +15,9 @@ Guide to use docker image file for C3D
     * [Stop Docker Container](#stop-docker-container)
     * [Add Multiple Users](#add-multiple-users)
     * [Create a docker group](#create-a-docker-group)
+  * [Build your own images](#build-your-own-images)
+    * [Building an image from Dockerfile](#building-an-image-from-dockerfile) 
     * [SSH Client Display ssh server GUI](#ssh-client-display-ssh-server-gui)
-  * [Building an image from Dockerfile](#building-an-image-from-dockerfile) 
   * [Q&A](#qa)
   
 ****
@@ -254,11 +255,24 @@ If this fails with a message similar to this:
 ###Transfer of files
 `$ scp <file.tar> ubuntu@12.34.56.78<Your IP Address>:12.34.89.10<Destination>`
 
-###ssh client display ssh server GUI
-`$ docker run -e DISPLAY -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host xclock`
-<p>`$ nvidia docker`
+##Build your own images
 
-##Building an image from Dockerfile
+List images on host
+`$ docker images`
+
+Getting a new image
+`$ docker pull ubuntu`
+
+Pulling images
+`$ docker pull docker-xeyes`
+
+Run images in container
+```
+$ docker run -it docker-xeyes-container /bin/bash
+root@a4cb7ce01d86:/#
+```
+
+Creating images
 
 ```
 # Create a directory
@@ -294,6 +308,36 @@ docker run -t --rm \
 # Run container from image
 $ ./run-with-x11.sh
 ```
+
+<b>Note:</b>
+
+The -t flag is used identify the new image belonging to docker-xeyes-container.
+The location of the dockerfile using the . to indicate a Dockerfile in the current directory. <-- Can specify a path to a Dockerfile
+
+An image can’t have more than 127 layers regardless of the storage driver. This limitation is set globally to encourage optimization of the overall size of images.
+
+Please refer to [best practice guide for dockerfile](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/).
+
+###ssh client display ssh server GUI
+
+Install XRDP Package from Ubuntu Repository
+`$ sudo apt-get install xrdp`
+
+Installing the xfce4 Desktop environment
+```
+sudo apt-get update
+sudo apt-get install xfce4
+```
+
+Configure xrdp to use xfce desktop environment
+`echo xfce4-session >~/.xsession`
+Restart the xrdp service
+`$ sudo service xrdp restart`
+
+Test your xrdp connection
+`$ hostname -I`
+
+Go to Windows machine and start remote desktop client and enter ip address/name of ubuntu machine.
 
 ##Q&A
 -----------------
