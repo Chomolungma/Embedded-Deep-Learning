@@ -294,10 +294,10 @@ CMD xeyes
 # Build the dockerfile
 $ docker build -t docker-xeyes-container
 
-# Create a .run file
-$ 
+# Create a .sh file
+$ gedit ./run-with-x11.sh
 
-# Type the following into .run file
+# Type the following into .sh file
 docker run -t --rm \
   -e DISPLAY=$DISPLAY \
   -u $(id -u) \
@@ -305,7 +305,7 @@ docker run -t --rm \
   "$@" docker-xeyes-container /bin/bash
 
 # Run container from image
-$ ./run-with-x11.sh
+$ sudo chmod a+x ./run-with-x11.sh; ./run-with-x11.sh
 ```
 
 <b>Note:</b>
