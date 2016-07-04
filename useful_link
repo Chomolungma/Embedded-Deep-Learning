@@ -16,3 +16,9 @@ http://www.tablesgenerator.com/html_tables
 
 ### cuda setting
 https://devtalk.nvidia.com/default/topic/945905/?comment=4909507
+
+### flops
+https://devtalk.nvidia.com/default/topic/482834/how-to-compute-gflops-for-gemm-blas/
+
+###fp16
+https://devtalk.nvidia.com/default/topic/948962/cuda-programming-and-performance/-fp32-sgemm-and-fp16-hgemm/
