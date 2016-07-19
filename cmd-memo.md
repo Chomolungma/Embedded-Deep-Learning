@@ -68,3 +68,6 @@ sudo umount /media/usb
 $ sudo mkdir /media/usb1
 $ sudo mount -t ntfs-3g /dev/sda1 /media/usb1
 $ sudo chmod -R 777 /media/usb1
+
+compress by preserving symbolic links in a folder (don't zip destination of symbolic link to reduce filesize)  
+zip -ry output-file.zip /source/folder/that/include/symbolic-link  
