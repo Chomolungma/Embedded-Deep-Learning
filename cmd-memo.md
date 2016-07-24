@@ -71,3 +71,15 @@ $ sudo chmod -R 777 /media/usb1
 
 compress by preserving symbolic links in a folder (don't zip destination of symbolic link to reduce filesize)  
 zip -ry output-file.zip /source/folder/that/include/symbolic-link  
+
+scp through tunnel
+local_L -> tunnel_T -> desti_T  
+file_T <---------------- file_T  
+Run scp to machine R, which is only accessible through gateway machine G    
+
+mobilexterm local terminal window1  
+ssh -L 1234:desti_T_IP:22 tunne_T_user@tunnel_T_IP  
+
+mobilexterm local terminal window1  
+scp -P 1234 ubuntu@127.0.0.1:/desti_T_path/file_T /local_L_patth/file_T  
+
