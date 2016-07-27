@@ -83,3 +83,6 @@ ssh -L 1234:desti_T_IP:22 tunne_T_user@tunnel_T_IP
 mobilexterm local terminal window1  
 scp -P 1234 ubuntu@127.0.0.1:/desti_T_path/file_T /local_L_patth/file_T  
 
+replace string from all found files from "/s" to "/g"  
+ find ./ -type f -name "*.cu" -exec sed -i 's/__UNIX__/__unix__/g' {} +  
+
